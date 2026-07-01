@@ -1,6 +1,7 @@
 import type { CounterItem } from "@/components/blocks/Counters";
 import type { GalleryImage } from "@/components/blocks/Gallery";
 import type { TimelineEvent } from "@/components/blocks/Timeline";
+import { stockImages } from "@/lib/home-content";
 
 export const departments = [
   {
@@ -92,8 +93,7 @@ export const news = [
       "Graduates are leading innovation across industries worldwide.",
     category: "Alumni",
     date: "December 9, 2025",
-    image:
-      "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=600&h=400&fit=crop",
+    image: stockImages.campus,
     author: "Howard Esther",
     href: "/blog/alumni-success",
   },
@@ -101,12 +101,12 @@ export const news = [
 
 export const galleryImages: GalleryImage[] = [
   {
-    src: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=800&h=600&fit=crop",
+    src: stockImages.campus,
     alt: "Campus Entrance",
     caption: "Main campus building",
   },
   {
-    src: "https://images.unsplash.com/photo-1541339907191-e08756dedf3c?w=600&h=600&fit=crop",
+    src: stockImages.library,
     alt: "Library",
   },
   {
@@ -114,11 +114,11 @@ export const galleryImages: GalleryImage[] = [
     alt: "Lecture Hall",
   },
   {
-    src: "https://images.unsplash.com/photo-1571260899304-425eee4c276e?w=600&h=600&fit=crop",
+    src: stockImages.sports,
     alt: "Sports",
   },
   {
-    src: "https://images.unsplash.com/photo-1519452575417-564d1407b0bc?w=600&h=600&fit=crop",
+    src: stockImages.graduation,
     alt: "Graduation",
   },
   {

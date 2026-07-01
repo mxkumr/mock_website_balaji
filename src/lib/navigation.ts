@@ -97,8 +97,7 @@ export const mainNavigation: NavItem[] = [
       description: "Highly qualified faculties will guide you for career growth.",
       stat: "1.5K+",
       statLabel: "Regular Students",
-      image:
-        "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=400&h=300&fit=crop",
+      image: "/images/hero-campus.jpg",
       ctaLabel: "Apply Now",
       ctaHref: "/apply",
     },
@@ -125,8 +124,9 @@ export const mainNavigation: NavItem[] = [
 export const siteConfig = {
   name: "Sree Balaji Institute of Science and Technology",
   shortName: "SBIST",
+  logo: "/images/sbist-logo.jpg",
   email: "office@sbist.in",
-  phone: "+91 44 2222 3333",
+  phone: "",
   address: "No. 7 Works Road, Chrompet, Chennai - 600 044",
   social: {
     facebook: "https://facebook.com",

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { siteConfig } from "@/lib/navigation";
 
@@ -24,28 +25,41 @@ export function Footer() {
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
           {/* Brand */}
           <div>
-            <div className="flex items-center gap-3">
-              <div className="flex h-11 w-11 items-center justify-center rounded-full bg-accent text-sm font-bold text-white">
-                SB
-              </div>
-              <p className="text-sm font-bold leading-tight">{siteConfig.shortName}</p>
-            </div>
+            <Link
+              href="/"
+              className="inline-flex rounded-lg bg-white px-2.5 py-1.5"
+              aria-label={siteConfig.name}
+            >
+              <Image
+                src={siteConfig.logo}
+                alt={siteConfig.name}
+                width={320}
+                height={88}
+                className="h-11 w-auto max-w-[240px] object-contain object-left sm:h-12 sm:max-w-[280px]"
+              />
+            </Link>
             <p className="mt-4 text-sm leading-relaxed text-white/70">
               {siteConfig.name}
             </p>
             <div className="mt-5 space-y-2 text-sm text-white/70">
+              <p>
+                <span className="font-medium text-white">Address:</span>{" "}
+                {siteConfig.address}
+              </p>
               <p>
                 <span className="font-medium text-white">Email:</span>{" "}
                 <a href={`mailto:${siteConfig.email}`} className="hover:text-accent">
                   {siteConfig.email}
                 </a>
               </p>
-              <p>
-                <span className="font-medium text-white">Phone:</span>{" "}
-                <a href={`tel:${siteConfig.phone}`} className="hover:text-accent">
-                  {siteConfig.phone}
-                </a>
-              </p>
+              {siteConfig.phone && (
+                <p>
+                  <span className="font-medium text-white">Phone:</span>{" "}
+                  <a href={`tel:${siteConfig.phone}`} className="hover:text-accent">
+                    {siteConfig.phone}
+                  </a>
+                </p>
+              )}
             </div>
           </div>
 

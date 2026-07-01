@@ -1,6 +1,11 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import {
+  ScrollReveal,
+  StaggerContainer,
+  StaggerItem,
+} from "@/components/motion/ScrollAnimations";
 
 export type CounterItem = {
   value: number;
@@ -97,7 +102,7 @@ export function Counters({
   return (
     <section
       ref={ref}
-      className="relative overflow-hidden bg-primary py-16 lg:py-20"
+      className="relative overflow-hidden bg-primary py-20 lg:py-24"
     >
       <div className="absolute inset-0 opacity-10">
         <div className="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-accent" />
@@ -106,28 +111,33 @@ export function Counters({
 
       <div className="relative mx-auto max-w-7xl px-4 lg:px-8">
         {(title || subtitle) && (
-          <div className="mb-12 text-center">
-            {subtitle && (
-              <span className="text-sm font-semibold uppercase tracking-widest text-accent">
-                {subtitle}
-              </span>
-            )}
-            {title && (
-              <h2 className="mt-2 text-3xl font-bold text-white">{title}</h2>
-            )}
-          </div>
+          <ScrollReveal>
+            <div className="mb-12 text-center lg:mb-14">
+              {subtitle && (
+                <span className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">
+                  {subtitle}
+                </span>
+              )}
+              {title && (
+                <h2 className="mt-3 text-3xl leading-tight text-white lg:text-4xl">
+                  {title}
+                </h2>
+              )}
+            </div>
+          </ScrollReveal>
         )}
 
-        <div className="grid grid-cols-2 gap-8 lg:grid-cols-4">
+        <StaggerContainer className="grid grid-cols-2 gap-8 lg:grid-cols-4" stagger={0.08}>
           {items.map((item) => (
-            <CounterBlock
-              key={item.label}
-              item={item}
-              duration={duration}
-              started={started}
-            />
+            <StaggerItem key={item.label}>
+              <CounterBlock
+                item={item}
+                duration={duration}
+                started={started}
+              />
+            </StaggerItem>
           ))}
-        </div>
+        </StaggerContainer>
       </div>
     </section>
   );
