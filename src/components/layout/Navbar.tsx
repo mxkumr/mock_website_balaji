@@ -66,49 +66,47 @@ type NavLinkItemProps = {
   item: NavItem;
   activeMenu: string | null;
   onToggle: (label: string) => void;
-  onClose: () => void;
-  isHero: boolean;
-  isScrolled: boolean;
+  useLightNav: boolean;
 };
 
-function DesktopNavItem({
-  item,
-  activeMenu,
-  onToggle,
-  onClose,
-  isHero,
-  isScrolled,
-}: NavLinkItemProps) {
+function DesktopNavItem({ item, activeMenu, onToggle, useLightNav }: NavLinkItemProps) {
   const hasMega = Boolean(item.megaMenu);
   const isOpen = activeMenu === item.label;
-  const linkClass =
-    isHero && !isScrolled
-      ? "text-white/90 hover:text-white"
-      : "text-foreground hover:text-primary";
+  const linkClass = useLightNav
+    ? "text-white hover:text-white drop-shadow-[0_1px_2px_rgba(0,0,0,0.45)]"
+    : "text-foreground hover:text-primary";
 
   if (!hasMega && item.href) {
     return (
-      <Link href={item.href} className={`px-3 py-2 text-sm font-medium transition-colors ${linkClass}`}>
+      <Link
+        href={item.href}
+        className={`rounded-lg px-3 py-2 text-sm font-medium motion-premium ${linkClass}`}
+      >
         {item.label}
       </Link>
     );
   }
 
   return (
-    <div className="relative">
-      <button
-        type="button"
-        aria-expanded={isOpen}
-        aria-haspopup="true"
-        onClick={() => onToggle(item.label)}
-        onMouseEnter={() => onToggle(item.label)}
-        className={`flex items-center gap-1 px-3 py-2 text-sm font-medium transition-colors ${linkClass} ${isOpen ? (isHero && !isScrolled ? "text-white" : "text-primary") : ""}`}
-      >
-        {item.label}
-        <ChevronDown className={`transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`} />
-      </button>
-      <MegaMenu item={item} isOpen={isOpen} onClose={onClose} />
-    </div>
+    <button
+      type="button"
+      aria-expanded={isOpen}
+      aria-haspopup="true"
+      onClick={() => onToggle(item.label)}
+      onMouseEnter={() => onToggle(item.label)}
+      className={[
+        "flex items-center gap-1 rounded-lg px-3 py-2 text-sm font-medium motion-premium",
+        linkClass,
+        isOpen
+          ? useLightNav
+            ? "bg-white/15 text-white"
+            : "bg-surface text-primary"
+          : "",
+      ].join(" ")}
+    >
+      {item.label}
+      <ChevronDown className={`transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`} />
+    </button>
   );
 }
 
@@ -120,42 +118,59 @@ function MobileNavItem({ item, onClose }: { item: NavItem; onClose: () => void }
       <Link
         href={item.href}
         onClick={onClose}
-        className="block rounded-md px-3 py-2.5 text-sm font-medium text-foreground hover:bg-surface"
+        className="block rounded-xl border border-border bg-white px-4 py-3 text-sm font-semibold text-foreground motion-premium hover:border-primary/20 hover:shadow-sm"
       >
         {item.label}
       </Link>
     );
   }
 
+  const links = item.megaMenu?.flatMap((col) => col.links) ?? [];
+
   return (
-    <div>
+    <div className="overflow-hidden rounded-xl border border-border bg-surface/50">
       <button
         type="button"
         onClick={() => setExpanded(!expanded)}
-        className="flex w-full items-center justify-between rounded-md px-3 py-2.5 text-sm font-medium text-foreground hover:bg-surface"
+        className="flex w-full items-center justify-between px-4 py-3 text-sm font-semibold text-foreground"
       >
         {item.label}
         <ChevronDown className={`transition-transform ${expanded ? "rotate-180" : ""}`} />
       </button>
-      {expanded && item.megaMenu && (
-        <div className="ml-3 border-l border-border pl-3">
-          {item.megaMenu.map((col) => (
-            <div key={col.title} className="py-2">
-              <p className="mb-1 px-3 text-xs font-bold uppercase tracking-wider text-primary">
-                {col.title}
-              </p>
-              {col.links.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  onClick={onClose}
-                  className="block rounded-md px-3 py-1.5 text-sm text-muted hover:text-primary"
-                >
-                  {link.label}
-                </Link>
-              ))}
-            </div>
+      {expanded && (
+        <div className="grid grid-cols-2 gap-2 border-t border-border p-3">
+          {links.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              onClick={onClose}
+              className={[
+                "rounded-lg border border-border bg-white p-3 motion-premium hover:border-primary/20 hover:shadow-sm",
+                link.bento === "wide" ? "col-span-2" : "",
+                link.bento === "tall" ? "row-span-2 min-h-[120px]" : "min-h-[72px]",
+              ].join(" ")}
+            >
+              <p className="text-xs font-semibold leading-snug text-foreground">{link.label}</p>
+              {link.description && (
+                <p className="mt-1 line-clamp-2 text-[10px] leading-relaxed text-muted">
+                  {link.description}
+                </p>
+              )}
+            </Link>
           ))}
+          {item.featured && (
+            <Link
+              href={item.featured.ctaHref}
+              onClick={onClose}
+              className="col-span-2 flex min-h-[72px] flex-col justify-center rounded-lg bg-primary p-3 text-white"
+            >
+              <p className="text-lg font-semibold">{item.featured.stat}</p>
+              <p className="text-[10px] uppercase tracking-wide text-white/75">
+                {item.featured.statLabel}
+              </p>
+              <p className="mt-1 text-xs font-semibold">{item.featured.title}</p>
+            </Link>
+          )}
         </div>
       )}
     </div>
@@ -177,7 +192,9 @@ export function Navbar({ variant = "default" }: NavbarProps) {
     if (!isHero) return;
 
     function onScroll() {
-      setIsScrolled(window.scrollY > 60);
+      const scrolled = window.scrollY > 16;
+      setIsScrolled(scrolled);
+      if (scrolled) setActiveMenu(null);
     }
 
     onScroll();
@@ -185,22 +202,29 @@ export function Navbar({ variant = "default" }: NavbarProps) {
     return () => window.removeEventListener("scroll", onScroll);
   }, [isHero]);
 
+  const isHeroTransparent = isHero && !isScrolled;
+  const useLightNav = isHeroTransparent;
+
   const headerClass = [
-    "z-50 w-full transition-all duration-300",
+    "top-0 z-[100] w-full transition-[background-color,box-shadow] duration-300",
     isHero
-      ? isScrolled
-        ? "fixed top-0 bg-white shadow-sm"
-        : "absolute top-0 bg-transparent"
-      : "sticky top-0 bg-white shadow-sm",
+      ? isHeroTransparent
+        ? "absolute inset-x-0 bg-gradient-to-b from-[#0f2744]/60 via-[#0f2744]/25 to-transparent"
+        : "fixed inset-x-0 bg-white shadow-sm"
+      : "sticky inset-x-0 bg-white shadow-sm",
   ].join(" ");
 
-  const iconClass =
-    isHero && !isScrolled
-      ? "text-white/90 hover:text-white"
-      : "text-foreground hover:text-primary";
+  const navRowClass =
+    "relative mx-auto flex w-full max-w-7xl items-center justify-between px-4 py-4 lg:px-8";
+
+  const iconClass = useLightNav
+    ? "text-white hover:text-white drop-shadow-[0_1px_2px_rgba(0,0,0,0.45)]"
+    : "text-foreground hover:text-primary";
+
+  const activeNavItem = mainNavigation.find((item) => item.label === activeMenu);
 
   return (
-    <header className={headerClass}>
+    <header className={headerClass} onMouseLeave={closeMegaMenu}>
       {!isHero && (
         <div className="hidden border-b border-border bg-primary lg:block">
           <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-2 text-xs text-white/90 lg:px-8">
@@ -219,13 +243,15 @@ export function Navbar({ variant = "default" }: NavbarProps) {
         </div>
       )}
 
-      <nav
-        className="relative mx-auto flex max-w-7xl items-center justify-between px-4 py-4 lg:px-8"
-        onMouseLeave={closeMegaMenu}
-      >
+      <nav className={navRowClass}>
         <Link
           href="/"
-          className="inline-flex shrink-0 items-center rounded-lg bg-white px-2.5 py-1.5 shadow-sm ring-1 ring-black/5 transition-shadow hover:shadow-md"
+          className={[
+            "inline-flex shrink-0 items-center rounded-lg px-2.5 py-1.5 transition-shadow",
+            useLightNav
+              ? "bg-white/95 shadow-sm ring-1 ring-white/20 backdrop-blur-sm hover:shadow-md"
+              : "bg-white shadow-sm ring-1 ring-black/5 hover:shadow-md",
+          ].join(" ")}
           aria-label={siteConfig.name}
         >
           <Image
@@ -238,16 +264,14 @@ export function Navbar({ variant = "default" }: NavbarProps) {
           />
         </Link>
 
-        <div className="hidden items-center lg:flex lg:gap-1">
+        <div className="hidden items-center lg:flex lg:gap-0.5">
           {mainNavigation.map((item) => (
             <DesktopNavItem
               key={item.label}
               item={item}
               activeMenu={activeMenu}
               onToggle={toggleMenu}
-              onClose={closeMegaMenu}
-              isHero={isHero}
-              isScrolled={isScrolled}
+              useLightNav={useLightNav}
             />
           ))}
         </div>
@@ -255,19 +279,19 @@ export function Navbar({ variant = "default" }: NavbarProps) {
         <div className="flex items-center gap-3 lg:gap-4">
           <button
             type="button"
-            className={`hidden p-1.5 transition-colors lg:block ${iconClass}`}
+            className={`hidden p-1.5 motion-premium lg:block ${iconClass}`}
             aria-label="Search"
           >
             <SearchIcon />
           </button>
 
           <span
-            className={`hidden h-5 w-px lg:block ${isHero && !isScrolled ? "bg-white/30" : "bg-border"}`}
+            className={`hidden h-5 w-px lg:block ${useLightNav ? "bg-white/30" : "bg-border"}`}
           />
 
           <button
             type="button"
-            className={`p-1.5 transition-colors lg:hidden ${iconClass}`}
+            className={`p-1.5 motion-premium lg:hidden ${iconClass}`}
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label={mobileOpen ? "Close menu" : "Open menu"}
             aria-expanded={mobileOpen}
@@ -275,17 +299,9 @@ export function Navbar({ variant = "default" }: NavbarProps) {
             {mobileOpen ? <CloseIcon /> : <MenuIcon />}
           </button>
 
-          <button
-            type="button"
-            className={`hidden p-1.5 transition-colors lg:block ${iconClass}`}
-            aria-label="Menu"
-          >
-            <MenuIcon />
-          </button>
-
           <Link
             href="/apply"
-            className="hidden items-center gap-3 rounded-full bg-[#f5c518] px-5 py-2.5 text-sm font-bold text-[#1a1a1a] transition-all hover:bg-[#e8b80f] sm:inline-flex"
+            className="inline-flex items-center gap-2 rounded-full bg-[#f5c518] px-4 py-2 text-xs font-bold text-[#1a1a1a] motion-premium hover:bg-[#e8b80f] sm:gap-3 sm:px-5 sm:py-2.5 sm:text-sm"
           >
             Apply Now
             <ApplyArrowIcon />
@@ -293,23 +309,24 @@ export function Navbar({ variant = "default" }: NavbarProps) {
         </div>
       </nav>
 
+      {activeNavItem?.megaMenu && (
+        <MegaMenu
+          item={activeNavItem}
+          isOpen={Boolean(activeMenu)}
+          onClose={closeMegaMenu}
+        />
+      )}
+
       {mobileOpen && (
         <div className="border-t border-border bg-white px-4 py-4 lg:hidden">
-          {mainNavigation.map((item) => (
-            <MobileNavItem
-              key={item.label}
-              item={item}
-              onClose={() => setMobileOpen(false)}
-            />
-          ))}
-          <div className="mt-4 px-3">
-            <Link
-              href="/apply"
-              className="flex w-full items-center justify-center gap-3 rounded-full bg-[#f5c518] px-5 py-3 text-sm font-bold text-[#1a1a1a]"
-            >
-              Apply Now
-              <ApplyArrowIcon />
-            </Link>
+          <div className="flex flex-col gap-2">
+            {mainNavigation.map((item) => (
+              <MobileNavItem
+                key={item.label}
+                item={item}
+                onClose={() => setMobileOpen(false)}
+              />
+            ))}
           </div>
         </div>
       )}

@@ -13,10 +13,10 @@ import { HomeClosingSections } from "@/components/sections/HomeClosingSections";
 export default function Home() {
   return (
     <>
-      {/* Hero — first impression */}
+      {/* Hero — navbar overlays hero via absolute positioning until scroll */}
       <div className="relative">
-        <Navbar variant="hero" />
         <Hero />
+        <Navbar variant="hero" />
       </div>
 
       <main>

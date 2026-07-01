@@ -1,6 +1,9 @@
 export type NavLink = {
   label: string;
   href: string;
+  description?: string;
+  /** Bento tile size in the mega menu grid */
+  bento?: "sm" | "wide" | "tall";
 };
 
 export type MegaMenuColumn = {
@@ -29,35 +32,43 @@ export const mainNavigation: NavItem[] = [
     href: "/",
   },
   {
-    label: "About us",
+    label: "About",
     megaMenu: [
       {
-        title: "About us",
+        title: "Institute",
         links: [
-          { label: "About us", href: "/about" },
-          { label: "History", href: "/about/history" },
-          { label: "Administration", href: "/about/administration" },
-          { label: "Campus Map", href: "/about/campus-map" },
-          { label: "Mission & Value", href: "/about/mission" },
-          { label: "Vice-Chancellor", href: "/about/vice-chancellor" },
-        ],
-      },
-    ],
-  },
-  {
-    label: "Pages",
-    megaMenu: [
-      {
-        title: "Campus Life",
-        links: [
-          { label: "Campus Life", href: "/campus-life" },
-          { label: "Research", href: "/research" },
-          { label: "Scholarships", href: "/scholarships" },
-          { label: "All Events", href: "/events" },
-          { label: "Libraries", href: "/libraries" },
-          { label: "Alumni", href: "/alumni" },
-          { label: "FAQ", href: "/faq" },
-          { label: "Gallery", href: "/gallery" },
+          {
+            label: "About SBIST",
+            href: "/about",
+            description: "Vision, mission & institute overview",
+            bento: "wide",
+          },
+          {
+            label: "History",
+            href: "/about/history",
+            description: "Our journey since establishment",
+          },
+          {
+            label: "Administration",
+            href: "/about/administration",
+            description: "Leadership & governance",
+          },
+          {
+            label: "Mission & Values",
+            href: "/about/mission",
+            description: "What we stand for",
+          },
+          {
+            label: "Campus Map",
+            href: "/about/campus-map",
+            description: "Explore our Chrompet campus",
+          },
+          {
+            label: "Founder's Message",
+            href: "/about/founders-message",
+            description: "Message from the chairman",
+            bento: "wide",
+          },
         ],
       },
     ],
@@ -66,51 +77,126 @@ export const mainNavigation: NavItem[] = [
     label: "Academics",
     megaMenu: [
       {
-        title: "Faculty",
+        title: "Departments",
         links: [
-          { label: "Faculty Areas", href: "/faculty" },
-          { label: "Faculty Details", href: "/faculty/details" },
-          { label: "Faculty Members", href: "/faculty/members" },
+          {
+            label: "Computer Science",
+            href: "/programs/cse",
+            description: "Software, AI & computing",
+          },
+          {
+            label: "Electrical & Electronics",
+            href: "/programs/ece",
+            description: "Power systems & electronics",
+          },
+          {
+            label: "Civil Engineering",
+            href: "/programs/civil",
+            description: "Infrastructure & design",
+          },
+          {
+            label: "Mechanical",
+            href: "/programs/mechanical",
+            description: "Manufacturing & thermal",
+          },
+          {
+            label: "All Programs",
+            href: "/programs",
+            description: "Browse every engineering program",
+            bento: "wide",
+          },
         ],
       },
       {
-        title: "Programs",
+        title: "Admissions",
         links: [
-          { label: "All Programs", href: "/programs" },
-          { label: "M.Sc. in Software Engineering", href: "/programs/msc-se" },
-          { label: "B.Sc. in Software Engineering", href: "/programs/bsc-se" },
+          {
+            label: "How to Apply",
+            href: "/apply",
+            description: "Start your application",
+            bento: "tall",
+          },
+          {
+            label: "Admission Requirements",
+            href: "/apply/requirements",
+            description: "Eligibility & documents",
+          },
+          {
+            label: "Tuition & Fees",
+            href: "/tuition",
+            description: "Fee structure overview",
+          },
+          {
+            label: "Scholarships",
+            href: "/scholarships",
+            description: "Financial support options",
+          },
         ],
       },
       {
-        title: "Others",
+        title: "Faculty & Research",
         links: [
-          { label: "Tuition & Fee", href: "/tuition" },
-          { label: "How to Apply", href: "/apply/how" },
-          { label: "Admission Requirements", href: "/apply/requirements" },
-          { label: "Cost & Financial Aid", href: "/financial-aid" },
-          { label: "Apply Now", href: "/apply" },
+          {
+            label: "Faculty Members",
+            href: "/faculty/members",
+            description: "Meet our teaching staff",
+          },
+          {
+            label: "Research",
+            href: "/research",
+            description: "Labs & innovation focus",
+            bento: "wide",
+          },
         ],
       },
     ],
     featured: {
       title: "Join SBIST Now",
-      description: "Highly qualified faculties will guide you for career growth.",
+      description: "Highly qualified faculty will guide you for career growth.",
       stat: "1.5K+",
-      statLabel: "Regular Students",
+      statLabel: "Students Enrolled",
       image: "/images/hero-campus.jpg",
       ctaLabel: "Apply Now",
       ctaHref: "/apply",
     },
   },
   {
-    label: "Blog",
+    label: "Campus",
     megaMenu: [
       {
-        title: "Blog",
+        title: "Student Life",
         links: [
-          { label: "Blog Grid", href: "/blog" },
-          { label: "Blog Standard", href: "/blog/standard" },
-          { label: "Blog Details", href: "/blog/details" },
+          {
+            label: "Campus Life",
+            href: "/campus-life",
+            description: "Clubs, culture & community",
+            bento: "wide",
+          },
+          {
+            label: "Events",
+            href: "/events",
+            description: "Symposiums & activities",
+          },
+          {
+            label: "Library",
+            href: "/libraries",
+            description: "Resources & study spaces",
+          },
+          {
+            label: "Gallery",
+            href: "/gallery",
+            description: "Photos from campus life",
+          },
+          {
+            label: "Alumni",
+            href: "/alumni",
+            description: "Our graduate network",
+          },
+          {
+            label: "FAQ",
+            href: "/faq",
+            description: "Common questions answered",
+          },
         ],
       },
     ],
