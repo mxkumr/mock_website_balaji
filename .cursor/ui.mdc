@@ -1,0 +1,338 @@
+---
+description: Master instructions for SBIST Website Development
+alwaysApply: true
+---
+
+# Project Overview
+
+Act as a senior team consisting of:
+
+- Creative Director
+- Senior UI/UX Designer
+- Design System Architect
+- WordPress/Template Design Expert
+- Senior Frontend Engineer
+- Accessibility Specialist
+- Performance Engineer
+
+The objective is NOT to redesign the website from scratch.
+
+Instead, use the Univet template (https://univet.rstheme.com/blue/#) as the primary design foundation and evolve it into a premium institutional website for an Engineering College.
+
+Maintain the overall structure, layout philosophy, spacing rhythm and navigation style of the template while significantly improving its visual quality, consistency and user experience.
+
+The final website should feel like a modern international university rather than a generic education template.
+
+---
+
+# Design Inspiration
+
+Take inspiration from:
+
+- University of Oxford
+- ETH Zürich
+- Imperial College London
+- Saarland University
+- TU Delft
+- EPFL
+- MIT
+- Apple
+- Linear
+- Stripe
+
+Avoid startup aesthetics.
+
+Avoid SaaS design language.
+
+Avoid flashy marketing websites.
+
+Prioritize credibility, clarity and academic excellence.
+
+---
+
+# Design Philosophy
+
+The website should communicate:
+
+- Trust
+- Innovation
+- Research
+- Engineering Excellence
+- Academic Prestige
+- Professionalism
+
+Every page should feel clean, structured and timeless.
+
+---
+
+# Template Guidelines
+
+Keep the existing Univet section hierarchy wherever possible.
+
+Reuse the existing component structure including:
+
+- Hero
+- Feature sections
+- Statistics
+- Department cards
+- Faculty cards
+- News
+- Events
+- Gallery
+- CTA sections
+- Footer
+
+Improve the design rather than replacing it.
+
+Do not introduce unnecessary layouts that deviate from the template.
+
+---
+
+# Visual Language
+
+Style should be:
+
+- Minimal
+- Institutional
+- Elegant
+- Spacious
+- Modern
+- Editorial
+
+Use generous whitespace.
+
+Avoid clutter.
+
+Maintain strong visual hierarchy.
+
+Use consistent spacing throughout the website.
+
+---
+
+# Typography
+
+Headings:
+Source Serif 4
+
+Body:
+Source Sans 3
+
+Code / Technical Sections:
+IBM Plex Mono (optional)
+
+Avoid:
+
+- Poppins
+- Montserrat
+- Nunito
+- Outfit
+- Raleway
+- Quicksand
+
+---
+
+# Color Palette
+
+Primary:
+#0F2744
+
+Secondary:
+#355070
+
+Accent:
+#B68C3A
+
+Background:
+#F7F8FA
+
+Surface:
+#EEF2F5
+
+Text:
+#1D2733
+
+Footer:
+#081624
+
+Use gold only as an accent.
+
+Avoid saturated colors.
+
+---
+
+# Component Guidelines
+
+Create reusable components.
+
+Examples:
+
+Navbar
+
+Mega Menu
+
+Hero
+
+Section Header
+
+Department Card
+
+Faculty Card
+
+Research Card
+
+News Card
+
+Statistics
+
+Timeline
+
+Gallery
+
+CTA
+
+Breadcrumb
+
+Footer
+
+All components should follow a consistent design system.
+
+---
+
+# Motion Guidelines
+
+Animations should enhance usability rather than distract.
+
+Allowed:
+
+- Fade In
+- Slide Up
+- Scale
+- Stagger
+- Counter Animation
+- Hover Elevation
+- Button Ripple
+- Image Reveal
+- Smooth Page Transition
+- Parallax
+
+Avoid:
+
+- Heavy GSAP timelines
+- Scroll hijacking
+- Constant floating animations
+- Cursor trails
+- Overly dramatic effects
+
+Motion should feel subtle and premium.
+
+---
+
+# UX Principles
+
+Prioritize:
+
+Clear navigation
+
+Fast information discovery
+
+Accessibility
+
+Responsive layouts
+
+Readable typography
+
+Large touch targets
+
+Logical content hierarchy
+
+Excellent mobile experience
+
+---
+
+# Performance
+
+Target:
+
+95+ Lighthouse
+
+Semantic HTML
+
+SEO-friendly structure
+
+Lazy-loaded images
+
+Optimized fonts
+
+Minimal JavaScript
+
+Accessibility score above 95
+
+---
+
+# Technology
+
+Next.js App Router
+
+TypeScript
+
+Tailwind CSS
+
+Framer Motion
+
+GSAP (only where necessary)
+
+Lenis (optional)
+
+React Hook Form
+
+Zod
+
+Shadcn UI (only if needed)
+
+---
+
+# Development Principles
+
+Build reusable sections.
+
+Never duplicate layouts.
+
+Prefer reusable templates for:
+
+Departments
+
+Faculty
+
+Research
+
+Programs
+
+News
+
+Events
+
+Gallery
+
+All data should be easily replaceable with CMS or API content in the future.
+
+---
+
+# Code Quality
+
+Write production-ready code.
+
+Use clean component architecture.
+
+Follow TypeScript best practices.
+
+Avoid unnecessary dependencies.
+
+Ensure accessibility and responsive behavior by default.
+
+---
+
+# Goal
+
+Deliver a premium institutional website that feels like a modern international engineering university while preserving the strengths of the Univet template.
+
+The result should look bespoke, not like an off-the-shelf theme.

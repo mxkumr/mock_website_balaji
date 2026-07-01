@@ -1,0 +1,36 @@
+import type { Metadata } from "next";
+import { Source_Sans_3, Source_Serif_4 } from "next/font/google";
+import "./globals.css";
+
+const sourceSans = Source_Sans_3({
+  variable: "--font-source-sans-3",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+});
+
+const sourceSerif = Source_Serif_4({
+  variable: "--font-source-serif-4",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+});
+
+export const metadata: Metadata = {
+  title: "SBIST | Sree Balaji Institute of Science and Technology",
+  description:
+    "Highly qualified faculties will guide you for career growth at Sree Balaji Institute of Science and Technology, Chennai.",
+};
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <html
+      lang="en"
+      className={`${sourceSans.variable} ${sourceSerif.variable} h-full scroll-smooth`}
+    >
+      <body className="min-h-full flex flex-col antialiased">{children}</body>
+    </html>
+  );
+}
