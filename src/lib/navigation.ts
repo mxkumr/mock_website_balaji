@@ -1,9 +1,33 @@
+export type NavIconName =
+  | "about"
+  | "history"
+  | "administration"
+  | "mission"
+  | "map"
+  | "founder"
+  | "cse"
+  | "ece"
+  | "civil"
+  | "mechanical"
+  | "programs"
+  | "apply"
+  | "requirements"
+  | "tuition"
+  | "scholarship"
+  | "faculty"
+  | "research"
+  | "campus"
+  | "events"
+  | "library"
+  | "gallery"
+  | "alumni"
+  | "faq";
+
 export type NavLink = {
   label: string;
   href: string;
   description?: string;
-  /** Bento tile size in the mega menu grid */
-  bento?: "sm" | "wide" | "tall";
+  icon: NavIconName;
 };
 
 export type MegaMenuColumn = {
@@ -40,34 +64,38 @@ export const mainNavigation: NavItem[] = [
           {
             label: "About SBIST",
             href: "/about",
-            description: "Vision, mission & institute overview",
-            bento: "wide",
+            description: "Vision, mission & overview",
+            icon: "about",
           },
           {
             label: "History",
             href: "/about/history",
-            description: "Our journey since establishment",
+            description: "Our journey",
+            icon: "history",
           },
           {
             label: "Administration",
             href: "/about/administration",
             description: "Leadership & governance",
+            icon: "administration",
           },
           {
             label: "Mission & Values",
             href: "/about/mission",
             description: "What we stand for",
+            icon: "mission",
           },
           {
             label: "Campus Map",
             href: "/about/campus-map",
-            description: "Explore our Chrompet campus",
+            description: "Chrompet campus",
+            icon: "map",
           },
           {
             label: "Founder's Message",
             href: "/about/founders-message",
-            description: "Message from the chairman",
-            bento: "wide",
+            description: "From the chairman",
+            icon: "founder",
           },
         ],
       },
@@ -82,28 +110,32 @@ export const mainNavigation: NavItem[] = [
           {
             label: "Computer Science",
             href: "/programs/cse",
-            description: "Software, AI & computing",
+            description: "Software & AI",
+            icon: "cse",
           },
           {
             label: "Electrical & Electronics",
             href: "/programs/ece",
-            description: "Power systems & electronics",
+            description: "Power & electronics",
+            icon: "ece",
           },
           {
             label: "Civil Engineering",
             href: "/programs/civil",
-            description: "Infrastructure & design",
+            description: "Infrastructure",
+            icon: "civil",
           },
           {
             label: "Mechanical",
             href: "/programs/mechanical",
-            description: "Manufacturing & thermal",
+            description: "Manufacturing",
+            icon: "mechanical",
           },
           {
             label: "All Programs",
             href: "/programs",
-            description: "Browse every engineering program",
-            bento: "wide",
+            description: "Browse all programs",
+            icon: "programs",
           },
         ],
       },
@@ -113,23 +145,26 @@ export const mainNavigation: NavItem[] = [
           {
             label: "How to Apply",
             href: "/apply",
-            description: "Start your application",
-            bento: "tall",
+            description: "Start application",
+            icon: "apply",
           },
           {
-            label: "Admission Requirements",
+            label: "Requirements",
             href: "/apply/requirements",
-            description: "Eligibility & documents",
+            description: "Eligibility & docs",
+            icon: "requirements",
           },
           {
             label: "Tuition & Fees",
             href: "/tuition",
-            description: "Fee structure overview",
+            description: "Fee structure",
+            icon: "tuition",
           },
           {
             label: "Scholarships",
             href: "/scholarships",
-            description: "Financial support options",
+            description: "Financial aid",
+            icon: "scholarship",
           },
         ],
       },
@@ -139,13 +174,14 @@ export const mainNavigation: NavItem[] = [
           {
             label: "Faculty Members",
             href: "/faculty/members",
-            description: "Meet our teaching staff",
+            description: "Teaching staff",
+            icon: "faculty",
           },
           {
             label: "Research",
             href: "/research",
-            description: "Labs & innovation focus",
-            bento: "wide",
+            description: "Labs & innovation",
+            icon: "research",
           },
         ],
       },
@@ -169,33 +205,38 @@ export const mainNavigation: NavItem[] = [
           {
             label: "Campus Life",
             href: "/campus-life",
-            description: "Clubs, culture & community",
-            bento: "wide",
+            description: "Clubs & community",
+            icon: "campus",
           },
           {
             label: "Events",
             href: "/events",
             description: "Symposiums & activities",
+            icon: "events",
           },
           {
             label: "Library",
             href: "/libraries",
-            description: "Resources & study spaces",
+            description: "Study resources",
+            icon: "library",
           },
           {
             label: "Gallery",
             href: "/gallery",
-            description: "Photos from campus life",
+            description: "Campus photos",
+            icon: "gallery",
           },
           {
             label: "Alumni",
             href: "/alumni",
-            description: "Our graduate network",
+            description: "Graduate network",
+            icon: "alumni",
           },
           {
             label: "FAQ",
             href: "/faq",
-            description: "Common questions answered",
+            description: "Common questions",
+            icon: "faq",
           },
         ],
       },

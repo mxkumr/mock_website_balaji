@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useCallback, useEffect, useState } from "react";
+import { NavIcon } from "@/components/layout/NavIcons";
 import { MegaMenu } from "@/components/layout/MegaMenu";
 import { mainNavigation, siteConfig } from "@/lib/navigation";
 import type { NavItem } from "@/lib/navigation";
@@ -125,8 +126,6 @@ function MobileNavItem({ item, onClose }: { item: NavItem; onClose: () => void }
     );
   }
 
-  const links = item.megaMenu?.flatMap((col) => col.links) ?? [];
-
   return (
     <div className="overflow-hidden rounded-xl border border-border bg-surface/50">
       <button
@@ -138,37 +137,54 @@ function MobileNavItem({ item, onClose }: { item: NavItem; onClose: () => void }
         <ChevronDown className={`transition-transform ${expanded ? "rotate-180" : ""}`} />
       </button>
       {expanded && (
-        <div className="grid grid-cols-2 gap-2 border-t border-border p-3">
-          {links.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              onClick={onClose}
-              className={[
-                "rounded-lg border border-border bg-white p-3 motion-premium hover:border-primary/20 hover:shadow-sm",
-                link.bento === "wide" ? "col-span-2" : "",
-                link.bento === "tall" ? "row-span-2 min-h-[120px]" : "min-h-[72px]",
-              ].join(" ")}
-            >
-              <p className="text-xs font-semibold leading-snug text-foreground">{link.label}</p>
-              {link.description && (
-                <p className="mt-1 line-clamp-2 text-[10px] leading-relaxed text-muted">
-                  {link.description}
-                </p>
-              )}
-            </Link>
+        <div className="space-y-3 border-t border-border p-3">
+          {item.megaMenu?.map((column) => (
+            <div key={column.title}>
+              <p className="mb-1.5 text-[9px] font-bold uppercase tracking-wider text-primary/80">
+                {column.title}
+              </p>
+              <div className="grid grid-cols-1 gap-1.5 sm:grid-cols-2">
+                {column.links.map((link) => (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    onClick={onClose}
+                    className="group flex items-start gap-2 rounded-lg border border-border bg-white px-2.5 py-2 motion-premium hover:border-primary/20 hover:shadow-sm"
+                  >
+                    <span className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-md bg-primary/10 text-primary group-hover:bg-primary group-hover:text-white">
+                      <NavIcon name={link.icon} className="h-3.5 w-3.5" />
+                    </span>
+                    <span className="min-w-0">
+                      <span className="block text-xs font-semibold leading-tight text-foreground">
+                        {link.label}
+                      </span>
+                      {link.description && (
+                        <span className="mt-0.5 block text-[10px] leading-snug text-muted">
+                          {link.description}
+                        </span>
+                      )}
+                    </span>
+                  </Link>
+                ))}
+              </div>
+            </div>
           ))}
           {item.featured && (
             <Link
               href={item.featured.ctaHref}
               onClick={onClose}
-              className="col-span-2 flex min-h-[72px] flex-col justify-center rounded-lg bg-primary p-3 text-white"
+              className="flex items-center justify-between rounded-lg bg-primary px-3 py-2.5 text-white"
             >
-              <p className="text-lg font-semibold">{item.featured.stat}</p>
-              <p className="text-[10px] uppercase tracking-wide text-white/75">
-                {item.featured.statLabel}
-              </p>
-              <p className="mt-1 text-xs font-semibold">{item.featured.title}</p>
+              <div>
+                <p className="text-base font-semibold leading-none">{item.featured.stat}</p>
+                <p className="mt-0.5 text-[9px] uppercase tracking-wide text-white/75">
+                  {item.featured.statLabel}
+                </p>
+                <p className="mt-1 text-xs font-semibold">{item.featured.title}</p>
+              </div>
+              <span className="rounded-md bg-accent px-2 py-1 text-[10px] font-semibold text-primary">
+                {item.featured.ctaLabel}
+              </span>
             </Link>
           )}
         </div>
