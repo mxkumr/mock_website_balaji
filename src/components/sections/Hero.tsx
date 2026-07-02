@@ -39,16 +39,22 @@ function PlayIcon() {
 
 function Watermark({ y }: { y?: ReturnType<typeof useTransform<number, string>> }) {
   const text = (
-    <span
-      className="mx-auto max-w-5xl px-4 text-center font-serif text-2xl font-semibold leading-[1.15] tracking-tight text-white/90 drop-shadow-[0_2px_24px_rgba(0,0,0,0.35)] sm:text-3xl md:text-4xl lg:text-[2.75rem]"
-      style={{ textShadow: "0 2px 30px rgba(0,0,0,0.35)" }}
-    >
-      {heroContent.watermark}
+    <span className="mx-auto flex max-w-5xl flex-col items-center px-4 text-center text-primary">
+      <span className="font-watermark whitespace-normal text-xl font-bold uppercase leading-[1.15] tracking-[0.04em] drop-shadow-[0_2px_8px_rgba(15,39,68,0.18)] sm:whitespace-nowrap sm:text-3xl md:text-4xl lg:text-5xl xl:text-[3.25rem]">
+        {heroContent.watermark}
+      </span>
+      <span className="mt-4 flex items-center gap-2 text-[0.65rem] font-semibold uppercase tracking-[0.15em] text-primary/80 sm:mt-5 sm:gap-3 sm:text-sm sm:tracking-[0.25em] md:text-base">
+        <span className="h-px w-6 bg-accent sm:w-12" />
+        <span className="font-watermark-alt whitespace-normal sm:whitespace-nowrap">
+          {heroContent.watermarkSubtitle}
+        </span>
+        <span className="h-px w-6 bg-accent sm:w-12" />
+      </span>
     </span>
   );
 
   const className =
-    "pointer-events-none absolute inset-x-0 top-[19%] z-[2] flex justify-center select-none";
+    "pointer-events-none absolute inset-x-0 top-[12%] z-[6] flex justify-center select-none";
 
   if (y) {
     return (
@@ -87,18 +93,19 @@ export function Hero() {
       priority
       quality={100}
       unoptimized
-      className="object-cover object-[center_38%]"
+      className="object-cover object-[30%_38%] md:object-[center_38%]"
       sizes="100vw"
+      style={{ top: "50px", left: "-1px" }}
     />
   );
 
   return (
     <section
       ref={ref}
-      className="relative min-h-screen overflow-hidden bg-gradient-to-b from-[#6a9fd4] via-[#4a7db5] to-[#2d5080]"
+      className="relative min-h-screen overflow-hidden bg-background"
     >
-      {/* Sky backdrop — matches photo twilight blue */}
-      <div className="pointer-events-none absolute inset-x-0 top-0 z-[1] h-[38%] bg-gradient-to-b from-[#7eb3e8] via-[#5a94c9] to-transparent" />
+      {/* Light backdrop so the masked top of the image blends into the theme background */}
+      <div className="pointer-events-none absolute inset-x-0 top-0 z-[1] h-[38%] bg-gradient-to-b from-background via-background to-transparent" />
 
       {/* SBIST watermark in open sky */}
       {prefersReducedMotion ? <Watermark /> : <Watermark y={watermarkY} />}
@@ -120,8 +127,8 @@ export function Hero() {
         )}
       </div>
 
-      {/* Soft sky blend at horizon */}
-      <div className="pointer-events-none absolute inset-x-0 top-0 z-[4] h-[32%] bg-gradient-to-b from-[#5a94c9]/50 via-transparent to-transparent" />
+      {/* Soft blend at horizon */}
+      <div className="pointer-events-none absolute inset-x-0 top-0 z-[4] h-[32%] bg-gradient-to-b from-background/60 via-transparent to-transparent" />
 
       {/* Bottom gradient for headline legibility */}
       <div className="pointer-events-none absolute inset-0 z-[5] bg-gradient-to-b from-transparent via-transparent to-[#0f2744]/92" />
@@ -163,7 +170,7 @@ function HeroContent() {
         <span>{heroContent.eyebrow}</span>
       </motion.div> */}
       <motion.h1
-        className="text-3xl leading-[1.2] text-white sm:text-4xl lg:text-[2.75rem]"
+        className="text-[23px] leading-[1.2] text-white sm:text-4xl lg:text-[2.75rem]"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.65, delay: 0.3 }}

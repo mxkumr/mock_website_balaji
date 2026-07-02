@@ -28,6 +28,9 @@
   --color-footer-bg: var(--footer-bg);
   --font-sans: var(--font-source-sans-3);
   --font-serif: var(--font-source-serif-4);
+  --font-heading: var(--font-cinzel);
+  --font-watermark: var(--font-cinzel);
+  --font-watermark-alt: var(--font-cinzel);
 }
 
 body {
@@ -42,7 +45,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: var(--font-source-serif-4), Georgia, "Times New Roman", serif;
+  font-family: var(--font-cinzel), Georgia, "Times New Roman", serif;
   font-weight: 600;
   letter-spacing: -0.01em;
 }
