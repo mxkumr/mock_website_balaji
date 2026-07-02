@@ -2,7 +2,7 @@ import type { CounterItem } from "@/components/blocks/Counters";
 import type { GalleryImage } from "@/components/blocks/Gallery";
 
 export const heroContent = {
-  watermark: "SBIST",
+  watermark: "At Sree Balaji College of Science and Technology",
   eyebrow: "Welcome to Sree Balaji Institute of Science and Technology",
   title: "Highly Qualified Faculties Will Guide You for Career Growth",
   campusTourLabel: "Campus Tour",

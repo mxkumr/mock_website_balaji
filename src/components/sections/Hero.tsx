@@ -6,11 +6,11 @@ import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion
 import { useRef } from "react";
 import { heroContent } from "@/lib/home-content";
 
-/** Sky band: image fades in below so SBIST stays visible in open sky */
+/** Sky band: image fades in below so the hero watermark stays visible in open sky */
 const IMAGE_SKY_MASK =
   "linear-gradient(to bottom, transparent 0%, transparent 20%, rgba(0,0,0,0.45) 26%, rgba(0,0,0,0.9) 34%, black 42%, black 100%)";
 
-function GraduationCapIcon() {
+/* function GraduationCapIcon() {
   return (
     <svg
       className="h-5 w-5 shrink-0"
@@ -27,7 +27,7 @@ function GraduationCapIcon() {
       <path strokeLinecap="round" strokeLinejoin="round" d="M22 10l-10 5" />
     </svg>
   );
-}
+} */
 
 function PlayIcon() {
   return (
@@ -40,15 +40,15 @@ function PlayIcon() {
 function Watermark({ y }: { y?: ReturnType<typeof useTransform<number, string>> }) {
   const text = (
     <span
-      className="font-serif text-[20vw] font-semibold leading-none tracking-tight text-white/[0.45] drop-shadow-[0_2px_24px_rgba(255,255,255,0.2)] sm:text-[22vw]"
-      style={{ textShadow: "0 0 60px rgba(255,255,255,0.12)" }}
+      className="mx-auto max-w-5xl px-4 text-center font-serif text-2xl font-semibold leading-[1.15] tracking-tight text-white/90 drop-shadow-[0_2px_24px_rgba(0,0,0,0.35)] sm:text-3xl md:text-4xl lg:text-[2.75rem]"
+      style={{ textShadow: "0 2px 30px rgba(0,0,0,0.35)" }}
     >
       {heroContent.watermark}
     </span>
   );
 
   const className =
-    "pointer-events-none absolute inset-x-0 top-[9%] z-[2] flex justify-center select-none";
+    "pointer-events-none absolute inset-x-0 top-[19%] z-[2] flex justify-center select-none";
 
   if (y) {
     return (
@@ -153,7 +153,7 @@ export function Hero() {
 function HeroContent() {
   return (
     <div className="max-w-2xl">
-      <motion.div
+      {/* <motion.div
         className="mb-4 flex items-start gap-2.5 text-xs text-white/90 sm:items-center sm:text-sm"
         initial={{ opacity: 0, y: 16 }}
         animate={{ opacity: 1, y: 0 }}
@@ -161,7 +161,7 @@ function HeroContent() {
       >
         <GraduationCapIcon />
         <span>{heroContent.eyebrow}</span>
-      </motion.div>
+      </motion.div> */}
       <motion.h1
         className="text-3xl leading-[1.2] text-white sm:text-4xl lg:text-[2.75rem]"
         initial={{ opacity: 0, y: 20 }}
