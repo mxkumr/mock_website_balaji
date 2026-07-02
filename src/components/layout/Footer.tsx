@@ -27,7 +27,7 @@ export function Footer() {
           <div>
             <Link
               href="/"
-              className="inline-flex rounded-lg bg-white px-2.5 py-1.5"
+              className="inline-flex overflow-hidden rounded-lg bg-[#f5f3ec] px-1 py-0.5"
               aria-label={siteConfig.name}
             >
               <Image

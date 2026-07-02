@@ -263,10 +263,10 @@ export function Navbar({ variant = "default" }: NavbarProps) {
         <Link
           href="/"
           className={[
-            "inline-flex shrink-0 items-center rounded-lg px-2.5 py-1.5 transition-shadow",
+            "inline-flex shrink-0 items-center overflow-hidden rounded-lg px-1 py-0.5 transition-shadow",
             useLightNav
-              ? "bg-white/95 shadow-sm ring-1 ring-white/20 backdrop-blur-sm hover:shadow-md"
-              : "bg-white shadow-sm ring-1 ring-black/5 hover:shadow-md",
+              ? "bg-[#f5f3ec] shadow-sm ring-1 ring-white/25 backdrop-blur-sm hover:shadow-md"
+              : "bg-[#f5f3ec] shadow-sm ring-1 ring-black/5 hover:shadow-md",
           ].join(" ")}
           aria-label={siteConfig.name}
         >
@@ -317,7 +317,7 @@ export function Navbar({ variant = "default" }: NavbarProps) {
 
           <Link
             href="/apply"
-            className="inline-flex items-center gap-2 rounded-full bg-[#f5c518] px-4 py-2 text-xs font-bold text-[#1a1a1a] motion-premium hover:bg-[#e8b80f] sm:gap-3 sm:px-5 sm:py-2.5 sm:text-sm"
+            className="hidden items-center gap-2 rounded-full bg-[#f5c518] px-4 py-2 text-xs font-bold text-[#1a1a1a] motion-premium hover:bg-[#e8b80f] sm:inline-flex sm:gap-3 sm:px-5 sm:py-2.5 sm:text-sm"
           >
             Apply Now
             <ApplyArrowIcon />
