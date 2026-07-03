@@ -2,8 +2,8 @@ import type { CounterItem } from "@/components/blocks/Counters";
 import type { GalleryImage } from "@/components/blocks/Gallery";
 
 export const heroContent = {
-  watermark: "What the World Needs Begins Here",
-  watermarkSubtitle: "At Sree Balaji College of Science and Technology",
+  watermark: "Sree Balaji College of Science and Technology",
+  watermarkSubtitle: "What the World Needs Begins Here",
   eyebrow: "Welcome to Sree Balaji Institute of Science and Technology",
   title: "Highly Qualified Faculties Will Guide You for Career Growth",
   campusTourLabel: "Campus Tour",
@@ -44,7 +44,8 @@ export const aboutContent = {
   },
   images: {
     primary: stockImages.students,
-    secondary: stockImages.campus,
+    secondary:
+      "https://images.unsplash.com/photo-1627556704302-624286467c65?w=600&h=600&fit=crop",
   },
 };
 
@@ -154,7 +155,8 @@ export const campusLifeContent = {
       title: "Main Academic Block",
       description:
         "Our central campus building houses lecture halls, faculty offices, and student services — the heart of daily life at SBIST.",
-      image: stockImages.campus,
+      image:
+        "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=900&h=600&fit=crop",
       href: "/campus-life/academic-block",
     },
     {

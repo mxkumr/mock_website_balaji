@@ -169,14 +169,6 @@ function HeroContent() {
         <GraduationCapIcon />
         <span>{heroContent.eyebrow}</span>
       </motion.div> */}
-      <motion.h1
-        className="text-[23px] leading-[1.2] text-white sm:text-4xl lg:text-[2.75rem]"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.65, delay: 0.3 }}
-      >
-        {heroContent.title}
-      </motion.h1>
     </div>
   );
 }
