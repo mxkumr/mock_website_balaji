@@ -39,16 +39,16 @@ function PlayIcon() {
 
 function Watermark({ y }: { y?: ReturnType<typeof useTransform<number, string>> }) {
   const text = (
-    <span className="mx-auto flex max-w-5xl flex-col items-center px-4 text-center text-primary">
-      <span className="font-watermark whitespace-normal text-xl font-bold uppercase leading-[1.15] tracking-[0.04em] drop-shadow-[0_2px_8px_rgba(15,39,68,0.18)] sm:whitespace-nowrap sm:text-3xl md:text-4xl lg:text-5xl xl:text-[3.25rem]">
+    <span className="mx-auto flex w-full max-w-7xl flex-col items-center px-4 text-center text-primary sm:px-6 lg:px-8">
+      <span className="font-watermark max-w-full text-balance text-xl font-bold uppercase leading-[1.15] tracking-[0.04em] drop-shadow-[0_2px_8px_rgba(15,39,68,0.18)] sm:text-[clamp(1.25rem,2.2vw+0.5rem,2.75rem)]">
         {heroContent.watermark}
       </span>
-      <span className="mt-4 flex items-center gap-2 text-[0.65rem] font-semibold uppercase tracking-[0.15em] text-primary/80 sm:mt-5 sm:gap-3 sm:text-sm sm:tracking-[0.25em] md:text-base">
-        <span className="h-px w-6 bg-accent sm:w-12" />
-        <span className="font-watermark-alt whitespace-normal sm:whitespace-nowrap">
+      <span className="mt-4 flex max-w-full flex-wrap items-center justify-center gap-x-2 gap-y-1 text-[0.65rem] font-semibold uppercase tracking-[0.15em] text-primary/80 sm:mt-5 sm:gap-x-3 sm:text-sm sm:tracking-[0.2em] md:text-base">
+        <span className="hidden h-px w-6 bg-accent sm:block sm:w-10 lg:w-12" />
+        <span className="font-watermark-alt text-balance">
           {heroContent.watermarkSubtitle}
         </span>
-        <span className="h-px w-6 bg-accent sm:w-12" />
+        <span className="hidden h-px w-6 bg-accent sm:block sm:w-10 lg:w-12" />
       </span>
     </span>
   );
