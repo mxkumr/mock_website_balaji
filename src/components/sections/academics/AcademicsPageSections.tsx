@@ -457,7 +457,7 @@ export function AlumniSection() {
             <StaggerItem key={stat.label}>
               <SectionCard className="text-center">
                 <div className="px-6 py-8">
-                  {"headline" in stat && stat.headline ? (
+                  {stat.headline ? (
                     <p className="font-heading text-2xl font-bold text-primary lg:text-3xl">{stat.headline}</p>
                   ) : (
                     <p className="text-4xl font-bold text-primary lg:text-5xl">

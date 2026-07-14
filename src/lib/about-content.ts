@@ -2,6 +2,21 @@ import type { GalleryImage } from "@/components/blocks/Gallery";
 import type { NavIconName } from "@/lib/navigation";
 import { stockImages } from "@/lib/home-content";
 
+export type PageStatItem = {
+  label: string;
+  icon: NavIconName;
+  value?: number;
+  suffix?: string;
+  headline?: string;
+};
+
+export type HighlightStatItem = {
+  label: string;
+  value?: number;
+  suffix?: string;
+  headline?: string;
+};
+
 export const aboutPageContent = {
   header: {
     title: "About SBIST",
@@ -46,7 +61,7 @@ export const aboutPageContent = {
     { headline: "Excellence", label: "Academic quality", icon: "campus" as NavIconName },
     { headline: "Innovation", label: "Modern learning", icon: "faculty" as NavIconName },
     { headline: "Growth", label: "Career development", icon: "research" as NavIconName },
-  ],
+  ] as PageStatItem[],
   vision: {
     title: "Our Vision",
     description:
