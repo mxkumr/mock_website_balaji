@@ -3,18 +3,14 @@ import Link from "next/link";
 import { siteConfig } from "@/lib/navigation";
 
 const campusLinks = [
+  { label: "Home", href: "/" },
   { label: "About SBIST", href: "/about" },
-  { label: "Alumni Network", href: "/alumni" },
-  { label: "Library", href: "/libraries" },
-  { label: "Campus Life", href: "/campus-life" },
+  { label: "Academics", href: "/academics" },
 ];
 
 const usefulLinks = [
   { label: "Careers", href: "/careers" },
-  { label: "Faculty Areas", href: "/faculty" },
-  { label: "Graduate Programs", href: "/programs" },
-  { label: "Campus Events", href: "/events" },
-  { label: "How to Apply", href: "/apply" },
+  { label: "Contact", href: "/contact" },
 ];
 
 export function Footer() {
@@ -71,10 +67,10 @@ export function Footer() {
             </h3>
             <ul className="space-y-2.5">
               {campusLinks.map((link) => (
-                <li key={link.href}>
+                <li key={link.label}>
                   <Link
                     href={link.href}
-                    className="text-sm text-white/70 transition-colors hover:text-white"
+                    className="text-sm text-white/70 transition-all duration-300 hover:scale-105 hover:text-accent"
                   >
                     {link.label}
                   </Link>
@@ -90,10 +86,10 @@ export function Footer() {
             </h3>
             <ul className="space-y-2.5">
               {usefulLinks.map((link) => (
-                <li key={link.href}>
+                <li key={link.label}>
                   <Link
                     href={link.href}
-                    className="text-sm text-white/70 transition-colors hover:text-white"
+                    className="text-sm text-white/70 transition-all duration-300 hover:scale-105 hover:text-accent"
                   >
                     {link.label}
                   </Link>

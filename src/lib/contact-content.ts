@@ -17,10 +17,9 @@ export const contactPageContent = {
     title: "Get in Touch",
     links: [
       { label: "Contact Us", href: "/contact", icon: "about" as NavIconName },
-      { label: "Admissions", href: "/apply", icon: "apply" as NavIconName },
       { label: "Academics", href: "/academics", icon: "programs" as NavIconName },
-      { label: "Campus Map", href: "/about/campus-map", icon: "map" as NavIconName },
-      { label: "FAQ", href: "/faq", icon: "faq" as NavIconName },
+      { label: "About SBIST", href: "/about", icon: "mission" as NavIconName },
+      { label: "Careers", href: "/careers", icon: "faculty" as NavIconName },
     ],
     image: stockImages.students,
   },
@@ -84,7 +83,7 @@ export const contactPageContent = {
       {
         title: "Admissions Office",
         description: "Applications, eligibility, and enrollment support.",
-        href: "/apply",
+        href: "/contact",
         icon: "apply" as NavIconName,
       },
       {
@@ -94,10 +93,10 @@ export const contactPageContent = {
         icon: "programs" as NavIconName,
       },
       {
-        title: "Student Services",
-        description: "Campus life, events, and student support.",
-        href: "/campus-life",
-        icon: "campus" as NavIconName,
+        title: "Careers",
+        description: "Faculty recruitment and employment enquiries.",
+        href: "/careers",
+        icon: "faculty" as NavIconName,
       },
     ],
   },

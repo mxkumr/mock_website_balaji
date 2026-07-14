@@ -131,7 +131,7 @@ function ApplyCard() {
       <p className="text-sm text-white/75">Students Enrolled</p>
 
       <Link
-        href="/apply"
+        href="/contact"
         className="mt-auto inline-flex w-full items-center justify-center gap-2 rounded-lg bg-accent px-5 py-3 text-sm font-bold uppercase tracking-wide text-primary-dark transition-colors hover:bg-accent-hover"
       >
         Apply Now
@@ -359,7 +359,7 @@ function ResearchPanel() {
         human resource support is available to achieve the goals.
       </p>
       <Link
-        href="/research"
+        href="/academics"
         className="mt-8 inline-flex justify-center text-sm font-semibold text-accent hover:text-accent-hover"
       >
         Explore research →

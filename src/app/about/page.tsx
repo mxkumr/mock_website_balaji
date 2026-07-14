@@ -42,7 +42,7 @@ export default function AboutPage() {
           title="Ready to Join SBIST?"
           description="Take the first step toward an engineering career at our Chrompet campus. Apply now or explore our academic programs."
           primaryLabel="Apply Now"
-          primaryHref="/apply"
+          primaryHref="/contact"
           secondaryLabel="Explore Academics"
           secondaryHref="/academics"
           image={stockImages.students}

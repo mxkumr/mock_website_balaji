@@ -74,14 +74,15 @@ function DesktopNavItem({ item, activeMenu, onToggle, useLightNav }: NavLinkItem
   const hasMega = Boolean(item.megaMenu);
   const isOpen = activeMenu === item.label;
   const linkClass = useLightNav
-    ? "text-white hover:text-white drop-shadow-[0_1px_2px_rgba(0,0,0,0.45)]"
-    : "text-foreground hover:text-primary";
+    ? "text-white drop-shadow-[0_1px_2px_rgba(0,0,0,0.45)] hover:text-accent-bright"
+    : "text-foreground hover:text-accent-bright";
+  const hoverClass = "inline-block origin-center motion-premium hover:scale-110";
 
   if (!hasMega && item.href) {
     return (
       <Link
         href={item.href}
-        className={`rounded-lg px-3 py-2 text-sm font-medium motion-premium ${linkClass}`}
+        className={`rounded-lg px-3 py-2 text-sm font-medium ${hoverClass} ${linkClass}`}
       >
         {item.label}
       </Link>
@@ -96,12 +97,13 @@ function DesktopNavItem({ item, activeMenu, onToggle, useLightNav }: NavLinkItem
       onClick={() => onToggle(item.label)}
       onMouseEnter={() => onToggle(item.label)}
       className={[
-        "flex items-center gap-1 rounded-lg px-3 py-2 text-sm font-medium motion-premium",
+        "flex items-center gap-1 rounded-lg px-3 py-2 text-sm font-medium",
+        hoverClass,
         linkClass,
         isOpen
           ? useLightNav
-            ? "bg-white/15 text-white"
-            : "bg-surface text-primary"
+            ? "scale-110 bg-white/15 text-accent-bright"
+            : "scale-110 bg-surface text-accent-bright"
           : "",
       ].join(" ")}
     >
@@ -119,7 +121,7 @@ function MobileNavItem({ item, onClose }: { item: NavItem; onClose: () => void }
       <Link
         href={item.href}
         onClick={onClose}
-        className="block rounded-xl border border-border bg-white px-4 py-3 text-sm font-semibold text-foreground motion-premium hover:border-primary/20 hover:shadow-sm"
+        className="block origin-center rounded-xl border border-border bg-white px-4 py-3 text-sm font-semibold text-foreground motion-premium hover:scale-[1.03] hover:border-accent-bright/50 hover:text-accent-bright hover:shadow-sm"
       >
         {item.label}
       </Link>
@@ -316,7 +318,7 @@ export function Navbar({ variant = "default" }: NavbarProps) {
           </button>
 
           <Link
-            href="/apply"
+            href="/contact"
             className="hidden items-center gap-2 rounded-full bg-[#f5c518] px-4 py-2 text-xs font-bold text-[#1a1a1a] motion-premium hover:bg-[#e8b80f] sm:inline-flex sm:gap-3 sm:px-5 sm:py-2.5 sm:text-sm"
           >
             Apply Now

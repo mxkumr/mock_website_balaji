@@ -8,8 +8,8 @@ export const heroContent = {
   eyebrow: "Welcome to Sree Balaji Institute of Science and Technology",
   title: "Highly Qualified Faculties Will Guide You for Career Growth",
   campusTourLabel: "Campus Tour",
-  campusTourHref: "/campus-tour",
-  applyHref: "/apply",
+  campusTourHref: "/about",
+  applyHref: "/contact",
   buildingImage: "/images/hero-campus.jpg",
 };
 
@@ -68,7 +68,7 @@ export const departments = [
       "The School of Computing has experienced faculty members with industry experience and well equipped laboratories.",
     image:
       "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&h=420&fit=crop",
-    href: "/programs/cse",
+    href: "/academics#courses",
     degree: "B.E. Computer Science Engineering",
     icon: "cse",
     duration: "4 Years",
@@ -80,7 +80,7 @@ export const departments = [
       "Focused on networks, communication systems, and modern IT infrastructure with practical lab-based learning.",
     image:
       "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&h=420&fit=crop",
-    href: "/programs/ict",
+    href: "/academics#courses",
     degree: "B.E. Information and Communication Technology",
     icon: "ict",
     duration: "4 Years",
@@ -92,7 +92,7 @@ export const departments = [
       "The electrical engineers prepared to make the world eco friendly through innovation and sustainable design.",
     image:
       "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&h=420&fit=crop",
-    href: "/programs/ece",
+    href: "/academics#courses",
     degree: "B.E. Electrical and Communication Engineering",
     icon: "ece",
     duration: "4 Years",
@@ -104,7 +104,7 @@ export const departments = [
       "The department of Civil Engineering is committed to the task of providing quality education, which will transform the students into efficient and successful engineers.",
     image:
       "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&h=420&fit=crop",
-    href: "/programs/civil",
+    href: "/academics#courses",
     degree: "B.E. Civil Engineering",
     icon: "civil",
     duration: "4 Years",
@@ -116,7 +116,7 @@ export const departments = [
       "The School of Mechanical Engineering is one of the pioneering departments of our institute.",
     image:
       "https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=600&h=420&fit=crop",
-    href: "/programs/mechanical",
+    href: "/academics#courses",
     degree: "B.E. Mechanical Engineering",
     icon: "mechanical",
     duration: "4 Years",
@@ -128,7 +128,7 @@ export const departments = [
       "Combining engineering principles with medical sciences to prepare students for healthcare technology and device innovation.",
     image:
       "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=600&h=420&fit=crop",
-    href: "/programs/biomedical",
+    href: "/academics#courses",
     degree: "B.E. Biomedical Engineering",
     icon: "biomedical",
     duration: "4 Years",
@@ -140,7 +140,7 @@ export const departments = [
       "A Bachelor of Business Administration program focused on management fundamentals, entrepreneurship, and industry-ready business skills.",
     image:
       "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&h=420&fit=crop",
-    href: "/programs/bba",
+    href: "/academics#courses",
     degree: "BBA",
     icon: "bba",
     duration: "3 Years",
@@ -152,7 +152,7 @@ export const departments = [
       "A Bachelor of Computer Applications program covering software development, databases, and applied computing for IT careers.",
     image:
       "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=600&h=420&fit=crop",
-    href: "/programs/bca",
+    href: "/academics#courses",
     degree: "BCA",
     icon: "bca",
     duration: "3 Years",
@@ -224,7 +224,7 @@ export type CampusLifeTile = {
 export const campusLifeContent = {
   eyebrow: "Campus Life",
   title: "Discover Campus Life",
-  viewAllHref: "/campus-life",
+  viewAllHref: "/about",
   tiles: [
     {
       id: "campus",
@@ -233,7 +233,7 @@ export const campusLifeContent = {
         "Our central campus building houses lecture halls, faculty offices, and student services — the heart of daily life at SBIST.",
       image:
         "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=900&h=600&fit=crop",
-      href: "/campus-life/academic-block",
+      href: "/about",
     },
     {
       id: "library",
@@ -241,7 +241,7 @@ export const campusLifeContent = {
       description:
         "A quiet, well-stocked library with digital resources, journals, and study spaces for focused learning.",
       image: stockImages.library,
-      href: "/campus-life/library",
+      href: "/about",
     },
     {
       id: "lecture",
@@ -250,7 +250,7 @@ export const campusLifeContent = {
         "Spacious, technology-enabled classrooms designed for interactive teaching and collaborative learning.",
       image:
         "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=800&h=600&fit=crop",
-      href: "/campus-life/lecture-halls",
+      href: "/about",
     },
     {
       id: "lab",
@@ -259,7 +259,7 @@ export const campusLifeContent = {
         "Hands-on labs equipped for engineering, management, and computer applications programs with industry-standard tools.",
       image:
         "https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=800&h=600&fit=crop",
-      href: "/campus-life/labs",
+      href: "/about",
     },
     {
       id: "graduation",
@@ -267,7 +267,7 @@ export const campusLifeContent = {
       description:
         "Celebrating milestones as our graduates step into engineering careers across India and abroad.",
       image: stockImages.graduation,
-      href: "/campus-life/graduation",
+      href: "/about",
     },
     {
       id: "sports",
@@ -275,7 +275,7 @@ export const campusLifeContent = {
       description:
         "Outdoor grounds and indoor facilities for cricket, volleyball, and fitness — balance beyond the classroom.",
       image: stockImages.sports,
-      href: "/campus-life/sports",
+      href: "/about",
     },
   ] satisfies CampusLifeTile[],
 };
@@ -290,14 +290,14 @@ export const foundersNoteContent = {
     "We live in a globalized world that has challenges and complexities on a global scale. At the start of the 21st century, Sree Balaji Institute of Science and Technology is committed to nurturing engineers with integrity, innovation, and a passion for lifelong learning.",
   name: "Dr. S. Balaji",
   title: "Founder & Chairman",
-  videoHref: "/about/founders-message",
-  readMoreHref: "/about/founders-message",
+  videoHref: "/about",
+  readMoreHref: "/about",
 };
 
 export const upcomingEventsContent = {
   eyebrow: "Upcoming Events",
   title: "Join Our Latest Events",
-  viewMoreHref: "/events",
+  viewMoreHref: "/contact",
   events: [
     {
       title: "Annual Engineering Symposium 2026",
@@ -306,7 +306,7 @@ export const upcomingEventsContent = {
       location: "SBIST Main Auditorium, Chennai",
       image:
         "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=400&h=280&fit=crop",
-      href: "/events/symposium-2026",
+      href: "/contact",
     },
     {
       title: "Campus Placement Drive",
@@ -315,7 +315,7 @@ export const upcomingEventsContent = {
       location: "SBIST Placement Cell, Chennai",
       image:
         "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=400&h=280&fit=crop",
-      href: "/events/placement-drive",
+      href: "/contact",
     },
     {
       title: "International Research Conference",
@@ -324,7 +324,7 @@ export const upcomingEventsContent = {
       location: "SBIST Conference Hall, Chennai",
       image:
         "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=400&h=280&fit=crop",
-      href: "/events/research-conference",
+      href: "/contact",
     },
     {
       title: "Freshers Orientation Week",
@@ -332,7 +332,7 @@ export const upcomingEventsContent = {
       time: "09:00 AM - 03:40 PM",
       location: "SBIST Campus Grounds, Chennai",
       image: stockImages.campus,
-      href: "/events/orientation-week",
+      href: "/contact",
     },
   ],
 };

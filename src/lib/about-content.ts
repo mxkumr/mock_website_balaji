@@ -17,13 +17,9 @@ export const aboutPageContent = {
     title: "SBIST Inside",
     links: [
       { label: "Who We Are", href: "/about", icon: "about" as NavIconName },
-      { label: "History", href: "/about/history", icon: "history" as NavIconName },
-      {
-        label: "Administration",
-        href: "/about/administration",
-        icon: "administration" as NavIconName,
-      },
-      { label: "Campus Map", href: "/about/campus-map", icon: "map" as NavIconName },
+      { label: "Academics", href: "/academics", icon: "programs" as NavIconName },
+      { label: "Careers", href: "/careers", icon: "faculty" as NavIconName },
+      { label: "Contact", href: "/contact", icon: "apply" as NavIconName },
     ],
     image: stockImages.students,
   },
@@ -82,7 +78,7 @@ export const aboutPageContent = {
     title: "Our Campus Tour",
     description:
       "Explore our Chrompet campus — from modern lecture halls and engineering laboratories to the central library and sports grounds. See where SBIST students learn, research, and grow.",
-    videoHref: "/campus-tour",
+    videoHref: "/about",
     image: stockImages.campus,
   },
   testimonials: {
@@ -145,6 +141,6 @@ export const aboutPageContent = {
         alt: "Engineering Lab",
       },
     ] satisfies GalleryImage[],
-    ctaHref: "/campus-life",
+    ctaHref: "/about",
   },
 };

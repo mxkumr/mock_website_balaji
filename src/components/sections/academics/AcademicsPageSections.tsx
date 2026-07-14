@@ -352,7 +352,7 @@ export function CourseCatalogueSection() {
 
         <StaggerContainer className="mt-8 grid items-stretch gap-6 sm:grid-cols-2 lg:gap-8" stagger={0.06}>
           {courses.programs.map((program) => (
-            <StaggerItem key={program.href} className="h-full">
+            <StaggerItem key={program.title} className="h-full">
               <div className="motion-lift h-full">
                 <DepartmentCard
                   title={program.title}

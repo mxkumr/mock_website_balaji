@@ -43,7 +43,7 @@ export default function Home() {
           title="Admissions Open Now"
           description="Begin your engineering journey at Sree Balaji Institute of Science and Technology — where qualified faculty and modern laboratories support your career growth."
           primaryLabel="Apply Now"
-          primaryHref="/apply"
+          primaryHref="/contact"
           secondaryLabel="Contact Us"
           secondaryHref="/contact"
         />

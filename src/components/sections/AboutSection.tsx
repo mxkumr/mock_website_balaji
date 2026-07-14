@@ -52,13 +52,22 @@ function CheckIcon() {
   );
 }
 
-function AboutImage({ src, alt }: { src: string; alt: string }) {
+function AboutImage({
+  src,
+  alt,
+  priority = false,
+}: {
+  src: string;
+  alt: string;
+  priority?: boolean;
+}) {
   return (
     <div className="group relative min-h-[200px] flex-1 overflow-hidden rounded-2xl border border-border bg-white shadow-sm motion-lift">
       <Image
         src={src}
         alt={alt}
         fill
+        priority={priority}
         className="object-cover transition-transform duration-500 group-hover:scale-105"
         sizes="(max-width: 1024px) 100vw, 480px"
       />
@@ -74,8 +83,16 @@ export function AboutSection() {
           {/* Images */}
           <ScrollReveal direction="left" className="h-full">
             <div className="flex h-full flex-col gap-4">
-              <AboutImage src={aboutContent.images.primary} alt="Students learning at SBIST" />
-              <AboutImage src={aboutContent.images.secondary} alt="Graduates celebrating at SBIST" />
+              <AboutImage
+                src={aboutContent.images.primary}
+                alt="Students learning at SBIST"
+                priority
+              />
+              <AboutImage
+                src={aboutContent.images.secondary}
+                alt="Graduates celebrating at SBIST"
+                priority
+              />
             </div>
           </ScrollReveal>
 

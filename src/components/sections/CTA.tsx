@@ -19,7 +19,7 @@ export function CTA({
   title = "Admissions Open Now",
   description = "Start your academic journey with an institute committed to excellence, innovation, and student success.",
   primaryLabel = "Apply Now",
-  primaryHref = "/apply",
+  primaryHref = "/contact",
   secondaryLabel = "Learn More",
   secondaryHref = "/about",
   image = "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=600&h=400&fit=crop",

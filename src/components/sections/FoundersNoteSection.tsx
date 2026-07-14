@@ -178,7 +178,7 @@ function UpcomingEvents() {
 
         <StaggerContainer className="grid gap-5 sm:grid-cols-2 lg:gap-6" stagger={0.06}>
           {events.map((event) => (
-            <StaggerItem key={event.href}>
+            <StaggerItem key={event.title}>
               <EventCard event={event} />
             </StaggerItem>
           ))}

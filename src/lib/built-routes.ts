@@ -6,6 +6,7 @@ export const BUILT_ROUTES = new Set([
   "/contact",
   "/careers",
   "/under-construction",
+  "/site-under-construction",
 ]);
 
 export function isBuiltRoute(pathname: string): boolean {

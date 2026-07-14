@@ -57,7 +57,7 @@ function CampusBentoTile({ tile, size = "default" }: CampusBentoTileProps) {
 
   return (
     <Link
-      href={tile.href ?? "/campus-life"}
+      href={tile.href ?? "/about"}
       className="group relative flex h-full min-h-[190px] overflow-hidden rounded-2xl border border-border bg-primary shadow-sm motion-lift transition-shadow hover:shadow-lg"
     >
       <Image
