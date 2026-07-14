@@ -93,9 +93,9 @@ export function Hero() {
       priority
       quality={100}
       unoptimized
-      className="object-cover object-[30%_38%] md:object-[center_38%]"
+      className="object-cover object-[center_32%] md:object-[center_38%]"
       sizes="100vw"
-      style={{ top: "50px", left: "-1px" }}
+      style={{ top: "50px" }}
     />
   );
 
