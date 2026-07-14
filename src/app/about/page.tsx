@@ -11,6 +11,7 @@ import {
 } from "@/components/sections/about/AboutPageSections";
 import { CTA } from "@/components/sections/CTA";
 import { aboutPageContent } from "@/lib/about-content";
+import { stockImages } from "@/lib/home-content";
 import { siteConfig } from "@/lib/navigation";
 
 export const metadata: Metadata = {
@@ -39,11 +40,12 @@ export default function AboutPage() {
         <AboutGallerySection />
         <CTA
           title="Ready to Join SBIST?"
-          description="Take the first step toward an engineering career backed by qualified faculty, modern laboratories, and a vibrant campus community in Chrompet, Chennai."
+          description="Take the first step toward an engineering career at our Chrompet campus. Apply now or explore our academic programs."
           primaryLabel="Apply Now"
           primaryHref="/apply"
-          secondaryLabel="Contact Us"
-          secondaryHref="/contact"
+          secondaryLabel="Explore Academics"
+          secondaryHref="/academics"
+          image={stockImages.students}
         />
       </main>
 

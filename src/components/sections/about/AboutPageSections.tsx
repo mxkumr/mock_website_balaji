@@ -3,12 +3,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState, type ReactNode } from "react";
+import { Gallery } from "@/components/blocks/Gallery";
 import { NavIcon } from "@/components/layout/NavIcons";
 import { ScrollReveal, StaggerContainer, StaggerItem } from "@/components/motion/ScrollAnimations";
 import { aboutPageContent } from "@/lib/about-content";
 import type { NavIconName } from "@/lib/navigation";
-
-/* ─── Shared UI primitives ─────────────────────────────────────────── */
 
 function MortarboardIcon({ className = "h-5 w-5 shrink-0 text-accent" }: { className?: string }) {
   return (
@@ -31,16 +30,19 @@ function DecorativeBlobs() {
 function SectionCard({
   children,
   className = "",
-  noPadding = false,
+  id,
 }: {
   children: ReactNode;
   className?: string;
-  noPadding?: boolean;
+  id?: string;
 }) {
   return (
-    <div className={`relative overflow-hidden rounded-2xl border border-border bg-white shadow-sm ${className}`}>
+    <div
+      id={id}
+      className={`relative scroll-mt-28 overflow-hidden rounded-2xl border border-border bg-white shadow-sm ${className}`}
+    >
       <DecorativeBlobs />
-      <div className={noPadding ? "relative" : "relative"}>{children}</div>
+      <div className="relative">{children}</div>
     </div>
   );
 }
@@ -48,7 +50,7 @@ function SectionCard({
 function CardHeaderStrip({
   eyebrow,
   subtitle,
-  align = "center",
+  align = "left",
 }: {
   eyebrow: string;
   subtitle?: string;
@@ -62,14 +64,10 @@ function CardHeaderStrip({
     >
       <div className={`flex items-center gap-2.5 ${align === "center" ? "justify-center" : ""}`}>
         {align === "left" && <MortarboardIcon />}
-        <span className="text-xs font-semibold uppercase tracking-[0.18em] text-accent">
-          {eyebrow}
-        </span>
+        <span className="text-xs font-semibold uppercase tracking-[0.18em] text-accent">{eyebrow}</span>
       </div>
       {subtitle && (
-        <p className={`mt-1.5 text-sm text-muted ${align === "center" ? "" : "max-w-2xl"}`}>
-          {subtitle}
-        </p>
+        <p className={`mt-1.5 text-sm text-muted ${align === "center" ? "" : "max-w-2xl"}`}>{subtitle}</p>
       )}
       <div
         className={`mt-3 h-0.5 w-10 rounded-full bg-accent/50 ${align === "center" ? "mx-auto" : ""}`}
@@ -79,24 +77,7 @@ function CardHeaderStrip({
   );
 }
 
-function SectionEyebrow({ label }: { label: string }) {
-  return (
-    <div className="flex items-center gap-2.5">
-      <MortarboardIcon />
-      <span className="text-xs font-semibold uppercase tracking-[0.18em] text-accent">
-        {label}
-      </span>
-    </div>
-  );
-}
-
-function IconBadge({
-  icon,
-  size = "md",
-}: {
-  icon: NavIconName;
-  size?: "sm" | "md" | "lg";
-}) {
+function IconBadge({ icon, size = "md" }: { icon: NavIconName; size?: "sm" | "md" | "lg" }) {
   const config = {
     sm: { box: "h-10 w-10 rounded-xl", icon: "h-4 w-4" },
     md: { box: "h-12 w-12 rounded-xl", icon: "h-5 w-5" },
@@ -147,11 +128,22 @@ function QuoteMark() {
   );
 }
 
-function PlayIcon() {
+function StarRating({ rating }: { rating: number }) {
   return (
-    <svg className="h-6 w-6 translate-x-0.5 text-primary" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
-      <path d="M8 5v14l11-7L8 5z" />
-    </svg>
+    <div className="flex items-center gap-1" aria-label={`${rating} out of 5 stars`}>
+      {Array.from({ length: 5 }, (_, index) => (
+        <svg
+          key={index}
+          className={`h-4 w-4 ${index < Math.floor(rating) ? "text-accent" : index < rating ? "text-accent/50" : "text-border"}`}
+          viewBox="0 0 20 20"
+          fill="currentColor"
+          aria-hidden
+        >
+          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+        </svg>
+      ))}
+      <span className="ml-1 text-sm font-semibold text-primary">{rating.toFixed(1)}</span>
+    </div>
   );
 }
 
@@ -204,50 +196,67 @@ function StatBlock({
           aria-hidden
         />
       )}
-
       <IconBadge icon={icon} size="lg" />
-
       <p className="mt-5 text-4xl font-bold leading-none tracking-tight text-primary lg:text-[2.75rem]">
         {count.toLocaleString()}
         <span className="text-accent">{suffix}</span>
       </p>
-
-      <p className="mt-3 max-w-[9rem] text-xs font-semibold uppercase tracking-[0.14em] text-muted">
-        {label}
-      </p>
-
+      <p className="mt-3 max-w-[9rem] text-xs font-semibold uppercase tracking-[0.14em] text-muted">{label}</p>
       <AccentBar className="mt-4" />
     </div>
   );
 }
 
-function StarRating({ rating }: { rating: number }) {
+function AboutSidebar() {
+  const { sidebar } = aboutPageContent;
+
   return (
-    <div className="flex items-center gap-2">
-      <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary/5 text-sm font-bold text-primary ring-1 ring-primary/10">
-        {rating.toFixed(1)}
-      </span>
-      <div className="flex gap-0.5" aria-label={`${rating} out of 5 stars`}>
-        {Array.from({ length: 5 }).map((_, i) => (
-          <svg
-            key={i}
-            className={`h-4 w-4 ${i < Math.floor(rating) ? "text-accent" : i < rating ? "text-accent/50" : "text-border"}`}
-            viewBox="0 0 24 24"
-            fill="currentColor"
-            aria-hidden
-          >
-            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-          </svg>
-        ))}
-      </div>
-    </div>
+    <aside className="lg:sticky lg:top-28 lg:self-start">
+      <SectionCard>
+        <CardHeaderStrip eyebrow={sidebar.title} subtitle="Explore SBIST" align="left" />
+        <nav aria-label="About navigation">
+          <ul className="divide-y divide-border">
+            {sidebar.links.map((link) => {
+              const isActive = link.href === "/about";
+              return (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className={`group flex items-center gap-3 px-5 py-3.5 text-sm font-medium transition-colors ${
+                      isActive
+                        ? "bg-primary/5 text-primary"
+                        : "text-foreground hover:bg-surface hover:text-primary"
+                    }`}
+                  >
+                    <IconBadge icon={link.icon} size="sm" />
+                    <span className="flex-1">{link.label}</span>
+                    {isActive && <span className="h-1.5 w-1.5 rounded-full bg-accent" aria-hidden />}
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
+        </nav>
+        <div className="group relative aspect-[4/3] overflow-hidden border-t border-border">
+          <Image
+            src={sidebar.image}
+            alt="Students on the SBIST campus"
+            fill
+            className="object-cover transition-transform duration-500 group-hover:scale-105"
+            sizes="280px"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-primary-dark/60 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+          <p className="absolute bottom-4 left-4 text-xs font-semibold uppercase tracking-[0.12em] text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+            Campus Life
+          </p>
+        </div>
+      </SectionCard>
+    </aside>
   );
 }
 
-/* ─── Sections ─────────────────────────────────────────────────────── */
-
 export function AboutMainSection() {
-  const { sidebar, main, stats } = aboutPageContent;
+  const { main, stats } = aboutPageContent;
   const statsRef = useRef<HTMLDivElement>(null);
   const [statsStarted, setStatsStarted] = useState(false);
 
@@ -274,134 +283,62 @@ export function AboutMainSection() {
       <div className="mx-auto max-w-7xl px-4 lg:px-8">
         <div className="grid gap-10 lg:grid-cols-[280px_1fr] lg:gap-14 xl:gap-16">
           <ScrollReveal direction="left">
-            <aside className="lg:sticky lg:top-28 lg:self-start">
-              <SectionCard noPadding>
-                <CardHeaderStrip eyebrow={sidebar.title} subtitle="Explore our institute" align="left" />
-                <nav aria-label="About navigation">
-                  <ul className="divide-y divide-border">
-                    {sidebar.links.map((link) => {
-                      const isActive = link.href === "/about";
-                      return (
-                        <li key={link.href}>
-                          <Link
-                            href={link.href}
-                            className={`group flex items-center gap-3 px-5 py-3.5 text-sm font-medium transition-colors ${
-                              isActive
-                                ? "bg-primary/5 text-primary"
-                                : "text-foreground hover:bg-surface hover:text-primary"
-                            }`}
-                          >
-                            <IconBadge icon={link.icon} size="sm" />
-                            <span className="flex-1">{link.label}</span>
-                            {isActive && (
-                              <span className="h-1.5 w-1.5 rounded-full bg-accent" aria-hidden />
-                            )}
-                          </Link>
-                        </li>
-                      );
-                    })}
-                  </ul>
-                </nav>
-                <div className="group relative aspect-[4/3] overflow-hidden border-t border-border">
-                  <Image
-                    src={sidebar.image}
-                    alt="Students at SBIST"
-                    fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-105"
-                    sizes="280px"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-primary-dark/60 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-                  <p className="absolute bottom-4 left-4 text-xs font-semibold uppercase tracking-[0.12em] text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                    Campus Life
-                  </p>
-                </div>
-              </SectionCard>
-            </aside>
+            <AboutSidebar />
           </ScrollReveal>
 
           <div className="min-w-0 space-y-8">
             <ScrollReveal direction="right">
               <SectionCard>
-                <CardHeaderStrip
-                  eyebrow={main.eyebrow}
-                  subtitle="Learn about our mission, values, and community"
-                  align="left"
-                />
+                <CardHeaderStrip eyebrow={main.eyebrow} subtitle="Our story, mission, and community" align="left" />
                 <div className="px-6 py-8 lg:px-8 lg:py-10">
-                  <h2 className="text-3xl leading-tight text-foreground lg:text-[2.25rem]">
-                    {main.title}
-                  </h2>
-                  <div className="mt-6 space-y-4 border-b border-border pb-8 text-[15px] leading-relaxed text-muted">
+                  <h2 className="text-3xl leading-tight text-foreground lg:text-[2.25rem]">{main.title}</h2>
+                  <div className="mt-6 space-y-4 text-[15px] leading-relaxed text-muted">
                     {main.paragraphs.map((paragraph) => (
                       <p key={paragraph.slice(0, 48)}>{paragraph}</p>
                     ))}
                   </div>
+
+                  <div className="mt-8 grid gap-4 sm:grid-cols-2">
+                    <div className="group relative aspect-[4/3] overflow-hidden rounded-xl border border-border">
+                      <Image
+                        src={main.images.primary}
+                        alt="SBIST campus"
+                        fill
+                        className="object-cover transition-transform duration-500 group-hover:scale-105"
+                        sizes="(max-width: 640px) 100vw, 320px"
+                      />
+                    </div>
+                    <div className="group relative aspect-[4/3] overflow-hidden rounded-xl border border-border">
+                      <Image
+                        src={main.images.secondary}
+                        alt="Students at SBIST"
+                        fill
+                        className="object-cover transition-transform duration-500 group-hover:scale-105"
+                        sizes="(max-width: 640px) 100vw, 320px"
+                      />
+                    </div>
+                  </div>
+
+                  <blockquote className="mt-8 rounded-xl border border-border bg-surface/60 px-6 py-6">
+                    <QuoteMark />
+                    <p className="mt-4 font-serif text-base italic leading-relaxed text-foreground">
+                      &ldquo;{main.quote.text}&rdquo;
+                    </p>
+                    <footer className="mt-4 border-t border-border pt-4">
+                      <p className="text-sm font-semibold text-primary">{main.quote.author}</p>
+                      <p className="text-xs text-muted">{main.quote.role}</p>
+                    </footer>
+                  </blockquote>
+
+                  <p className="mt-6 text-[15px] leading-relaxed text-muted">{main.closingParagraph}</p>
                   <AccentBar className="group mt-6" />
                 </div>
               </SectionCard>
             </ScrollReveal>
 
-            <ScrollReveal delay={0.1}>
-              <SectionCard>
-                <div className="px-6 py-8 lg:px-8 lg:py-10">
-                  <div className="flex items-start gap-4">
-                    <QuoteMark />
-                    <div className="min-w-0 flex-1">
-                      <p className="font-serif text-base italic leading-relaxed text-foreground lg:text-lg">
-                        &ldquo;{main.quote.text}&rdquo;
-                      </p>
-                      <footer className="mt-6 flex items-center gap-4 border-t border-border pt-5">
-                        <div className="h-px flex-1 bg-gradient-to-r from-border to-transparent" />
-                        <div className="text-right">
-                          <p className="text-sm font-semibold text-primary">{main.quote.author}</p>
-                          <p className="text-xs text-muted">{main.quote.role}</p>
-                        </div>
-                      </footer>
-                    </div>
-                  </div>
-                </div>
-              </SectionCard>
-            </ScrollReveal>
-
-            <ScrollReveal delay={0.15}>
-              <SectionCard>
-                <div className="px-6 py-6 lg:px-8">
-                  <p className="text-[15px] leading-relaxed text-muted">{main.closingParagraph}</p>
-                </div>
-              </SectionCard>
-            </ScrollReveal>
-
-            <ScrollReveal delay={0.2}>
-              <div className="grid gap-4 sm:grid-cols-2">
-                {[main.images.primary, main.images.secondary].map((src, i) => (
-                  <div
-                    key={src}
-                    className="group relative aspect-[4/3] overflow-hidden rounded-2xl border border-border bg-white shadow-sm motion-lift"
-                  >
-                    <Image
-                      src={src}
-                      alt={i === 0 ? "SBIST campus building" : "Students in lecture hall at SBIST"}
-                      fill
-                      className="object-cover transition-transform duration-500 group-hover:scale-105"
-                      sizes="(max-width: 640px) 100vw, 400px"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-primary-dark/70 via-primary/20 to-transparent opacity-60 transition-opacity group-hover:opacity-80" />
-                    <div className="absolute bottom-0 left-0 right-0 border-t border-white/10 bg-primary/30 px-4 py-3 backdrop-blur-sm">
-                      <p className="text-xs font-semibold uppercase tracking-[0.12em] text-white">
-                        {i === 0 ? "Our Campus" : "Student Life"}
-                      </p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </ScrollReveal>
-
             <div ref={statsRef}>
-              <SectionCard noPadding>
-                <CardHeaderStrip
-                  eyebrow="SBIST at a Glance"
-                  subtitle="Numbers that reflect our growing engineering community"
-                />
+              <SectionCard>
+                <CardHeaderStrip eyebrow="SBIST at a Glance" subtitle="Numbers that reflect our growing community" />
                 <StaggerContainer
                   className="relative grid divide-y divide-border sm:grid-cols-3 sm:divide-x sm:divide-y-0"
                   stagger={0.08}
@@ -435,23 +372,17 @@ export function AboutVisionSection() {
     <section className="bg-surface py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-4 lg:px-8">
         <ScrollReveal>
-          <SectionCard noPadding>
-            <CardHeaderStrip
-              eyebrow="Our Vision"
-              subtitle="Shaping engineers who lead with integrity and innovation"
-            />
-            <div className="px-6 py-8 lg:px-10 lg:py-10">
-              <h2 className="text-3xl leading-tight text-foreground lg:text-4xl">
-                {vision.title}
-              </h2>
-              <p className="mt-5 max-w-3xl text-[15px] leading-relaxed text-muted lg:text-base">
-                {vision.description}
-              </p>
+          <SectionCard>
+            <CardHeaderStrip eyebrow="Our Purpose" subtitle="What drives us forward" />
+            <div className="px-6 py-8 text-center lg:px-8 lg:py-10">
+              <h2 className="text-3xl leading-tight text-foreground lg:text-4xl">{vision.title}</h2>
+              <p className="mx-auto mt-5 max-w-3xl text-base leading-relaxed text-muted">{vision.description}</p>
+              <AccentBar className="group mx-auto mt-6" />
             </div>
           </SectionCard>
         </ScrollReveal>
 
-        <StaggerContainer className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8" stagger={0.08}>
+        <StaggerContainer className="mt-8 grid gap-6 sm:grid-cols-3 lg:gap-8" stagger={0.06}>
           {vision.pillars.map((pillar) => (
             <StaggerItem key={pillar.title}>
               <SectionCard className="group motion-lift h-full">
@@ -476,25 +407,16 @@ export function AboutCampusTourSection() {
   return (
     <section className="bg-background py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-4 lg:px-8">
-        <SectionCard noPadding>
+        <SectionCard>
           <div className="grid items-stretch lg:grid-cols-2">
             <ScrollReveal direction="left" className="flex flex-col">
-              <CardHeaderStrip
-                eyebrow="Virtual Tour"
-                subtitle="Walk through our Chrompet campus"
-                align="left"
-              />
+              <CardHeaderStrip eyebrow="Virtual Visit" subtitle="See our Chrompet campus" align="left" />
               <div className="flex flex-1 flex-col px-6 py-8 lg:px-10 lg:py-10">
-                <h2 className="text-3xl leading-tight text-foreground lg:text-4xl">
-                  {campusTour.title}
-                </h2>
-                <p className="mt-5 flex-1 text-[15px] leading-relaxed text-muted lg:text-base">
-                  {campusTour.description}
-                </p>
+                <h2 className="text-3xl leading-tight text-foreground lg:text-4xl">{campusTour.title}</h2>
+                <p className="mt-5 text-base leading-relaxed text-muted">{campusTour.description}</p>
                 <div className="mt-8">
-                  <ArrowPillLink href={campusTour.videoHref}>Watch Campus Tour</ArrowPillLink>
+                  <ArrowPillLink href={campusTour.videoHref}>Take a Campus Tour</ArrowPillLink>
                 </div>
-                <AccentBar className="group mt-8" />
               </div>
             </ScrollReveal>
 
@@ -507,19 +429,9 @@ export function AboutCampusTourSection() {
                   className="object-cover transition-transform duration-700 group-hover:scale-105"
                   sizes="(max-width: 1024px) 100vw, 560px"
                 />
-                <div className="absolute inset-0 bg-primary/30 transition-colors group-hover:bg-primary/40" />
-                <Link
-                  href={campusTour.videoHref}
-                  className="absolute left-1/2 top-1/2 flex h-16 w-16 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white shadow-xl transition-transform hover:scale-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2"
-                  aria-label="Play campus tour video"
-                >
-                  <span className="absolute inset-0 -m-2 rounded-full border-2 border-white/40" />
-                  <PlayIcon />
-                </Link>
+                <div className="absolute inset-0 bg-gradient-to-t from-primary-dark/80 via-primary/20 to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 border-t border-white/10 bg-primary/40 px-5 py-4 backdrop-blur-sm">
-                  <p className="text-xs font-semibold uppercase tracking-[0.12em] text-white">
-                    Chrompet Campus · Chennai
-                  </p>
+                  <p className="text-xs font-semibold uppercase tracking-[0.12em] text-white">Chrompet, Chennai</p>
                 </div>
               </div>
             </ScrollReveal>
@@ -537,44 +449,32 @@ export function AboutTestimonialsSection() {
     <section className="bg-surface py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-4 lg:px-8">
         <ScrollReveal>
-          <SectionCard noPadding>
-            <CardHeaderStrip eyebrow="Voices from Campus" subtitle={testimonials.description} />
+          <SectionCard>
+            <CardHeaderStrip eyebrow="Student Voices" subtitle={testimonials.description} />
+            <div className="px-6 py-8 lg:px-8">
+              <h2 className="text-3xl leading-tight text-foreground lg:text-4xl">{testimonials.title}</h2>
+              <AccentBar className="group mt-4" />
+            </div>
           </SectionCard>
         </ScrollReveal>
 
-        <ScrollReveal delay={0.05} className="mt-8 text-center">
-          <h2 className="text-3xl leading-tight text-foreground lg:text-4xl">
-            {testimonials.title}
-          </h2>
-        </ScrollReveal>
-
-        <StaggerContainer className="mt-10 grid gap-6 sm:grid-cols-2 lg:gap-8" stagger={0.06}>
+        <StaggerContainer className="mt-8 grid gap-6 sm:grid-cols-2 lg:gap-8" stagger={0.06}>
           {testimonials.items.map((item) => (
             <StaggerItem key={item.name}>
               <SectionCard className="group motion-lift flex h-full flex-col">
                 <div className="flex flex-1 flex-col px-6 py-8 lg:px-8 lg:py-10">
-                  <div className="flex items-center justify-between gap-4">
-                    <StarRating rating={item.rating} />
-                    <QuoteMark />
-                  </div>
+                  <StarRating rating={item.rating} />
                   <blockquote className="mt-5 flex-1 font-serif text-base italic leading-relaxed text-foreground">
                     &ldquo;{item.quote}&rdquo;
                   </blockquote>
                   <footer className="mt-6 flex items-center gap-4 border-t border-border pt-5">
                     <div className="relative h-12 w-12 shrink-0 overflow-hidden rounded-full border-2 border-border ring-2 ring-primary/5">
-                      <Image
-                        src={item.image}
-                        alt={item.name}
-                        fill
-                        className="object-cover"
-                        sizes="48px"
-                      />
+                      <Image src={item.image} alt={item.name} fill className="object-cover" sizes="48px" />
                     </div>
                     <div className="min-w-0 flex-1">
                       <p className="text-sm font-semibold text-primary">{item.name}</p>
                       <p className="text-xs text-muted">{item.role}</p>
                     </div>
-                    <AccentBar />
                   </footer>
                 </div>
               </SectionCard>
@@ -590,55 +490,13 @@ export function AboutGallerySection() {
   const { gallery } = aboutPageContent;
 
   return (
-    <section className="bg-background py-20 lg:py-28">
-      <div className="mx-auto max-w-7xl px-4 lg:px-8">
-        <ScrollReveal>
-          <SectionCard noPadding>
-            <div className="flex flex-col items-center justify-between gap-6 px-6 py-6 sm:flex-row lg:px-8 lg:py-8">
-              <div>
-                <SectionEyebrow label={gallery.subtitle} />
-                <h2 className="mt-3 text-3xl text-foreground lg:text-4xl">{gallery.title}</h2>
-                <AccentBar className="group mt-4" />
-              </div>
-              <ArrowPillLink href={gallery.ctaHref}>Discover Campus Life</ArrowPillLink>
-            </div>
-          </SectionCard>
-        </ScrollReveal>
-
-        <ScrollReveal delay={0.1} className="mt-8">
-          <div className="overflow-hidden rounded-2xl border border-border bg-white shadow-sm">
-            <div className="grid grid-cols-2 gap-px bg-border sm:grid-cols-3 lg:grid-cols-6">
-              {gallery.images.map((image, index) => (
-                <div
-                  key={image.src}
-                  className={`group relative overflow-hidden bg-white ${
-                    index === 0
-                      ? "col-span-2 row-span-2 aspect-square sm:aspect-auto sm:min-h-[280px]"
-                      : "aspect-square"
-                  }`}
-                >
-                  <Image
-                    src={image.src}
-                    alt={image.alt}
-                    fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-110"
-                    sizes="(max-width: 768px) 50vw, 16vw"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-primary-dark/80 via-primary/20 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-                  <div className="absolute bottom-0 left-0 right-0 translate-y-full border-t border-white/10 bg-primary/50 px-4 py-3 backdrop-blur-sm transition-transform duration-300 group-hover:translate-y-0">
-                    <p className="text-xs font-semibold uppercase tracking-[0.1em] text-white">
-                      {image.alt}
-                    </p>
-                    {image.caption && (
-                      <p className="mt-0.5 text-[11px] text-white/75">{image.caption}</p>
-                    )}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </ScrollReveal>
+    <>
+      <Gallery images={gallery.images} title={gallery.title} subtitle={gallery.subtitle} columns={3} />
+      <div className="bg-surface pb-16 lg:pb-24">
+        <div className="mx-auto max-w-7xl px-4 text-center lg:px-8">
+          <ArrowPillLink href={gallery.ctaHref}>Explore Campus Life</ArrowPillLink>
+        </div>
       </div>
-    </section>
+    </>
   );
 }

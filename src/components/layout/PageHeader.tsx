@@ -61,10 +61,7 @@ export function PageHeader({
                   {index === breadcrumbs.length - 1 ? (
                     <span className="font-medium text-accent">{crumb.label}</span>
                   ) : (
-                    <Link
-                      href={crumb.href}
-                      className="transition-colors hover:text-white"
-                    >
+                    <Link href={crumb.href} className="transition-colors hover:text-white">
                       {crumb.label}
                     </Link>
                   )}
@@ -73,9 +70,7 @@ export function PageHeader({
             </ol>
           </nav>
 
-          <h1 className="max-w-3xl text-4xl leading-tight text-white lg:text-5xl">
-            {title}
-          </h1>
+          <h1 className="max-w-3xl text-4xl leading-tight text-white lg:text-5xl">{title}</h1>
           <div className="mt-4 h-1 w-12 rounded-full bg-accent" aria-hidden />
 
           {description && (
