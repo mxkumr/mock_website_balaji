@@ -13,25 +13,21 @@ export const heroContent = {
   buildingImage: "/images/hero-campus.jpg",
 };
 
-/** Shared stock imagery — verified URLs and local campus asset */
+/** Shared local imagery from public/images */
 export const stockImages = {
   campus: "/images/hero-campus.jpg",
-  library:
-    "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=600&h=600&fit=crop",
-  graduation:
-    "https://images.unsplash.com/photo-1562774053-701939374585?w=600&h=600&fit=crop",
-  sports:
-    "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=600&h=600&fit=crop",
-  students:
-    "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=640&h=780&fit=crop",
+  library: "/images/slide-1.jpg",
+  graduation: "/images/slide-2.jpg",
+  sports: "/images/mechanical.jpg",
+  students: "/images/students-library.jpg",
 };
 
 export const aboutContent = {
-  eyebrow: "About Your Institute",
+  eyebrow: "About Our Institute",
   title: "Empowering Students to Lead the Future",
   paragraphs: [
-    "We live in an increasingly interconnected world that faces challenges and complex problems on a global scale. At the start of the 21st century, Sree Balaji Institute of Science and Technology has qualified faculties and latest lab equipments.",
-    "Setting clearly defined short term and long term goals in research with timelines, evaluate the progress and ensure that all relevant infrastructural and human resource support is available to achieve the goals.",
+    "Sree Balaji Institute of Science and Technology is an AICTE-approved engineering college in Chrompet, Chennai. We offer undergraduate programs in engineering, management, and computer applications, with a focus on strong fundamentals and practical, industry-ready skills.",
+    "Our campus brings together experienced faculty, modern laboratories, and a supportive academic environment. Through structured teaching, hands-on training, and career guidance, we help students grow into capable engineers and professionals.",
   ],
   highlights: [
     "Qualified Faculty with Industry Experience",
@@ -39,14 +35,14 @@ export const aboutContent = {
     "Structured Academic & Research Goals",
   ],
   stat: {
-    value: "50+",
-    label: "Award Winning",
-    description: "Achieved awards for excellence and innovation in engineering education.",
+    value: "Shaping Tomorrow's Engineers",
+    label: "Today, at SBIST",
+    description:
+      "Through dedicated teaching, hands-on learning, and strong values, we help students turn ambition into lasting success.",
   },
   images: {
     primary: stockImages.students,
-    secondary:
-      "https://images.unsplash.com/photo-1627556704302-624286467c65?w=600&h=600&fit=crop",
+    secondary: "/images/students-classroom.jpg",
   },
 };
 
@@ -66,8 +62,7 @@ export const departments = [
     title: "Computer Science Engineering",
     description:
       "The School of Computing has experienced faculty members with industry experience and well equipped laboratories.",
-    image:
-      "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&h=420&fit=crop",
+    image: "/images/students-classroom.jpg",
     href: "/academics#courses",
     degree: "B.E. Computer Science Engineering",
     icon: "cse",
@@ -78,8 +73,7 @@ export const departments = [
     title: "Information and Communication Technology",
     description:
       "Focused on networks, communication systems, and modern IT infrastructure with practical lab-based learning.",
-    image:
-      "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&h=420&fit=crop",
+    image: "/images/computer.jpg",
     href: "/academics#courses",
     degree: "B.E. Information and Communication Technology",
     icon: "ict",
@@ -90,8 +84,7 @@ export const departments = [
     title: "Electrical and Communication Engineering",
     description:
       "The electrical engineers prepared to make the world eco friendly through innovation and sustainable design.",
-    image:
-      "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&h=420&fit=crop",
+    image: "/images/electrical.jpg",
     href: "/academics#courses",
     degree: "B.E. Electrical and Communication Engineering",
     icon: "ece",
@@ -102,8 +95,7 @@ export const departments = [
     title: "Civil Engineering",
     description:
       "The department of Civil Engineering is committed to the task of providing quality education, which will transform the students into efficient and successful engineers.",
-    image:
-      "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&h=420&fit=crop",
+    image: "/images/civil.jpg",
     href: "/academics#courses",
     degree: "B.E. Civil Engineering",
     icon: "civil",
@@ -114,8 +106,7 @@ export const departments = [
     title: "Mechanical Engineering",
     description:
       "The School of Mechanical Engineering is one of the pioneering departments of our institute.",
-    image:
-      "https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=600&h=420&fit=crop",
+    image: "/images/mechanical.jpg",
     href: "/academics#courses",
     degree: "B.E. Mechanical Engineering",
     icon: "mechanical",
@@ -126,8 +117,7 @@ export const departments = [
     title: "Biomedical Engineering",
     description:
       "Combining engineering principles with medical sciences to prepare students for healthcare technology and device innovation.",
-    image:
-      "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=600&h=420&fit=crop",
+    image: "/images/slide-3.jpg",
     href: "/academics#courses",
     degree: "B.E. Biomedical Engineering",
     icon: "biomedical",
@@ -138,8 +128,7 @@ export const departments = [
     title: "BBA",
     description:
       "A Bachelor of Business Administration program focused on management fundamentals, entrepreneurship, and industry-ready business skills.",
-    image:
-      "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&h=420&fit=crop",
+    image: "/images/students-library.jpg",
     href: "/academics#courses",
     degree: "BBA",
     icon: "bba",
@@ -150,8 +139,7 @@ export const departments = [
     title: "BCA",
     description:
       "A Bachelor of Computer Applications program covering software development, databases, and applied computing for IT careers.",
-    image:
-      "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=600&h=420&fit=crop",
+    image: "/images/computer.jpg",
     href: "/academics#courses",
     degree: "BCA",
     icon: "bca",
@@ -161,10 +149,10 @@ export const departments = [
 ] satisfies Department[];
 
 export const counterItems: CounterItem[] = [
-  { value: 1500, suffix: "+", label: "Students Enrolled" },
-  { value: 8, suffix: "", label: "Programs Offered" },
-  { value: 80, suffix: "+", label: "Faculty Members" },
-  { value: 15, suffix: "+", label: "Modern Laboratories" },
+  { headline: "Excellence", label: "Quality engineering education" },
+  { headline: "Innovation", label: "Learning beyond the classroom" },
+  { headline: "Opportunity", label: "A fresh start for ambitious minds" },
+  { headline: "Growth", label: "Skills for a successful career" },
 ];
 
 export const notices = [
@@ -192,24 +180,24 @@ export const galleryImages: GalleryImage[] = [
     caption: "Main academic block",
   },
   {
-    src: stockImages.library,
+    src: "/images/students-library.jpg",
     alt: "Library",
   },
   {
-    src: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=600&h=600&fit=crop",
+    src: "/images/students-classroom.jpg",
     alt: "Lecture Hall",
   },
   {
-    src: "https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=600&h=600&fit=crop",
+    src: "/images/slide-3.jpg",
     alt: "Engineering Lab",
   },
   {
     src: stockImages.graduation,
-    alt: "Graduation Ceremony",
+    alt: "Library Study Hall",
   },
   {
     src: stockImages.sports,
-    alt: "Campus Sports",
+    alt: "Mechanical Workshop",
   },
 ];
 
@@ -231,8 +219,7 @@ export const campusLifeContent = {
       title: "Main Academic Block",
       description:
         "Our central campus building houses lecture halls, faculty offices, and student services — the heart of daily life at SBIST.",
-      image:
-        "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=900&h=600&fit=crop",
+      image: "/images/hero-campus.jpg",
       href: "/about",
     },
     {
@@ -240,7 +227,7 @@ export const campusLifeContent = {
       title: "Central Library",
       description:
         "A quiet, well-stocked library with digital resources, journals, and study spaces for focused learning.",
-      image: stockImages.library,
+      image: "/images/slide-1.jpg",
       href: "/about",
     },
     {
@@ -248,8 +235,7 @@ export const campusLifeContent = {
       title: "Modern Lecture Halls",
       description:
         "Spacious, technology-enabled classrooms designed for interactive teaching and collaborative learning.",
-      image:
-        "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=800&h=600&fit=crop",
+      image: "/images/students-classroom.jpg",
       href: "/about",
     },
     {
@@ -257,8 +243,7 @@ export const campusLifeContent = {
       title: "Engineering Laboratories",
       description:
         "Hands-on labs equipped for engineering, management, and computer applications programs with industry-standard tools.",
-      image:
-        "https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=800&h=600&fit=crop",
+      image: "/images/slide-3.jpg",
       href: "/about",
     },
     {
@@ -266,7 +251,7 @@ export const campusLifeContent = {
       title: "Graduation & Convocation",
       description:
         "Celebrating milestones as our graduates step into engineering careers across India and abroad.",
-      image: stockImages.graduation,
+      image: "/images/slide-2.jpg",
       href: "/about",
     },
     {
@@ -274,7 +259,7 @@ export const campusLifeContent = {
       title: "Sports & Recreation",
       description:
         "Outdoor grounds and indoor facilities for cricket, volleyball, and fitness — balance beyond the classroom.",
-      image: stockImages.sports,
+      image: "/images/mechanical.jpg",
       href: "/about",
     },
   ] satisfies CampusLifeTile[],
@@ -287,10 +272,9 @@ export const contactContent = {
 
 export const foundersNoteContent = {
   quote:
-    "We live in a globalized world that has challenges and complexities on a global scale. At the start of the 21st century, Sree Balaji Institute of Science and Technology is committed to nurturing engineers with integrity, innovation, and a passion for lifelong learning.",
-  name: "Dr. S. Balaji",
-  title: "Founder & Chairman",
-  videoHref: "/about",
+    "SBIST gave me more than classroom learning. The faculty guide you personally, the labs let you practice what you study, and the campus environment keeps you motivated to grow every day.",
+  name: "Priya Menon",
+  title: "B.E. Information and Communication Technology",
   readMoreHref: "/about",
 };
 
@@ -304,8 +288,7 @@ export const upcomingEventsContent = {
       date: "August 4, 2026",
       time: "09:00 AM - 03:40 PM",
       location: "SBIST Main Auditorium, Chennai",
-      image:
-        "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=400&h=280&fit=crop",
+      image: "/images/slide-3.jpg",
       href: "/contact",
     },
     {
@@ -313,8 +296,7 @@ export const upcomingEventsContent = {
       date: "August 4, 2026",
       time: "09:00 AM - 03:40 PM",
       location: "SBIST Placement Cell, Chennai",
-      image:
-        "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=400&h=280&fit=crop",
+      image: "/images/students-library.jpg",
       href: "/contact",
     },
     {
@@ -322,8 +304,7 @@ export const upcomingEventsContent = {
       date: "August 4, 2026",
       time: "09:00 AM - 03:40 PM",
       location: "SBIST Conference Hall, Chennai",
-      image:
-        "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=400&h=280&fit=crop",
+      image: "/images/slide-1.jpg",
       href: "/contact",
     },
     {

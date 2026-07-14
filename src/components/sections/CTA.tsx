@@ -22,7 +22,7 @@ export function CTA({
   primaryHref = "/contact",
   secondaryLabel = "Learn More",
   secondaryHref = "/about",
-  image = "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=600&h=400&fit=crop",
+  image = "/images/students-library.jpg",
   variant = "split",
 }: CTAProps) {
   if (variant === "default") {

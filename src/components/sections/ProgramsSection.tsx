@@ -45,14 +45,6 @@ const tabs: { id: TabId; label: string; icon: ReactNode }[] = [
   },
 ];
 
-const studentAvatars = [
-  "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=80&h=80&fit=crop",
-  "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=80&h=80&fit=crop",
-  "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=80&h=80&fit=crop",
-  "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=80&h=80&fit=crop",
-  "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&h=80&fit=crop",
-];
-
 const bentoGridClass =
   "grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-6 lg:auto-rows-[minmax(170px,1fr)]";
 
@@ -116,23 +108,16 @@ function ApplyCard() {
         </svg>
       </div>
 
-      <div className="mt-5 flex -space-x-2">
-        {studentAvatars.map((src) => (
-          <div
-            key={src}
-            className="relative h-9 w-9 overflow-hidden rounded-full border-2 border-primary-dark"
-          >
-            <Image src={src} alt="" fill className="object-cover" sizes="36px" />
-          </div>
-        ))}
-      </div>
-
-      <p className="mt-4 text-2xl font-semibold">1,500+</p>
-      <p className="text-sm text-white/75">Students Enrolled</p>
+      <p className="mt-5 text-xs font-semibold uppercase tracking-[0.14em] text-accent">Our Programs</p>
+      <h3 className="mt-2 text-xl font-semibold leading-snug">Courses designed for real careers</h3>
+      <p className="mt-3 flex-1 text-sm leading-relaxed text-white/75">
+        Industry-aligned curriculum, experienced faculty, and hands-on labs across engineering, management, and computer
+        applications.
+      </p>
 
       <Link
         href="/contact"
-        className="mt-auto inline-flex w-full items-center justify-center gap-2 rounded-lg bg-accent px-5 py-3 text-sm font-bold uppercase tracking-wide text-primary-dark transition-colors hover:bg-accent-hover"
+        className="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-lg bg-accent px-5 py-3 text-sm font-bold uppercase tracking-wide text-primary-dark transition-colors hover:bg-accent-hover"
       >
         Apply Now
         <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
@@ -155,30 +140,19 @@ function NoticeCard() {
         {notices.map((notice) => (
           <li
             key={notice.ref}
-            className="flex items-start justify-between gap-3 border-b border-border pb-3 last:border-0 last:pb-0"
+            className="border-b border-border pb-3 last:border-0 last:pb-0"
           >
-            <div className="min-w-0 flex-1">
-              <p className="text-sm font-semibold leading-snug text-foreground">
-                {notice.title}
-              </p>
-              <div className="mt-1.5 flex items-center gap-1.5 text-xs text-muted">
-                <svg className="h-3.5 w-3.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                  <rect x="3" y="4" width="18" height="18" rx="2" />
-                  <path strokeLinecap="round" d="M16 2v4M8 2v4M3 10h18" />
-                </svg>
-                {notice.date}
-              </div>
-              <p className="mt-1 font-mono text-[10px] text-muted/80">{notice.ref}</p>
-            </div>
-            <button
-              type="button"
-              className="shrink-0 rounded-full p-2 text-muted transition-colors hover:bg-surface hover:text-primary"
-              aria-label={`Download notice: ${notice.title}`}
-            >
-              <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5 5-5M12 15V3" />
+            <p className="text-sm font-semibold leading-snug text-foreground">
+              {notice.title}
+            </p>
+            <div className="mt-1.5 flex items-center gap-1.5 text-xs text-muted">
+              <svg className="h-3.5 w-3.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <rect x="3" y="4" width="18" height="18" rx="2" />
+                <path strokeLinecap="round" d="M16 2v4M8 2v4M3 10h18" />
               </svg>
-            </button>
+              {notice.date}
+            </div>
+            <p className="mt-1 font-mono text-[10px] text-muted/80">{notice.ref}</p>
           </li>
         ))}
       </ul>

@@ -90,7 +90,7 @@ export function AboutSection() {
               />
               <AboutImage
                 src={aboutContent.images.secondary}
-                alt="Graduates celebrating at SBIST"
+                alt="Students in lecture at SBIST"
                 priority
               />
             </div>
@@ -139,9 +139,11 @@ export function AboutSection() {
                       {aboutContent.stat.value}
                     </p>
                     <p className="mt-1 text-sm font-semibold">{aboutContent.stat.label}</p>
-                    <p className="mt-2 text-xs leading-relaxed text-white/75">
-                      {aboutContent.stat.description}
-                    </p>
+                    {aboutContent.stat.description ? (
+                      <p className="mt-2 text-xs leading-relaxed text-white/75">
+                        {aboutContent.stat.description}
+                      </p>
+                    ) : null}
                   </div>
                 </aside>
               </div>

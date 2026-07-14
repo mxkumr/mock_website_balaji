@@ -173,20 +173,22 @@ function useCountUp(target: number, duration: number, started: boolean): number 
 
 function StatBlock({
   value,
+  headline,
   suffix,
   label,
   icon,
   started,
   showDivider,
 }: {
-  value: number;
+  value?: number;
+  headline?: string;
   suffix?: string;
   label: string;
   icon: NavIconName;
   started: boolean;
   showDivider?: boolean;
 }) {
-  const count = useCountUp(value, 2000, started);
+  const count = useCountUp(value ?? 0, 2000, started && value !== undefined);
 
   return (
     <div className="group relative flex h-full flex-col items-center px-4 py-6 text-center sm:py-4">
@@ -197,10 +199,16 @@ function StatBlock({
         />
       )}
       <IconBadge icon={icon} size="lg" />
-      <p className="mt-5 text-4xl font-bold leading-none tracking-tight text-primary lg:text-[2.75rem]">
-        {count.toLocaleString()}
-        <span className="text-accent">{suffix}</span>
-      </p>
+      {headline ? (
+        <p className="mt-5 font-heading text-2xl font-bold leading-none tracking-tight text-primary lg:text-3xl">
+          {headline}
+        </p>
+      ) : (
+        <p className="mt-5 text-4xl font-bold leading-none tracking-tight text-primary lg:text-[2.75rem]">
+          {count.toLocaleString()}
+          <span className="text-accent">{suffix}</span>
+        </p>
+      )}
       <p className="mt-3 max-w-[9rem] text-xs font-semibold uppercase tracking-[0.14em] text-muted">{label}</p>
       <AccentBar className="mt-4" />
     </div>
@@ -338,7 +346,7 @@ export function AboutMainSection() {
 
             <div ref={statsRef}>
               <SectionCard>
-                <CardHeaderStrip eyebrow="SBIST at a Glance" subtitle="Numbers that reflect our growing community" />
+                <CardHeaderStrip eyebrow="SBIST at a Glance" subtitle="What defines our approach to education" />
                 <StaggerContainer
                   className="relative grid divide-y divide-border sm:grid-cols-3 sm:divide-x sm:divide-y-0"
                   stagger={0.08}
@@ -347,6 +355,7 @@ export function AboutMainSection() {
                     <StaggerItem key={stat.label}>
                       <StatBlock
                         value={stat.value}
+                        headline={stat.headline}
                         suffix={stat.suffix}
                         label={stat.label}
                         icon={stat.icon}
@@ -450,7 +459,7 @@ export function AboutTestimonialsSection() {
       <div className="mx-auto max-w-7xl px-4 lg:px-8">
         <ScrollReveal>
           <SectionCard>
-            <CardHeaderStrip eyebrow="Student Voices" subtitle={testimonials.description} />
+            <CardHeaderStrip eyebrow="Professional Opinions" subtitle={testimonials.description} />
             <div className="px-6 py-8 lg:px-8">
               <h2 className="text-3xl leading-tight text-foreground lg:text-4xl">{testimonials.title}</h2>
               <AccentBar className="group mt-4" />

@@ -107,11 +107,11 @@ function CampusLifeStatTile() {
         <span className="text-xs font-semibold uppercase tracking-[0.18em] text-accent">
           Student Life
         </span>
-        <p className="mt-3 font-serif text-4xl font-semibold text-primary">15+</p>
-        <p className="mt-1 text-sm font-medium text-foreground">Clubs & Activities</p>
+        <p className="mt-3 font-serif text-4xl font-semibold text-primary">3+</p>
+        <p className="mt-1 text-sm font-medium text-foreground">Dance, Arts & Cultural</p>
       </div>
       <p className="text-sm leading-relaxed text-muted">
-        From technical societies to cultural events, SBIST offers a vibrant campus experience beyond academics.
+        From dance and arts clubs to cultural events, SBIST offers a vibrant campus experience beyond academics.
       </p>
       <Link
         href={campusLifeContent.viewAllHref}
@@ -127,14 +127,14 @@ function CampusLifeStatTile() {
 }
 
 export function CampusLifeSection() {
-  const { eyebrow, title, viewAllHref, tiles } = campusLifeContent;
+  const { eyebrow, title, tiles } = campusLifeContent;
   const [campus, library, lecture, lab, graduation, sports] = tiles;
 
   return (
     <section className="bg-background py-20 lg:py-28" id="campus-life">
       <div className="mx-auto max-w-7xl px-4 lg:px-8">
         <ScrollReveal>
-          <div className="mb-10 flex flex-col gap-6 sm:mb-12 sm:flex-row sm:items-end sm:justify-between">
+          <div className="mb-10 sm:mb-12">
             <div>
               <div className="flex items-center gap-2.5">
                 <MortarboardIcon />
@@ -146,17 +146,6 @@ export function CampusLifeSection() {
                 {title}
               </h2>
             </div>
-            <Link
-              href={viewAllHref}
-              className="inline-flex shrink-0 items-center gap-3 self-start rounded-full border border-border bg-white px-5 py-2.5 text-sm font-semibold text-foreground shadow-sm transition-all hover:border-primary/20 hover:shadow-md sm:self-auto"
-            >
-              View Gallery
-              <span className="flex h-7 w-7 items-center justify-center rounded-full bg-primary text-white">
-                <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
-              </span>
-            </Link>
           </div>
         </ScrollReveal>
 

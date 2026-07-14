@@ -6,7 +6,7 @@ export const aboutPageContent = {
   header: {
     title: "About SBIST",
     description:
-      "Education goes beyond textbooks and classrooms. We empower students to explore their passions and challenge conventions.",
+      "At Sree Balaji Institute of Science and Technology, we combine strong academic foundations with practical learning to help students build meaningful careers in engineering, management, and technology.",
     breadcrumbs: [
       { label: "Home", href: "/" },
       { label: "About SBIST", href: "/about" },
@@ -38,16 +38,14 @@ export const aboutPageContent = {
     closingParagraph:
       "At the heart of SBIST lies a commitment to excellence and inclusivity — helping students gain the skills, confidence, and perspective to lead in an ever-changing world.",
     images: {
-      primary:
-        "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=800&h=600&fit=crop",
-      secondary:
-        "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=800&h=600&fit=crop",
+      primary: "/images/hero-campus.jpg",
+      secondary: "/images/students-classroom.jpg",
     },
   },
   stats: [
-    { value: 1500, suffix: "+", label: "Students Enrolled", icon: "campus" as NavIconName },
-    { value: 80, suffix: "+", label: "Academic Staff", icon: "faculty" as NavIconName },
-    { value: 25, suffix: "+", label: "Industry Partners", icon: "research" as NavIconName },
+    { headline: "Excellence", label: "Academic quality", icon: "campus" as NavIconName },
+    { headline: "Innovation", label: "Modern learning", icon: "faculty" as NavIconName },
+    { headline: "Growth", label: "Career development", icon: "research" as NavIconName },
   ],
   vision: {
     title: "Our Vision",
@@ -82,45 +80,41 @@ export const aboutPageContent = {
     image: stockImages.campus,
   },
   testimonials: {
-    title: "Student Feedback",
+    title: "Professional Opinions",
     description:
-      "Our students are at the heart of everything we do. Their stories reflect our mission to inspire, empower, and prepare the next generation of engineers.",
+      "Leaders and professionals share why they value Sree Balaji Institute of Science and Technology as a strong choice for students.",
     items: [
       {
         rating: 5.0,
         quote:
-          "At SBIST, the faculty genuinely care about your growth. The labs and mentorship helped me land my first internship before graduation.",
-        name: "Arjun Kumar",
-        role: "B.E. Computer Science Engineering",
-        image:
-          "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=120&h=120&fit=crop",
+          "I strongly recommend Sree Balaji Institute of Science and Technology for students who want quality education with discipline and purpose. It is a college I trust for student growth.",
+        name: "Yaser",
+        role: "Managing Director, Jollo",
+        image: "/images/SREE_Balaji_logo.svg",
       },
       {
         rating: 5.0,
         quote:
-          "The ICT program at SBIST is world-class. We work on real projects, not just theory. The labs and research opportunities gave me the edge I needed.",
-        name: "Priya Menon",
-        role: "B.E. Information and Communication Technology",
-        image:
-          "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=120&h=120&fit=crop",
-      },
-      {
-        rating: 4.5,
-        quote:
-          "SBIST gave me a strong foundation in electrical and communication engineering. The campus environment and peer community made learning collaborative and enjoyable.",
-        name: "Rahul Venkatesh",
-        role: "B.E. Electrical and Communication Engineering",
-        image:
-          "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=120&h=120&fit=crop",
+          "SBIST stands out for its practical approach to learning. I would confidently suggest Balaji college to students and parents looking for a focused engineering education.",
+        name: "Dr. Meera Srinivasan",
+        role: "Academic Advisor",
+        image: "/images/SREE_Balaji_logo.svg",
       },
       {
         rating: 5.0,
         quote:
-          "From placement training to industry visits, SBIST prepared me for the professional world. I am proud to be an SBIST graduate.",
-        name: "Deepa Srinivasan",
-        role: "B.E. Civil Engineering",
-        image:
-          "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=120&h=120&fit=crop",
+          "The institute emphasizes strong fundamentals, modern labs, and student responsibility. That is why I prefer Sree Balaji college when guiding young learners.",
+        name: "Mr. Karthik Rajan",
+        role: "Industry Mentor",
+        image: "/images/SREE_Balaji_logo.svg",
+      },
+      {
+        rating: 5.0,
+        quote:
+          "Sree Balaji Institute of Science and Technology is building students with both skill and character. It is an institution I respect and recommend for aspiring engineers.",
+        name: "Ms. Anitha Devi",
+        role: "HR & Talent Development",
+        image: "/images/SREE_Balaji_logo.svg",
       },
     ],
   },
@@ -128,18 +122,12 @@ export const aboutPageContent = {
     title: "Discover Campus Life",
     subtitle: "Gallery",
     images: [
-      { src: stockImages.campus, alt: "Main Campus", caption: "Academic block" },
-      { src: stockImages.library, alt: "Central Library" },
-      {
-        src: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=600&h=600&fit=crop",
-        alt: "Lecture Hall",
-      },
-      { src: stockImages.sports, alt: "Sports Ground" },
-      { src: stockImages.graduation, alt: "Graduation Day" },
-      {
-        src: "https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=600&h=600&fit=crop",
-        alt: "Engineering Lab",
-      },
+      { src: "/images/hero-campus.jpg", alt: "Main Campus", caption: "Academic block" },
+      { src: "/images/students-library.jpg", alt: "Central Library" },
+      { src: "/images/students-classroom.jpg", alt: "Lecture Hall" },
+      { src: "/images/computer.jpg", alt: "Computer Lab" },
+      { src: "/images/slide-2.jpg", alt: "Library Study Hall" },
+      { src: "/images/slide-3.jpg", alt: "Engineering Lab" },
     ] satisfies GalleryImage[],
     ctaHref: "/about",
   },

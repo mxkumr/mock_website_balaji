@@ -156,20 +156,22 @@ function useCountUp(target: number, duration: number, started: boolean): number 
 
 function StatBlock({
   value,
+  headline,
   suffix,
   label,
   icon,
   started,
   showDivider,
 }: {
-  value: number;
+  value?: number;
+  headline?: string;
   suffix?: string;
   label: string;
   icon: NavIconName;
   started: boolean;
   showDivider?: boolean;
 }) {
-  const count = useCountUp(value, 2000, started);
+  const count = useCountUp(value ?? 0, 2000, started && value !== undefined);
 
   return (
     <div className="group relative flex h-full flex-col items-center px-4 py-6 text-center sm:py-4">
@@ -180,10 +182,16 @@ function StatBlock({
         />
       )}
       <IconBadge icon={icon} size="lg" />
-      <p className="mt-5 text-4xl font-bold leading-none tracking-tight text-primary lg:text-[2.75rem]">
-        {count.toLocaleString()}
-        <span className="text-accent">{suffix}</span>
-      </p>
+      {headline ? (
+        <p className="mt-5 font-heading text-2xl font-bold leading-none tracking-tight text-primary lg:text-3xl">
+          {headline}
+        </p>
+      ) : (
+        <p className="mt-5 text-4xl font-bold leading-none tracking-tight text-primary lg:text-[2.75rem]">
+          {count.toLocaleString()}
+          <span className="text-accent">{suffix}</span>
+        </p>
+      )}
       <p className="mt-3 max-w-[9rem] text-xs font-semibold uppercase tracking-[0.14em] text-muted">{label}</p>
       <AccentBar className="mt-4" />
     </div>
@@ -303,7 +311,7 @@ export function AcademicsIntroSection() {
               <SectionCard>
                 <CardHeaderStrip
                   eyebrow="Academics at a Glance"
-                  subtitle="Key numbers across our engineering programs"
+                  subtitle="What defines our approach to education"
                 />
                 <StaggerContainer
                   className="relative grid divide-y divide-border sm:grid-cols-2 lg:grid-cols-4 sm:divide-x sm:divide-y-0"
@@ -313,6 +321,7 @@ export function AcademicsIntroSection() {
                     <StaggerItem key={stat.label}>
                       <StatBlock
                         value={stat.value}
+                        headline={stat.headline}
                         suffix={stat.suffix}
                         label={stat.label}
                         icon={stat.icon}
@@ -448,10 +457,14 @@ export function AlumniSection() {
             <StaggerItem key={stat.label}>
               <SectionCard className="text-center">
                 <div className="px-6 py-8">
-                  <p className="text-4xl font-bold text-primary lg:text-5xl">
-                    {stat.value.toLocaleString()}
-                    <span className="text-accent">{stat.suffix}</span>
-                  </p>
+                  {"headline" in stat && stat.headline ? (
+                    <p className="font-heading text-2xl font-bold text-primary lg:text-3xl">{stat.headline}</p>
+                  ) : (
+                    <p className="text-4xl font-bold text-primary lg:text-5xl">
+                      {stat.value?.toLocaleString()}
+                      <span className="text-accent">{stat.suffix}</span>
+                    </p>
+                  )}
                   <p className="mt-2 text-xs font-semibold uppercase tracking-[0.14em] text-muted">{stat.label}</p>
                 </div>
               </SectionCard>
@@ -475,7 +488,6 @@ export function AlumniSection() {
                     <div className="min-w-0 flex-1">
                       <p className="text-sm font-semibold text-primary">{story.name}</p>
                       <p className="text-xs text-muted">{story.role}</p>
-                      <p className="mt-0.5 text-xs font-medium text-accent">{story.batch}</p>
                     </div>
                   </footer>
                 </div>
