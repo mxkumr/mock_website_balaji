@@ -70,6 +70,14 @@ const icons: Record<NavIconName, (props: IconProps) => ReactNode> = {
       <path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z" />
     </IconBase>
   ),
+  ict: (p) => (
+    <IconBase {...p}>
+      <path d="M5 12.55a11 11 0 0114.08 0" />
+      <path d="M8.53 16.11a6 6 0 016.95 0" />
+      <circle cx="12" cy="20" r="1" fill="currentColor" stroke="none" />
+      <path d="M12 2v4" />
+    </IconBase>
+  ),
   civil: (p) => (
     <IconBase {...p}>
       <path d="M3 21h18M6 21V9l6-4 6 4v12M10 21v-6h4v6" />
@@ -79,6 +87,26 @@ const icons: Record<NavIconName, (props: IconProps) => ReactNode> = {
     <IconBase {...p}>
       <circle cx="12" cy="12" r="3" />
       <path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M16.9 16.9l2.1 2.1M4.9 19.1l2.1-2.1M16.9 7.1l2.1-2.1" />
+    </IconBase>
+  ),
+  biomedical: (p) => (
+    <IconBase {...p}>
+      <path d="M12 5v14M5 12h14" />
+      <path d="M8 3h8a2 2 0 012 2v14a2 2 0 01-2 2H8a2 2 0 01-2-2V5a2 2 0 012-2z" />
+    </IconBase>
+  ),
+  bba: (p) => (
+    <IconBase {...p}>
+      <rect x="2" y="7" width="20" height="14" rx="2" />
+      <path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2" />
+      <path d="M12 12v4" />
+    </IconBase>
+  ),
+  bca: (p) => (
+    <IconBase {...p}>
+      <rect x="2" y="4" width="20" height="14" rx="2" />
+      <path d="M8 20h8M12 18v2" />
+      <path d="M7 9h4M7 12h8" />
     </IconBase>
   ),
   programs: (p) => (

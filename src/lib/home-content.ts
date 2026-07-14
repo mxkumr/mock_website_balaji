@@ -1,5 +1,6 @@
 import type { CounterItem } from "@/components/blocks/Counters";
 import type { GalleryImage } from "@/components/blocks/Gallery";
+import type { NavIconName } from "@/lib/navigation";
 
 export const heroContent = {
   watermark: "Sree Balaji College of Science and Technology",
@@ -49,6 +50,17 @@ export const aboutContent = {
   },
 };
 
+export type Department = {
+  title: string;
+  description: string;
+  image: string;
+  href: string;
+  degree: string;
+  icon: NavIconName;
+  duration: string;
+  category: "engineering" | "management" | "commerce";
+};
+
 export const departments = [
   {
     title: "Computer Science Engineering",
@@ -57,14 +69,34 @@ export const departments = [
     image:
       "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&h=420&fit=crop",
     href: "/programs/cse",
+    degree: "B.E. Computer Science Engineering",
+    icon: "cse",
+    duration: "4 Years",
+    category: "engineering",
   },
   {
-    title: "Electrical and Electronic Engineering",
+    title: "Information and Communication Technology",
     description:
-      "The electrical engineers prepared to make the world eco friendly.",
+      "Focused on networks, communication systems, and modern IT infrastructure with practical lab-based learning.",
+    image:
+      "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&h=420&fit=crop",
+    href: "/programs/ict",
+    degree: "B.E. Information and Communication Technology",
+    icon: "ict",
+    duration: "4 Years",
+    category: "engineering",
+  },
+  {
+    title: "Electrical and Communication Engineering",
+    description:
+      "The electrical engineers prepared to make the world eco friendly through innovation and sustainable design.",
     image:
       "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&h=420&fit=crop",
     href: "/programs/ece",
+    degree: "B.E. Electrical and Communication Engineering",
+    icon: "ece",
+    duration: "4 Years",
+    category: "engineering",
   },
   {
     title: "Civil Engineering",
@@ -73,6 +105,10 @@ export const departments = [
     image:
       "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&h=420&fit=crop",
     href: "/programs/civil",
+    degree: "B.E. Civil Engineering",
+    icon: "civil",
+    duration: "4 Years",
+    category: "engineering",
   },
   {
     title: "Mechanical Engineering",
@@ -81,12 +117,52 @@ export const departments = [
     image:
       "https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=600&h=420&fit=crop",
     href: "/programs/mechanical",
+    degree: "B.E. Mechanical Engineering",
+    icon: "mechanical",
+    duration: "4 Years",
+    category: "engineering",
   },
-];
+  {
+    title: "Biomedical Engineering",
+    description:
+      "Combining engineering principles with medical sciences to prepare students for healthcare technology and device innovation.",
+    image:
+      "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=600&h=420&fit=crop",
+    href: "/programs/biomedical",
+    degree: "B.E. Biomedical Engineering",
+    icon: "biomedical",
+    duration: "4 Years",
+    category: "engineering",
+  },
+  {
+    title: "BBA",
+    description:
+      "A Bachelor of Business Administration program focused on management fundamentals, entrepreneurship, and industry-ready business skills.",
+    image:
+      "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&h=420&fit=crop",
+    href: "/programs/bba",
+    degree: "BBA",
+    icon: "bba",
+    duration: "3 Years",
+    category: "management",
+  },
+  {
+    title: "BCA",
+    description:
+      "A Bachelor of Computer Applications program covering software development, databases, and applied computing for IT careers.",
+    image:
+      "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=600&h=420&fit=crop",
+    href: "/programs/bca",
+    degree: "BCA",
+    icon: "bca",
+    duration: "3 Years",
+    category: "commerce",
+  },
+] satisfies Department[];
 
 export const counterItems: CounterItem[] = [
   { value: 1500, suffix: "+", label: "Students Enrolled" },
-  { value: 4, suffix: "", label: "Engineering Departments" },
+  { value: 8, suffix: "", label: "Programs Offered" },
   { value: 80, suffix: "+", label: "Faculty Members" },
   { value: 15, suffix: "+", label: "Modern Laboratories" },
 ];
@@ -180,7 +256,7 @@ export const campusLifeContent = {
       id: "lab",
       title: "Engineering Laboratories",
       description:
-        "Hands-on labs equipped for CSE, ECE, Civil, and Mechanical programs with industry-standard tools.",
+        "Hands-on labs equipped for engineering, management, and computer applications programs with industry-standard tools.",
       image:
         "https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=800&h=600&fit=crop",
       href: "/campus-life/labs",

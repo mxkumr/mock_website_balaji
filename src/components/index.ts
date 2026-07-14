@@ -2,6 +2,8 @@
 export { Navbar } from "./layout/Navbar";
 export { MegaMenu } from "./layout/MegaMenu";
 export { Footer } from "./layout/Footer";
+export { PageHeader } from "./layout/PageHeader";
+export type { PageHeaderProps, Breadcrumb } from "./layout/PageHeader";
 
 // UI
 export { Button } from "./ui/Button";
@@ -26,6 +28,28 @@ export { HomeClosingSections } from "./sections/HomeClosingSections";
 export { CampusLifeSection } from "./sections/CampusLifeSection";
 export { CTA } from "./sections/CTA";
 export type { CTAProps } from "./sections/CTA";
+export {
+  AboutMainSection,
+  AboutVisionSection,
+  AboutCampusTourSection,
+  AboutTestimonialsSection,
+  AboutGallerySection,
+} from "./sections/about/AboutPageSections";
+export {
+  AcademicsIntroSection,
+  CourseCatalogueSection,
+  WhyJoinSection,
+  AlumniSection,
+  AdmissionsSection,
+} from "./sections/academics/AcademicsPageSections";
+export {
+  CareersMainSection,
+  CareersApplySection,
+} from "./sections/careers/CareersPageSections";
+export {
+  ContactMainSection,
+  ContactDepartmentsSection,
+} from "./sections/contact/ContactPageSections";
 
 // UI
 export { SectionHeader } from "./ui/SectionHeader";

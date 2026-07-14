@@ -10,6 +10,8 @@ export type DepartmentCardProps = {
   programs?: string[];
   href?: string;
   icon?: ReactNode;
+  duration?: string;
+  className?: string;
 };
 
 export function DepartmentCard({
@@ -19,10 +21,12 @@ export function DepartmentCard({
   programs = [],
   href = "#",
   icon,
+  duration,
+  className = "",
 }: DepartmentCardProps) {
   return (
-    <Card hover padding="none" className="group overflow-hidden">
-      <div className="relative h-48 overflow-hidden">
+    <Card hover padding="none" className={`group flex h-full flex-col overflow-hidden ${className}`}>
+      <div className="relative h-48 shrink-0 overflow-hidden">
         <Image
           src={image}
           alt={title}
@@ -37,25 +41,20 @@ export function DepartmentCard({
           </div>
         )}
       </div>
-      <div className="p-6">
-        <CardTitle>{title}</CardTitle>
-        <CardDescription>{description}</CardDescription>
-        {programs.length > 0 && (
-          <ul className="mt-4 space-y-1.5">
-            {programs.map((program) => (
-              <li
-                key={program}
-                className="flex items-center gap-2 text-sm text-foreground"
-              >
-                <span className="h-1 w-1 shrink-0 rounded-full bg-accent" />
-                {program}
-              </li>
-            ))}
-          </ul>
-        )}
+      <div className="flex flex-1 flex-col p-6">
+        <CardTitle className="line-clamp-2 min-h-[3.25rem]">{title}</CardTitle>
+        <CardDescription className="line-clamp-3 min-h-[4.25rem]">{description}</CardDescription>
+        <ul className="mt-4 min-h-[1.75rem] space-y-1.5" aria-label="Programs offered">
+          {programs.map((program) => (
+            <li key={program} className="flex items-center gap-2 text-sm text-foreground">
+              <span className="h-1 w-1 shrink-0 rounded-full bg-accent" />
+              {program}
+            </li>
+          ))}
+        </ul>
         <Link
           href={href}
-          className="mt-5 inline-flex items-center gap-1 text-sm font-semibold text-primary hover:text-primary-light"
+          className="mt-auto inline-flex items-center gap-1 pt-5 text-sm font-semibold text-primary hover:text-primary-light"
         >
           Learn More
           <svg
@@ -72,6 +71,11 @@ export function DepartmentCard({
             />
           </svg>
         </Link>
+        {duration && (
+          <p className="mt-4 border-t border-border pt-4 text-xs font-medium uppercase tracking-[0.12em] text-muted">
+            {duration}
+          </p>
+        )}
       </div>
     </Card>
   );
