@@ -1,0 +1,114 @@
+import type { NavIconName } from "@/lib/navigation";
+import { contactContent, stockImages } from "@/lib/home-content";
+import { siteConfig } from "@/lib/navigation";
+
+export const contactPageContent = {
+  header: {
+    title: "Contact SBIST",
+    description:
+      "Reach our admissions and administration teams for enquiries about programs, campus visits, and student services at our Chrompet campus in Chennai.",
+    breadcrumbs: [
+      { label: "Home", href: "/" },
+      { label: "Contact", href: "/contact" },
+    ],
+    backgroundImage: stockImages.campus,
+  },
+  sidebar: {
+    title: "Get in Touch",
+    links: [
+      { label: "Contact Us", href: "/contact", icon: "about" as NavIconName },
+      { label: "Admissions", href: "/apply", icon: "apply" as NavIconName },
+      { label: "Academics", href: "/academics", icon: "programs" as NavIconName },
+      { label: "Campus Map", href: "/about/campus-map", icon: "map" as NavIconName },
+      { label: "FAQ", href: "/faq", icon: "faq" as NavIconName },
+    ],
+    image: stockImages.students,
+  },
+  intro: {
+    eyebrow: "Contact Information",
+    title: "We Are Here to Help You",
+    description:
+      "Whether you are a prospective student, parent, or partner institution, our team at Sree Balaji Institute of Science and Technology is ready to assist with your enquiries.",
+  },
+  details: [
+    {
+      label: "Location",
+      value: contactContent.address,
+      href: "https://maps.google.com/?q=No.+7+Works+Road,+Chrompet,+Chennai+600044",
+      icon: "map" as NavIconName,
+    },
+    {
+      label: "Email",
+      value: contactContent.email,
+      href: `mailto:${contactContent.email}`,
+      icon: "apply" as NavIconName,
+    },
+  ],
+  officeHours: {
+    title: "Office Hours",
+    items: [
+      { day: "Monday – Friday", time: "9:00 AM – 5:00 PM" },
+      { day: "Saturday", time: "9:00 AM – 1:00 PM" },
+      { day: "Sunday & Public Holidays", time: "Closed" },
+    ],
+  },
+  form: {
+    eyebrow: "Send a Message",
+    title: "Write to Us",
+    description:
+      "Fill out the form below and our team will respond to your enquiry as soon as possible during office hours.",
+    subjects: [
+      "General Enquiry",
+      "Admissions",
+      "Academic Programs",
+      "Campus Visit",
+      "Other",
+    ],
+    submitLabel: "Send Message",
+    successMessage:
+      "Thank you for contacting SBIST. We have received your message and will get back to you shortly.",
+  },
+  map: {
+    title: "Find Us on the Map",
+    description:
+      "SBIST is located on Works Road in Chrompet, Chennai — easily accessible by road and public transport from across the city.",
+    embedUrl:
+      "https://maps.google.com/maps?q=No.+7+Works+Road,+Chrompet,+Chennai+600044&t=&z=15&ie=UTF8&iwloc=&output=embed",
+    directionsHref:
+      "https://maps.google.com/?q=No.+7+Works+Road,+Chrompet,+Chennai+600044",
+  },
+  departments: {
+    eyebrow: "Department Contacts",
+    title: "Who Should You Contact?",
+    items: [
+      {
+        title: "Admissions Office",
+        description: "Applications, eligibility, and enrollment support.",
+        href: "/apply",
+        icon: "apply" as NavIconName,
+      },
+      {
+        title: "Academic Affairs",
+        description: "Programs, departments, and curriculum enquiries.",
+        href: "/academics",
+        icon: "programs" as NavIconName,
+      },
+      {
+        title: "Student Services",
+        description: "Campus life, events, and student support.",
+        href: "/campus-life",
+        icon: "campus" as NavIconName,
+      },
+    ],
+  },
+  cta: {
+    image: stockImages.students,
+  },
+};
+
+/** Keep site-wide contact details in sync */
+export const sbistContact = {
+  address: contactContent.address,
+  email: contactContent.email,
+  instituteName: siteConfig.name,
+};

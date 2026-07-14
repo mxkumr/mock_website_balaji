@@ -14,7 +14,7 @@ type Department = (typeof departments)[number];
 const tabs: { id: TabId; label: string; icon: ReactNode }[] = [
   {
     id: "faculty",
-    label: "Engineering Departments",
+    label: "Academic Programs",
     icon: (
       <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
         <path strokeLinecap="round" d="M12 3L2 8l10 5 10-5-10-5z" />
@@ -75,7 +75,7 @@ function MortarboardIcon() {
   );
 }
 
-/* ─── Engineering Departments (original 3×2 grid) ─── */
+/* ─── Academic Programs grid ─── */
 
 function DepartmentCard({
   title,
@@ -238,6 +238,13 @@ function ProgramBentoCard({
   dept: Department;
   featured?: boolean;
 }) {
+  const categoryLabel =
+    dept.category === "engineering"
+      ? "Engineering"
+      : dept.category === "management"
+        ? "Management"
+        : "Commerce";
+
   return (
     <Link
       href={dept.href}
@@ -257,7 +264,7 @@ function ProgramBentoCard({
       )}
       <div className="relative">
         <span className="text-[10px] font-semibold uppercase tracking-[0.2em] text-accent">
-          Engineering
+          {categoryLabel}
         </span>
         <h3 className={`mt-2 leading-snug text-white ${featured ? "text-2xl" : "text-lg"}`}>
           {dept.title}
@@ -277,22 +284,22 @@ function ProgramBentoCard({
 }
 
 function ProgramsBento() {
-  const [cse, ece, civil, mech] = departments;
+  const [featured, second, third, fourth] = departments;
 
   return (
     <StaggerContainer className={bentoGridClass} stagger={0.06}>
-      {cse && (
+      {featured && (
         <StaggerItem className="sm:col-span-2 lg:col-span-4 lg:row-span-2">
           <BentoCell>
-            <ProgramBentoCard dept={cse} featured />
+            <ProgramBentoCard dept={featured} featured />
           </BentoCell>
         </StaggerItem>
       )}
 
-      {ece && (
+      {second && (
         <StaggerItem className="lg:col-span-2">
           <BentoCell>
-            <ProgramBentoCard dept={ece} />
+            <ProgramBentoCard dept={second} />
           </BentoCell>
         </StaggerItem>
       )}
@@ -300,27 +307,27 @@ function ProgramsBento() {
       <StaggerItem className="lg:col-span-2">
         <BentoCell>
           <div className="flex h-full flex-col justify-center rounded-2xl border border-white/15 bg-white/5 p-6 text-white">
-            <p className="text-3xl font-semibold text-accent">4</p>
-            <p className="mt-1 text-sm font-medium">Engineering Departments</p>
+            <p className="text-3xl font-semibold text-accent">8</p>
+            <p className="mt-1 text-sm font-medium">Programs Offered</p>
             <p className="mt-2 text-xs leading-relaxed text-white/60">
-              Computer Science, ECE, Civil & Mechanical Engineering programs.
+              Six B.E. engineering programs plus BBA and BCA.
             </p>
           </div>
         </BentoCell>
       </StaggerItem>
 
-      {civil && (
+      {third && (
         <StaggerItem className="lg:col-span-2">
           <BentoCell>
-            <ProgramBentoCard dept={civil} />
+            <ProgramBentoCard dept={third} />
           </BentoCell>
         </StaggerItem>
       )}
 
-      {mech && (
+      {fourth && (
         <StaggerItem className="lg:col-span-3">
           <BentoCell>
-            <ProgramBentoCard dept={mech} />
+            <ProgramBentoCard dept={fourth} />
           </BentoCell>
         </StaggerItem>
       )}
@@ -328,7 +335,7 @@ function ProgramsBento() {
       <StaggerItem className="lg:col-span-1">
         <BentoCell>
           <Link
-            href="/programs"
+            href="/academics"
             className="flex h-full min-h-[170px] flex-col items-center justify-center rounded-2xl border border-dashed border-accent/50 bg-accent/10 p-4 text-center motion-premium hover:border-accent hover:bg-accent/20"
           >
             <span className="text-2xl text-accent">→</span>

@@ -10,6 +10,7 @@ const campusLinks = [
 ];
 
 const usefulLinks = [
+  { label: "Careers", href: "/careers" },
   { label: "Faculty Areas", href: "/faculty" },
   { label: "Graduate Programs", href: "/programs" },
   { label: "Campus Events", href: "/events" },

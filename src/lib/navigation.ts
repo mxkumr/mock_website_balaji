@@ -6,9 +6,13 @@ export type NavIconName =
   | "map"
   | "founder"
   | "cse"
+  | "ict"
   | "ece"
   | "civil"
   | "mechanical"
+  | "biomedical"
+  | "bba"
+  | "bca"
   | "programs"
   | "apply"
   | "requirements"
@@ -103,20 +107,33 @@ export const mainNavigation: NavItem[] = [
   },
   {
     label: "Academics",
+    href: "/academics",
     megaMenu: [
       {
-        title: "Departments",
+        title: "Programs",
         links: [
           {
-            label: "Computer Science",
+            label: "Academics Overview",
+            href: "/academics",
+            description: "Programs, labs & alumni",
+            icon: "programs",
+          },
+          {
+            label: "Computer Science Engineering",
             href: "/programs/cse",
-            description: "Software & AI",
+            description: "Software & computing",
             icon: "cse",
           },
           {
-            label: "Electrical & Electronics",
+            label: "Information & Communication Technology",
+            href: "/programs/ict",
+            description: "Networks & IT systems",
+            icon: "ict",
+          },
+          {
+            label: "Electrical & Communication Engineering",
             href: "/programs/ece",
-            description: "Power & electronics",
+            description: "Power & communication",
             icon: "ece",
           },
           {
@@ -126,10 +143,28 @@ export const mainNavigation: NavItem[] = [
             icon: "civil",
           },
           {
-            label: "Mechanical",
+            label: "Mechanical Engineering",
             href: "/programs/mechanical",
-            description: "Manufacturing",
+            description: "Manufacturing & design",
             icon: "mechanical",
+          },
+          {
+            label: "Biomedical Engineering",
+            href: "/programs/biomedical",
+            description: "Healthcare technology",
+            icon: "biomedical",
+          },
+          {
+            label: "BBA",
+            href: "/programs/bba",
+            description: "Business administration",
+            icon: "bba",
+          },
+          {
+            label: "BCA",
+            href: "/programs/bca",
+            description: "Computer applications",
+            icon: "bca",
           },
           {
             label: "All Programs",
@@ -241,6 +276,10 @@ export const mainNavigation: NavItem[] = [
         ],
       },
     ],
+  },
+  {
+    label: "Careers",
+    href: "/careers",
   },
   {
     label: "Contact",
