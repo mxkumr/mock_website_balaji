@@ -86,17 +86,29 @@ export function Hero() {
   const contentOpacity = useTransform(scrollYProgress, [0, 0.75], [1, 0]);
 
   const imageLayer = (
-    <Image
-      src={heroContent.buildingImage}
-      alt="Sree Balaji Institute of Science and Technology campus"
-      fill
-      priority
-      quality={100}
-      unoptimized
-      className="object-cover object-[center_32%] md:object-[center_38%]"
-      sizes="100vw"
-      style={{ top: "50px" }}
-    />
+    <>
+      <Image
+        src={heroContent.heroMobileImage}
+        alt="SBIST students on campus"
+        fill
+        priority
+        quality={100}
+        unoptimized
+        className="object-cover object-[50%_30%] opacity-100 transition-opacity duration-700 ease-in-out md:pointer-events-none md:opacity-0"
+        sizes="100vw"
+      />
+      <Image
+        src={heroContent.buildingImage}
+        alt="Sree Balaji Institute of Science and Technology campus"
+        fill
+        priority
+        quality={100}
+        unoptimized
+        className="object-cover object-[center_32%] opacity-0 transition-opacity duration-700 ease-in-out md:object-[center_38%] md:opacity-100"
+        sizes="100vw"
+        style={{ top: "50px" }}
+      />
+    </>
   );
 
   return (

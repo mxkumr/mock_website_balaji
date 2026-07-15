@@ -10,7 +10,10 @@ export const heroContent = {
   campusTourLabel: "Campus Tour",
   campusTourHref: "/about",
   applyHref: "/contact",
+  /** Tablet & desktop hero */
   buildingImage: "/images/hero-campus.jpg",
+  /** Mobile-only hero */
+  heroMobileImage: "/images/hero-campus-mobile.jpg",
 };
 
 /** Shared local imagery from public/images */
