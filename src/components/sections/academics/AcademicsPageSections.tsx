@@ -284,7 +284,7 @@ export function AcademicsIntroSection() {
               <SectionCard>
                 <CardHeaderStrip
                   eyebrow={intro.eyebrow}
-                  subtitle="Programs, labs, and pathways to engineering careers"
+                  subtitle="Programs, labs and pathways to engineering careers"
                   align="left"
                 />
                 <div className="px-6 py-8 lg:px-8 lg:py-10">

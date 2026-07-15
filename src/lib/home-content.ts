@@ -26,8 +26,8 @@ export const aboutContent = {
   eyebrow: "About Our Institute",
   title: "Empowering Students to Lead the Future",
   paragraphs: [
-    "Sree Balaji Institute of Science and Technology is an AICTE-approved engineering college in Chrompet, Chennai. We offer undergraduate programs in engineering, management, and computer applications, with a focus on strong fundamentals and practical, industry-ready skills.",
-    "Our campus brings together experienced faculty, modern laboratories, and a supportive academic environment. Through structured teaching, hands-on training, and career guidance, we help students grow into capable engineers and professionals.",
+    "Sree Balaji Institute of Science and Technology is an AICTE-approved engineering college in Chrompet, Chennai. We offer undergraduate programs in engineering, management and computer applications, with a focus on strong fundamentals and practical, industry-ready skills.",
+    "Our campus brings together experienced faculty, modern laboratories and a supportive academic environment. Through structured teaching, hands-on training and career guidance, we help students grow into capable engineers and professionals.",
   ],
   highlights: [
     "Qualified Faculty with Industry Experience",
@@ -38,7 +38,7 @@ export const aboutContent = {
     value: "Shaping Tomorrow's Engineers",
     label: "Today, at SBIST",
     description:
-      "Through dedicated teaching, hands-on learning, and strong values, we help students turn ambition into lasting success.",
+      "Through dedicated teaching, hands-on learning and strong values, we help students turn ambition into lasting success.",
   },
   images: {
     primary: stockImages.students,
@@ -72,7 +72,7 @@ export const departments = [
   {
     title: "Information and Communication Technology",
     description:
-      "Focused on networks, communication systems, and modern IT infrastructure with practical lab-based learning.",
+      "Focused on networks, communication systems and modern IT infrastructure with practical lab-based learning.",
     image: "/images/computer.jpg",
     href: "/academics#courses",
     degree: "B.E. Information and Communication Technology",
@@ -127,7 +127,7 @@ export const departments = [
   {
     title: "BBA",
     description:
-      "A Bachelor of Business Administration program focused on management fundamentals, entrepreneurship, and industry-ready business skills.",
+      "A Bachelor of Business Administration program focused on management fundamentals, entrepreneurship and industry-ready business skills.",
     image: "/images/students-library.jpg",
     href: "/academics#courses",
     degree: "BBA",
@@ -138,7 +138,7 @@ export const departments = [
   {
     title: "BCA",
     description:
-      "A Bachelor of Computer Applications program covering software development, databases, and applied computing for IT careers.",
+      "A Bachelor of Computer Applications program covering software development, databases and applied computing for IT careers.",
     image: "/images/computer.jpg",
     href: "/academics#courses",
     degree: "BCA",
@@ -218,7 +218,7 @@ export const campusLifeContent = {
       id: "campus",
       title: "Main Academic Block",
       description:
-        "Our central campus building houses lecture halls, faculty offices, and student services — the heart of daily life at SBIST.",
+        "Our central campus building houses lecture halls, faculty offices and student services — the heart of daily life at SBIST.",
       image: "/images/hero-campus.jpg",
       href: "/about",
     },
@@ -226,7 +226,7 @@ export const campusLifeContent = {
       id: "library",
       title: "Central Library",
       description:
-        "A quiet, well-stocked library with digital resources, journals, and study spaces for focused learning.",
+        "A quiet, well-stocked library with digital resources, journals and study spaces for focused learning.",
       image: "/images/slide-1.jpg",
       href: "/about",
     },
@@ -242,7 +242,7 @@ export const campusLifeContent = {
       id: "lab",
       title: "Engineering Laboratories",
       description:
-        "Hands-on labs equipped for engineering, management, and computer applications programs with industry-standard tools.",
+        "Hands-on labs equipped for engineering, management and computer applications programs with industry-standard tools.",
       image: "/images/slide-3.jpg",
       href: "/about",
     },
@@ -256,10 +256,10 @@ export const campusLifeContent = {
     },
     {
       id: "sports",
-      title: "Sports & Recreation",
+      title: "Sports, Arts & Culture",
       description:
-        "Outdoor grounds and indoor facilities for cricket, volleyball, and fitness — balance beyond the classroom.",
-      image: "/images/mechanical.jpg",
+        "Outdoor grounds for cricket and volleyball, dance and arts clubs and cultural events — a vibrant campus life beyond the classroom.",
+      image: "/images/campus-sports.jpg",
       href: "/about",
     },
   ] satisfies CampusLifeTile[],
@@ -272,7 +272,7 @@ export const contactContent = {
 
 export const foundersNoteContent = {
   quote:
-    "SBIST gave me more than classroom learning. The faculty guide you personally, the labs let you practice what you study, and the campus environment keeps you motivated to grow every day.",
+    "SBIST gave me more than classroom learning. The faculty guide you personally, the labs let you practice what you study and the campus environment keeps you motivated to grow every day.",
   name: "Priya Menon",
   title: "B.E. Information and Communication Technology",
   readMoreHref: "/about",

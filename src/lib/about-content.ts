@@ -21,7 +21,7 @@ export const aboutPageContent = {
   header: {
     title: "About SBIST",
     description:
-      "At Sree Balaji Institute of Science and Technology, we combine strong academic foundations with practical learning to help students build meaningful careers in engineering, management, and technology.",
+      "At Sree Balaji Institute of Science and Technology, we combine strong academic foundations with practical learning to help students build meaningful careers in engineering, management and technology.",
     breadcrumbs: [
       { label: "Home", href: "/" },
       { label: "About SBIST", href: "/about" },
@@ -42,16 +42,16 @@ export const aboutPageContent = {
     eyebrow: "About SBIST",
     title: "About Sree Balaji Institute of Science and Technology",
     paragraphs: [
-      "At SBIST, education goes beyond textbooks and classrooms. We believe in empowering students to explore their passions, challenge conventions, and discover their potential through meaningful experiences. Our distinguished faculty members are leaders in their respective fields, dedicated to delivering world-class education that integrates theory with practical application.",
-      "With cutting-edge facilities, modern laboratories, and a vibrant learning environment, we ensure that every student has the tools and support to excel academically and personally.",
+      "At SBIST, education goes beyond textbooks and classrooms. We believe in empowering students to explore their passions, challenge conventions and discover their potential through meaningful experiences. Our distinguished faculty members are leaders in their respective fields, dedicated to delivering world-class education that integrates theory with practical application.",
+      "With cutting-edge facilities, modern laboratories and a vibrant learning environment, we ensure that every student has the tools and support to excel academically and personally.",
     ],
     quote: {
-      text: "Our diverse community welcomes students from across the region, fostering cultural exchange and mutual understanding. Through industry collaborations, research initiatives, and innovation hubs, we provide opportunities for students to engage with real-world challenges and contribute to sustainable solutions.",
+      text: "Our diverse community welcomes students from across the region, fostering cultural exchange and mutual understanding. Through industry collaborations, research initiatives and innovation hubs, we provide opportunities for students to engage with real-world challenges and contribute to sustainable solutions.",
       author: "Dr. S. Balaji",
       role: "Founder & Chairman",
     },
     closingParagraph:
-      "At the heart of SBIST lies a commitment to excellence and inclusivity — helping students gain the skills, confidence, and perspective to lead in an ever-changing world.",
+      "At the heart of SBIST lies a commitment to excellence and inclusivity — helping students gain the skills, confidence and perspective to lead in an ever-changing world.",
     images: {
       primary: "/images/hero-campus.jpg",
       secondary: "/images/students-classroom.jpg",
@@ -65,7 +65,7 @@ export const aboutPageContent = {
   vision: {
     title: "Our Vision",
     description:
-      "Our vision is to create a world where education empowers every individual to achieve their fullest potential. We strive to be a leading institution recognized for academic excellence, innovation, and social responsibility. Our goal is to nurture creative thinkers, ethical leaders, and lifelong learners who contribute positively to society.",
+      "Our vision is to create a world where education empowers every individual to achieve their fullest potential. We strive to be a leading institution recognized for academic excellence, innovation and social responsibility. Our goal is to nurture creative thinkers, ethical leaders and lifelong learners who contribute positively to society.",
     pillars: [
       {
         title: "Affordability",
@@ -76,13 +76,13 @@ export const aboutPageContent = {
       {
         title: "Academics",
         description:
-          "World-class programs with expert faculty guidance across engineering, management, and computer applications.",
+          "World-class programs with expert faculty guidance across engineering, management and computer applications.",
         icon: "programs" as NavIconName,
       },
       {
         title: "Student Life",
         description:
-          "Vibrant campus activities, cultural events, sports, and clubs that go beyond the classroom.",
+          "Vibrant campus activities, cultural events, sports and clubs that go beyond the classroom.",
         icon: "campus" as NavIconName,
       },
     ],
@@ -90,7 +90,7 @@ export const aboutPageContent = {
   campusTour: {
     title: "Our Campus Tour",
     description:
-      "Explore our Chrompet campus — from modern lecture halls and engineering laboratories to the central library and sports grounds. See where SBIST students learn, research, and grow.",
+      "Explore our Chrompet campus — from modern lecture halls and engineering laboratories to the central library and sports grounds. See where SBIST students learn, research and grow.",
     videoHref: "/about",
     image: stockImages.campus,
   },
@@ -118,7 +118,7 @@ export const aboutPageContent = {
       {
         rating: 5.0,
         quote:
-          "The institute emphasizes strong fundamentals, modern labs, and student responsibility. That is why I prefer Sree Balaji college when guiding young learners.",
+          "The institute emphasizes strong fundamentals, modern labs and student responsibility. That is why I prefer Sree Balaji college when guiding young learners.",
         name: "Mr. Karthik Rajan",
         role: "Industry Mentor",
         image: "/images/SREE_Balaji_logo.svg",

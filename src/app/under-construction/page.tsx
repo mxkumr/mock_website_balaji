@@ -54,7 +54,7 @@ export default async function UnderConstructionPage({ searchParams }: UnderConst
             ) : (
               <p className="mt-4 text-base leading-relaxed text-muted">
                 This part of the SBIST website is still under development. In the meantime, you can
-                visit our homepage, learn about the institute, or get in touch with us.
+                visit our homepage, learn about the institute or get in touch with us.
               </p>
             )}
 

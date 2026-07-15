@@ -17,7 +17,7 @@ export type CTAProps = {
 
 export function CTA({
   title = "Admissions Open Now",
-  description = "Start your academic journey with an institute committed to excellence, innovation, and student success.",
+  description = "Start your academic journey with an institute committed to excellence, innovation and student success.",
   primaryLabel = "Apply Now",
   primaryHref = "/contact",
   secondaryLabel = "Learn More",

@@ -53,7 +53,7 @@ export const careersPageContent = {
   apply: {
     eyebrow: "How to Apply",
     title: "Send Your Application by Email",
-    description: `Email your résumé and supporting documents to ${applicationEmail}. Include your department preference, qualifications, and teaching experience in the message.`,
+    description: `Email your résumé and supporting documents to ${applicationEmail}. Include your department preference, qualifications and teaching experience in the message.`,
     applicationMailto,
     applicationCta: "Email Your Application",
     website: "www.sbist.in",

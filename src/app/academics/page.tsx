@@ -39,7 +39,7 @@ export default function AcademicsPage() {
         <AdmissionsSection />
         <CTA
           title="Ready to Begin Your Engineering Career?"
-          description="Apply to SBIST and join a community of aspiring engineers backed by qualified faculty, modern laboratories, and strong industry connections in Chennai."
+          description="Apply to SBIST and join a community of aspiring engineers backed by qualified faculty, modern laboratories and strong industry connections in Chennai."
           primaryLabel="Apply Now"
           primaryHref="/contact"
           secondaryLabel="Explore Programs"

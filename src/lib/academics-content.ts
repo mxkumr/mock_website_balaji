@@ -14,7 +14,7 @@ export const academicsPageContent = {
   header: {
     title: "Academics at SBIST",
     description:
-      "Explore our programs, world-class laboratories, and the pathways that prepare students for careers in technology, infrastructure, healthcare, and business.",
+      "Explore our programs, world-class laboratories and the pathways that prepare students for careers in technology, infrastructure, healthcare and business.",
     breadcrumbs: [
       { label: "Home", href: "/" },
       { label: "Academics", href: "/academics" },
@@ -36,7 +36,7 @@ export const academicsPageContent = {
     eyebrow: "Academic Excellence",
     title: "Academic Programs Built for the Real World",
     paragraphs: [
-      "At Sree Balaji Institute of Science and Technology, academics are designed to bridge classroom theory with hands-on practice. We offer eight programs — Computer Science Engineering, Information and Communication Technology, Electrical and Communication Engineering, Civil Engineering, Mechanical Engineering, Biomedical Engineering, BBA, and BCA.",
+      "At Sree Balaji Institute of Science and Technology, academics are designed to bridge classroom theory with hands-on practice. We offer eight programs — Computer Science Engineering, Information and Communication Technology, Electrical and Communication Engineering, Civil Engineering, Mechanical Engineering, Biomedical Engineering, BBA and BCA.",
       "From modern laboratories and qualified faculty to placement training and research opportunities, SBIST provides a complete academic ecosystem on our Chrompet campus in Chennai.",
     ],
     highlights: [
@@ -55,7 +55,7 @@ export const academicsPageContent = {
     eyebrow: "Program Catalogue",
     title: "Browse Our Programs",
     description:
-      "Choose from eight undergraduate programs across engineering, management, and computer applications. Each pathway combines core fundamentals with practical labs and project-based learning.",
+      "Choose from eight undergraduate programs across engineering, management and computer applications. Each pathway combines core fundamentals with practical labs and project-based learning.",
     programs: departments.map((dept) => ({
       ...dept,
       programs: [dept.degree],
@@ -66,42 +66,42 @@ export const academicsPageContent = {
     eyebrow: "Why Join SBIST",
     title: "Where Qualified Faculty Guide Your Career Growth",
     description:
-      "SBIST combines academic rigour with practical exposure — giving students the confidence, skills, and network to succeed in competitive engineering careers.",
+      "SBIST combines academic rigour with practical exposure — giving students the confidence, skills and network to succeed in competitive engineering careers.",
     reasons: [
       {
         title: "Expert Faculty",
         description:
-          "Learn from experienced professors and industry practitioners who mentor students through projects, internships, and research.",
+          "Learn from experienced professors and industry practitioners who mentor students through projects, internships and research.",
         icon: "faculty" as NavIconName,
       },
       {
         title: "Modern Infrastructure",
         description:
-          "Well-equipped labs, digital learning resources, and spacious lecture halls create an environment built for engineering excellence.",
+          "Well-equipped labs, digital learning resources and spacious lecture halls create an environment built for engineering excellence.",
         icon: "research" as NavIconName,
       },
       {
         title: "Industry Connections",
         description:
-          "Regular industry visits, guest lectures, and placement drives connect students with leading companies across Tamil Nadu and beyond.",
+          "Regular industry visits, guest lectures and placement drives connect students with leading companies across Tamil Nadu and beyond.",
         icon: "programs" as NavIconName,
       },
       {
         title: "Affordable Education",
         description:
-          "Transparent tuition fees, scholarship options, and flexible payment plans make quality engineering education accessible.",
+          "Transparent tuition fees, scholarship options and flexible payment plans make quality engineering education accessible.",
         icon: "scholarship" as NavIconName,
       },
       {
         title: "Campus Community",
         description:
-          "Clubs, cultural events, sports, and peer networks foster collaboration and personal growth beyond academics.",
+          "Clubs, cultural events, sports and peer networks foster collaboration and personal growth beyond academics.",
         icon: "campus" as NavIconName,
       },
       {
         title: "Research Opportunities",
         description:
-          "Students engage in faculty-led research, symposiums, and innovation projects that strengthen their academic portfolios.",
+          "Students engage in faculty-led research, symposiums and innovation projects that strengthen their academic portfolios.",
         icon: "research" as NavIconName,
       },
     ],
@@ -136,7 +136,7 @@ export const academicsPageContent = {
         name: "Mr. Karthik Rajan",
         role: "Industry Mentor",
         quote:
-          "The institute emphasizes strong fundamentals, modern labs, and student responsibility. That is why I prefer Sree Balaji college when guiding young learners.",
+          "The institute emphasizes strong fundamentals, modern labs and student responsibility. That is why I prefer Sree Balaji college when guiding young learners.",
         image: "/images/SREE_Balaji_logo.svg",
       },
     ],
@@ -147,7 +147,7 @@ export const academicsPageContent = {
     eyebrow: "Admissions",
     title: "Start Your Academic Journey",
     description:
-      "Admissions are open for the upcoming academic year. Review eligibility, explore fee structures, and apply to join a community of aspiring engineers and professionals.",
+      "Admissions are open for the upcoming academic year. Review eligibility, explore fee structures and apply to join a community of aspiring engineers and professionals.",
     links: [
       {
         label: "Apply Now",
@@ -166,7 +166,7 @@ export const academicsPageContent = {
   notices: {
     eyebrow: "Academic Notices",
     title: "Latest Announcements",
-    description: "Stay updated on examinations, admissions, and academic calendar changes.",
+    description: "Stay updated on examinations, admissions and academic calendar changes.",
     items: notices,
     viewAllHref: "/academics#admissions",
   },

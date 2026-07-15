@@ -111,7 +111,7 @@ function ApplyCard() {
       <p className="mt-5 text-xs font-semibold uppercase tracking-[0.14em] text-accent">Our Programs</p>
       <h3 className="mt-2 text-xl font-semibold leading-snug">Courses designed for real careers</h3>
       <p className="mt-3 flex-1 text-sm leading-relaxed text-white/75">
-        Industry-aligned curriculum, experienced faculty, and hands-on labs across engineering, management, and computer
+        Industry-aligned curriculum, experienced faculty and hands-on labs across engineering, management and computer
         applications.
       </p>
 

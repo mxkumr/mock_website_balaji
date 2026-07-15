@@ -6,7 +6,7 @@ export const contactPageContent = {
   header: {
     title: "Contact SBIST",
     description:
-      "Reach our admissions and administration teams for enquiries about programs, campus visits, and student services at our Chrompet campus in Chennai.",
+      "Reach our admissions and administration teams for enquiries about programs, campus visits and student services at our Chrompet campus in Chennai.",
     breadcrumbs: [
       { label: "Home", href: "/" },
       { label: "Contact", href: "/contact" },
@@ -27,7 +27,7 @@ export const contactPageContent = {
     eyebrow: "Contact Information",
     title: "We Are Here to Help You",
     description:
-      "Whether you are a prospective student, parent, or partner institution, our team at Sree Balaji Institute of Science and Technology is ready to assist with your enquiries.",
+      "Whether you are a prospective student, parent or partner institution, our team at Sree Balaji Institute of Science and Technology is ready to assist with your enquiries.",
   },
   details: [
     {
@@ -82,13 +82,13 @@ export const contactPageContent = {
     items: [
       {
         title: "Admissions Office",
-        description: "Applications, eligibility, and enrollment support.",
+        description: "Applications, eligibility and enrollment support.",
         href: "/contact",
         icon: "apply" as NavIconName,
       },
       {
         title: "Academic Affairs",
-        description: "Programs, departments, and curriculum enquiries.",
+        description: "Programs, departments and curriculum enquiries.",
         href: "/academics",
         icon: "programs" as NavIconName,
       },

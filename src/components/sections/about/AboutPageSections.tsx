@@ -297,7 +297,7 @@ export function AboutMainSection() {
           <div className="min-w-0 space-y-8">
             <ScrollReveal direction="right">
               <SectionCard>
-                <CardHeaderStrip eyebrow={main.eyebrow} subtitle="Our story, mission, and community" align="left" />
+                <CardHeaderStrip eyebrow={main.eyebrow} subtitle="Our story, mission and community" align="left" />
                 <div className="px-6 py-8 lg:px-8 lg:py-10">
                   <h2 className="text-3xl leading-tight text-foreground lg:text-[2.25rem]">{main.title}</h2>
                   <div className="mt-6 space-y-4 text-[15px] leading-relaxed text-muted">
