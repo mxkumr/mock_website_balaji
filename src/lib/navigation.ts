@@ -42,6 +42,8 @@ export type MegaMenuColumn = {
 export type NavItem = {
   label: string;
   href?: string;
+  /** Compact dropdown with a few links (icon, title, description) */
+  dropdown?: NavLink[];
   megaMenu?: MegaMenuColumn[];
   featured?: {
     title: string;
@@ -59,7 +61,30 @@ export const mainNavigation: NavItem[] = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about" },
   { label: "Academics", href: "/academics" },
-  { label: "Careers", href: "/careers" },
+  { label: "SBIOL", href: "/sbiol" },
+  {
+    label: "Campus Life",
+    dropdown: [
+      {
+        label: "Overview",
+        href: "/campus-life",
+        description: "Facilities, spaces and the everyday pulse of SBIST campus.",
+        icon: "campus",
+      },
+      {
+        label: "SBSB",
+        href: "/sbsb",
+        description: "Shree Balaji Students Board — clubs, leadership and events.",
+        icon: "events",
+      },
+      {
+        label: "Careers",
+        href: "/careers",
+        description: "Faculty openings and how to apply to join our team.",
+        icon: "faculty",
+      },
+    ],
+  },
   { label: "Contact", href: "/contact" },
 ];
 

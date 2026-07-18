@@ -93,20 +93,17 @@ export function Hero() {
         fill
         priority
         quality={100}
-        unoptimized
         className="object-cover object-[50%_30%] opacity-100 transition-opacity duration-700 ease-in-out md:pointer-events-none md:opacity-0"
         sizes="100vw"
       />
       <Image
         src={heroContent.buildingImage}
-        alt="Sree Balaji Institute of Science and Technology campus"
+        alt="SBIST students looking toward the future"
         fill
         priority
         quality={100}
-        unoptimized
-        className="object-cover object-[center_32%] opacity-0 transition-opacity duration-700 ease-in-out md:object-[center_38%] md:opacity-100"
+        className="object-cover object-[center_35%] opacity-0 transition-opacity duration-700 ease-in-out md:opacity-100"
         sizes="100vw"
-        style={{ top: "50px" }}
       />
     </>
   );

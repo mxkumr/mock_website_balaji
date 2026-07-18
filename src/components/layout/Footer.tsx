@@ -6,9 +6,12 @@ const campusLinks = [
   { label: "Home", href: "/" },
   { label: "About SBIST", href: "/about" },
   { label: "Academics", href: "/academics" },
+  { label: "Campus Life", href: "/campus-life" },
 ];
 
 const usefulLinks = [
+  { label: "SBIOL Online", href: "/sbiol" },
+  { label: "SBSB", href: "/sbsb" },
   { label: "Careers", href: "/careers" },
   { label: "Contact", href: "/contact" },
 ];

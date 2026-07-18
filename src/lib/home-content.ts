@@ -11,9 +11,9 @@ export const heroContent = {
   campusTourHref: "/about",
   applyHref: "/contact",
   /** Tablet & desktop hero */
-  buildingImage: "/images/hero-campus.jpg",
+  buildingImage: "/images/hero-desktop.png",
   /** Mobile-only hero */
-  heroMobileImage: "/images/hero-campus-mobile.jpg",
+  heroMobileImage: "/images/hero-campus-mobile.png",
 };
 
 /** Shared local imagery from public/images */
@@ -22,7 +22,7 @@ export const stockImages = {
   library: "/images/slide-1.jpg",
   graduation: "/images/slide-2.jpg",
   sports: "/images/mechanical.jpg",
-  students: "/images/students-library.jpg",
+  students: "/images/students-library.png",
 };
 
 export const aboutContent = {
@@ -45,7 +45,7 @@ export const aboutContent = {
   },
   images: {
     primary: stockImages.students,
-    secondary: "/images/students-classroom.jpg",
+    secondary: "/images/computer-lab.JPG",
   },
 };
 
@@ -65,7 +65,7 @@ export const departments = [
     title: "Computer Science Engineering",
     description:
       "The School of Computing has experienced faculty members with industry experience and well equipped laboratories.",
-    image: "/images/students-classroom.jpg",
+    image: "/images/computer-lab.JPG",
     href: "/academics#courses",
     degree: "B.E. Computer Science Engineering",
     icon: "cse",
@@ -76,7 +76,7 @@ export const departments = [
     title: "Information and Communication Technology",
     description:
       "Focused on networks, communication systems and modern IT infrastructure with practical lab-based learning.",
-    image: "/images/computer.jpg",
+    image: "/images/computer1.JPG",
     href: "/academics#courses",
     degree: "B.E. Information and Communication Technology",
     icon: "ict",
@@ -87,7 +87,7 @@ export const departments = [
     title: "Electrical and Communication Engineering",
     description:
       "The electrical engineers prepared to make the world eco friendly through innovation and sustainable design.",
-    image: "/images/electrical.jpg",
+    image: "/images/lab2.JPG",
     href: "/academics#courses",
     degree: "B.E. Electrical and Communication Engineering",
     icon: "ece",
@@ -98,7 +98,7 @@ export const departments = [
     title: "Civil Engineering",
     description:
       "The department of Civil Engineering is committed to the task of providing quality education, which will transform the students into efficient and successful engineers.",
-    image: "/images/civil.jpg",
+    image: "/images/civil_eng.png",
     href: "/academics#courses",
     degree: "B.E. Civil Engineering",
     icon: "civil",
@@ -109,7 +109,7 @@ export const departments = [
     title: "Mechanical Engineering",
     description:
       "The School of Mechanical Engineering is one of the pioneering departments of our institute.",
-    image: "/images/mechanical.jpg",
+    image: "/images/lab4.JPG",
     href: "/academics#courses",
     degree: "B.E. Mechanical Engineering",
     icon: "mechanical",
@@ -120,7 +120,7 @@ export const departments = [
     title: "Biomedical Engineering",
     description:
       "Combining engineering principles with medical sciences to prepare students for healthcare technology and device innovation.",
-    image: "/images/slide-3.jpg",
+    image: "/images/lab5.JPG",
     href: "/academics#courses",
     degree: "B.E. Biomedical Engineering",
     icon: "biomedical",
@@ -131,7 +131,7 @@ export const departments = [
     title: "BBA",
     description:
       "A Bachelor of Business Administration program focused on management fundamentals, entrepreneurship and industry-ready business skills.",
-    image: "/images/students-library.jpg",
+    image: "/images/students-library.png",
     href: "/academics#courses",
     degree: "BBA",
     icon: "bba",
@@ -142,7 +142,7 @@ export const departments = [
     title: "BCA",
     description:
       "A Bachelor of Computer Applications program covering software development, databases and applied computing for IT careers.",
-    image: "/images/computer.jpg",
+    image: "/images/computer2.JPG",
     href: "/academics#courses",
     degree: "BCA",
     icon: "bca",
@@ -170,37 +170,42 @@ export const notices = [
     ref: "SBIST/REG/ACD/2026/03",
   },
   {
-    title: "Admissions Open for Academic Year 2027–28",
+    title: "Online Education Center of Excellence",
     date: "October 1, 2026",
-    ref: "SBIST/REG/ADM/2027/01",
+    ref: "SBIST/REG/OEC/2026/01",
   },
 ];
 
 export const galleryImages: GalleryImage[] = [
   {
-    src: stockImages.campus,
-    alt: "Campus Building",
-    caption: "Main academic block",
+    src: "/images/main-building-side.JPG",
+    alt: "Main Campus",
+    caption: "Academic block",
   },
   {
-    src: "/images/students-library.jpg",
-    alt: "Library",
+    src: "/images/library2.jpg",
+    alt: "Central Library",
+    caption: "Study spaces & resources",
   },
   {
-    src: "/images/students-classroom.jpg",
+    src: "/images/Classroom.JPG",
     alt: "Lecture Hall",
+    caption: "Modern classrooms",
   },
   {
-    src: "/images/slide-3.jpg",
-    alt: "Engineering Lab",
+    src: "/images/computer-lab.JPG",
+    alt: "Computer Lab",
+    caption: "Hands-on computing",
   },
   {
-    src: stockImages.graduation,
+    src: "/images/workstation-quotes.JPG",
     alt: "Library Study Hall",
+    caption: "Focused learning spaces",
   },
   {
-    src: stockImages.sports,
-    alt: "Mechanical Workshop",
+    src: "/images/lab.JPG",
+    alt: "Engineering Lab",
+    caption: "Practical engineering",
   },
 ];
 
@@ -215,55 +220,55 @@ export type CampusLifeTile = {
 export const campusLifeContent = {
   eyebrow: "Campus Life",
   title: "Discover Campus Life",
-  viewAllHref: "/about",
+  viewAllHref: "/sbsb#clubs",
   tiles: [
     {
       id: "campus",
       title: "Main Academic Block",
       description:
         "Our central campus building houses lecture halls, faculty offices and student services — the heart of daily life at SBIST.",
-      image: "/images/hero-campus.jpg",
-      href: "/about",
+      image: "/images/main-building-side.JPG",
+      href: "/campus-life#campus",
     },
     {
       id: "library",
       title: "Central Library",
       description:
         "A quiet, well-stocked library with digital resources, journals and study spaces for focused learning.",
-      image: "/images/slide-1.jpg",
-      href: "/about",
+      image: "/images/library2.jpg",
+      href: "/campus-life#library",
     },
     {
       id: "lecture",
       title: "Modern Lecture Halls",
       description:
         "Spacious, technology-enabled classrooms designed for interactive teaching and collaborative learning.",
-      image: "/images/students-classroom.jpg",
-      href: "/about",
+      image: "/images/Classroom.JPG",
+      href: "/campus-life#lecture",
     },
     {
       id: "lab",
       title: "Engineering Laboratories",
       description:
         "Hands-on labs equipped for engineering, management and computer applications programs with industry-standard tools.",
-      image: "/images/slide-3.jpg",
-      href: "/about",
+      image: "/images/lab.JPG",
+      href: "/campus-life#lab",
     },
     {
       id: "graduation",
       title: "Graduation & Convocation",
       description:
         "Celebrating milestones as our graduates step into engineering careers across India and abroad.",
-      image: "/images/slide-2.jpg",
-      href: "/about",
+      image: "/images/auditorium.JPG",
+      href: "/campus-life#graduation",
     },
     {
       id: "sports",
       title: "Sports, Arts & Culture",
       description:
         "Outdoor grounds for cricket and volleyball, dance and arts clubs and cultural events — a vibrant campus life beyond the classroom.",
-      image: "/images/campus-sports.jpg",
-      href: "/about",
+      image: "/images/campus-sports.png",
+      href: "/campus-life#sports",
     },
   ] satisfies CampusLifeTile[],
 };
@@ -284,39 +289,235 @@ export const foundersNoteContent = {
 export const upcomingEventsContent = {
   eyebrow: "Upcoming Events",
   title: "Join Our Latest Events",
-  viewMoreHref: "/contact",
+  viewMoreHref: "/sbsb#events",
   events: [
     {
-      title: "Annual Engineering Symposium 2026",
-      date: "August 4, 2026",
-      time: "09:00 AM - 03:40 PM",
+      title: "SBSB Fest",
+      date: "August 22, 2026",
+      time: "09:00 AM - 06:00 PM",
+      location: "SBIST Campus, Chromepet",
+      image: "/images/Gallery/audience2.JPG",
+      href: "/sbsb#events",
+    },
+    {
+      title: "Sports Meet",
+      date: "September 12, 2026",
+      time: "08:00 AM - 05:00 PM",
+      location: "SBIST Sports Grounds, Chennai",
+      image: "/images/campus-sports.png",
+      href: "/sbsb#events",
+    },
+    {
+      title: "Freshers' Day",
+      date: "July 25, 2026",
+      time: "10:00 AM - 02:00 PM",
       location: "SBIST Main Auditorium, Chennai",
-      image: "/images/slide-3.jpg",
-      href: "/contact",
+      image: "/images/Gallery/audience1.JPG",
+      href: "/sbsb#events",
     },
     {
-      title: "Campus Placement Drive",
-      date: "August 4, 2026",
-      time: "09:00 AM - 03:40 PM",
-      location: "SBIST Placement Cell, Chennai",
-      image: "/images/students-library.jpg",
-      href: "/contact",
+      title: "Annual Cultural Festival",
+      date: "October 18, 2026",
+      time: "11:00 AM - 08:00 PM",
+      location: "SBIST Auditorium & Campus Grounds",
+      image: "/images/auditorium.JPG",
+      href: "/sbsb#events",
     },
     {
-      title: "International Research Conference",
-      date: "August 4, 2026",
-      time: "09:00 AM - 03:40 PM",
-      location: "SBIST Conference Hall, Chennai",
-      image: "/images/slide-1.jpg",
-      href: "/contact",
+      title: "Entrepreneurship Summit",
+      date: "November 7, 2026",
+      time: "09:30 AM - 04:30 PM",
+      location: "SBIST Innovation Hub, Chennai",
+      image: "/images/workstation-quotes.JPG",
+      href: "/sbsb#events",
     },
     {
-      title: "Freshers Orientation Week",
-      date: "August 4, 2026",
-      time: "09:00 AM - 03:40 PM",
-      location: "SBIST Campus Grounds, Chennai",
-      image: stockImages.campus,
-      href: "/contact",
+      title: "Community Programs",
+      date: "December 5, 2026",
+      time: "09:00 AM - 01:00 PM",
+      location: "SBIST Outreach Initiatives, Chennai",
+      image: "/images/students-library.png",
+      href: "/sbsb#events",
     },
   ],
 };
+
+export type HomeGalleryItem = {
+  src: string;
+  alt: string;
+  label: string;
+  role: "hero" | "side" | "strip";
+};
+
+/** Homepage community gallery — curated mosaic with link to full campus gallery */
+export const homeGalleryContent = {
+  eyebrow: "Our Community",
+  title: "One Campus. One Team.",
+  description:
+    "From labs and classrooms to celebrations and achievements — SBIST is built by people who learn, create and grow together.",
+  viewMoreHref: "/campus-life#gallery",
+  viewMoreLabel: "View more",
+  items: [
+    {
+      src: "/images/Gallery/audience1.JPG",
+      alt: "Students celebrating together at a campus event",
+      label: "Celebrate Together",
+      role: "hero",
+    },
+    {
+      src: "/images/Gallery/Faculty1.JPG",
+      alt: "Faculty and students connected as one academic family",
+      label: "Mentors & Minds",
+      role: "side",
+    },
+    {
+      src: "/images/Gallery/Award1.JPG",
+      alt: "Team receiving awards on stage",
+      label: "Win as a Team",
+      role: "side",
+    },
+    {
+      src: "/images/Gallery/lab3.JPG",
+      alt: "Students collaborating in the engineering laboratory",
+      label: "Build Side by Side",
+      role: "strip",
+    },
+    {
+      src: "/images/Gallery/Classroom3.JPG",
+      alt: "Students learning together in a modern classroom",
+      label: "Learn Together",
+      role: "strip",
+    },
+    {
+      src: "/images/Gallery/computer-lab.JPG",
+      alt: "Peers working together in the computer lab",
+      label: "Create Together",
+      role: "strip",
+    },
+    {
+      src: "/images/Gallery/award2.JPG",
+      alt: "Campus award ceremony celebrating collective success",
+      label: "Rise Together",
+      role: "strip",
+    },
+    {
+      src: "/images/Gallery/audience2.JPG",
+      alt: "Community gathered for a campus celebration",
+      label: "Belong Here",
+      role: "strip",
+    },
+    {
+      src: "/images/Gallery/Award3.JPG",
+      alt: "Students recognized for excellence as a cohort",
+      label: "Proud Moments",
+      role: "strip",
+    },
+  ] satisfies HomeGalleryItem[],
+};
+
+export type CampusLifeGalleryItem = {
+  src: string;
+  alt: string;
+  label: string;
+};
+
+/** Full campus life gallery carousel — all photos from /images/Gallery (excl. *-mobile) */
+export const campusLifeGalleryContent = {
+  eyebrow: "Campus Gallery",
+  title: "Moments Across Campus",
+  description:
+    "Scroll through labs, classrooms, celebrations and everyday life at SBIST.",
+  items: [
+    { src: "/images/Gallery/audience2.JPG", alt: "Audience at a campus gathering", label: "Campus Gathering" },
+    { src: "/images/Gallery/audience3.JPG", alt: "Students and guests at an event", label: "Shared Moments" },
+    { src: "/images/Gallery/auditorium.JPG", alt: "SBIST auditorium", label: "Auditorium" },
+    { src: "/images/Gallery/Award1.JPG", alt: "Award ceremony on stage", label: "Awards Night" },
+    { src: "/images/Gallery/award2.JPG", alt: "Students receiving recognition", label: "Recognition" },
+    { src: "/images/Gallery/Award3.JPG", alt: "Excellence awards celebration", label: "Proud Moments" },
+    { src: "/images/Gallery/award4.JPG", alt: "Campus award presentation", label: "Achievement" },
+    { src: "/images/Gallery/award5.JPG", alt: "Faculty and students with awards", label: "Honours" },
+    { src: "/images/Gallery/award6.JPG", alt: "Award ceremony group", label: "Success Together" },
+    { src: "/images/Gallery/civil.jpg", alt: "Civil engineering laboratory", label: "Civil Lab" },
+    { src: "/images/Gallery/Classroom.JPG", alt: "Modern lecture classroom", label: "Lecture Hall" },
+    { src: "/images/Gallery/Classroom2.JPG", alt: "Students in classroom learning", label: "Active Learning" },
+    { src: "/images/Gallery/Classroom3.JPG", alt: "Technology-enabled classroom", label: "Smart Classroom" },
+    { src: "/images/Gallery/Classroom4.JPG", alt: "Campus classroom interior", label: "Learning Spaces" },
+    { src: "/images/Gallery/computer.jpg", alt: "Computing facilities", label: "Computing" },
+    { src: "/images/Gallery/computer1.JPG", alt: "Computer lab workstations", label: "Computer Lab" },
+    { src: "/images/Gallery/computer2.JPG", alt: "Students at computer terminals", label: "Digital Skills" },
+    { src: "/images/Gallery/computer-lab.JPG", alt: "Modern computer laboratory", label: "IT Laboratory" },
+    { src: "/images/Gallery/computer-lab2.JPG", alt: "Computer lab seating rows", label: "Lab Practice" },
+    { src: "/images/Gallery/computer-lab-board.JPG", alt: "Computer lab with instructional board", label: "Guided Practice" },
+    { src: "/images/Gallery/electrical.jpg", alt: "Electrical engineering facilities", label: "Electrical" },
+    { src: "/images/Gallery/electricallab.jpg", alt: "Electrical engineering laboratory", label: "Electrical Lab" },
+    { src: "/images/Gallery/electricallab1.jpg", alt: "Electrical lab equipment", label: "Power Systems" },
+    { src: "/images/Gallery/electricallab2.jpg", alt: "Students in electrical lab", label: "Circuit Work" },
+    { src: "/images/Gallery/electricallab3.jpg", alt: "Electrical lab benches", label: "Hands-On Circuits" },
+    { src: "/images/Gallery/electricallab4.jpg", alt: "Electrical laboratory setup", label: "Lab Ready" },
+    { src: "/images/Gallery/Faculty1.JPG", alt: "Faculty with students", label: "Mentors & Minds" },
+    { src: "/images/Gallery/interior.JPG", alt: "Campus interior corridor", label: "Campus Interior" },
+    { src: "/images/Gallery/interior2.JPG", alt: "Academic building interior", label: "Inside Campus" },
+    { src: "/images/Gallery/interior3.JPG", alt: "Campus hallway and spaces", label: "Walkways" },
+    { src: "/images/Gallery/interior4.JPG", alt: "Building interior details", label: "Architecture" },
+    { src: "/images/Gallery/interior5.JPG", alt: "Campus interior view", label: "Spaces to Grow" },
+    { src: "/images/Gallery/interior6.JPG", alt: "Campus common area", label: "Common Spaces" },
+    { src: "/images/Gallery/lab.JPG", alt: "Engineering laboratory", label: "Engineering Lab" },
+    { src: "/images/Gallery/lab2.JPG", alt: "Laboratory workstations", label: "Lab Work" },
+    { src: "/images/Gallery/lab3.JPG", alt: "Students collaborating in lab", label: "Build Side by Side" },
+    { src: "/images/Gallery/lab4.JPG", alt: "Hands-on laboratory session", label: "Experiment" },
+    { src: "/images/Gallery/lab5.JPG", alt: "Engineering lab equipment", label: "Tools & Practice" },
+    { src: "/images/Gallery/legend-map.JPG", alt: "Campus legend map", label: "Campus Map" },
+    { src: "/images/Gallery/logo.JPG", alt: "SBIST logo display", label: "Our Identity" },
+    { src: "/images/Gallery/main-building-front.JPG", alt: "Main building front elevation", label: "Main Building" },
+    { src: "/images/Gallery/main-building-side.JPG", alt: "Main academic block side view", label: "Academic Block" },
+    { src: "/images/Gallery/mechanical.jpg", alt: "Mechanical engineering workshop", label: "Mechanical" },
+    { src: "/images/Gallery/quotes1.JPG", alt: "Inspirational campus display", label: "Inspiration" },
+    { src: "/images/Gallery/quotes2.JPG", alt: "Campus motivational wall", label: "Words to Live By" },
+    { src: "/images/Gallery/reception.JPG", alt: "Campus reception area", label: "Welcome Desk" },
+    { src: "/images/Gallery/slide-1.jpg", alt: "Campus highlight view", label: "Campus Life" },
+    { src: "/images/Gallery/slide-2.jpg", alt: "Campus facility highlight", label: "Our Facilities" },
+    { src: "/images/Gallery/slide-3.jpg", alt: "Campus academic highlight", label: "Academic Spirit" },
+    { src: "/images/Gallery/workstation-quotes.JPG", alt: "Workstation area with quotes", label: "Workstations" },
+    { src: "/images/Gallery/wrokstation.JPG", alt: "Student workstation space", label: "Study Stations" },
+    { src: "/images/Gallery/audience1.JPG", alt: "Campus community celebrating together", label: "Celebrate Together" },
+  ] satisfies CampusLifeGalleryItem[],
+};
+
+export const sbiolHomeContent = {
+  eyebrow: "Sree Balaji Institute of Online Learning",
+  brand: "SBIOL",
+  title: "Earn a UGC-recognized degree without pausing your career",
+  description:
+    "Flexible online MBA, B.Com and BBA programmes from BIHER — delivered through SBIST Chromepet with 24/7 LMS access and AI-proctored exams.",
+  image: "/images/workstation-quotes.JPG",
+  imageAlt: "Online learning workstation at SBIST",
+  motto: "Aim · Aspire · Inspire",
+  programs: [
+    {
+      title: "Online MBA",
+      detail: "2 Years · Postgraduate",
+      description: "Strategic leadership with specialised electives for working professionals.",
+      href: "/sbiol#courses",
+    },
+    {
+      title: "B.Com",
+      detail: "3 Years · Undergraduate",
+      description: "Accounting, taxation and information systems — fully online.",
+      href: "/sbiol#courses",
+    },
+    {
+      title: "BBA",
+      detail: "3 Years · Undergraduate",
+      description: "Finance, accounts and business skills for corporate careers.",
+      href: "/sbiol#courses",
+    },
+  ],
+  stats: [
+    { value: "40+", label: "Years of BIHER trust" },
+    { value: "100K+", label: "Alumni network" },
+    { value: "24/7", label: "LMS access" },
+  ],
+  primaryCta: { label: "Explore SBIOL", href: "/sbiol" },
+  secondaryCta: { label: "Download Brochure", href: "/docs/SBIOL%20BROUCHER.pdf" },
+};
+

@@ -54,7 +54,7 @@ export const aboutPageContent = {
       "At the heart of SBIST lies a commitment to excellence and inclusivity — helping students gain the skills, confidence and perspective to lead in an ever-changing world.",
     images: {
       primary: "/images/hero-campus.jpg",
-      secondary: "/images/students-classroom.jpg",
+      secondary: "/images/workstation-quotes.JPG",
     },
   },
   stats: [
@@ -80,7 +80,7 @@ export const aboutPageContent = {
         icon: "programs" as NavIconName,
       },
       {
-        title: "Student Life",
+        title: "Campus Life",
         description:
           "Vibrant campus activities, cultural events, sports and clubs that go beyond the classroom.",
         icon: "campus" as NavIconName,
@@ -92,7 +92,7 @@ export const aboutPageContent = {
     description:
       "Explore our Chrompet campus — from modern lecture halls and engineering laboratories to the central library and sports grounds. See where SBIST students learn, research and grow.",
     videoHref: "/about",
-    image: stockImages.campus,
+    image: "/images/interior3.JPG",
   },
   testimonials: {
     title: "Professional Opinions",
@@ -137,12 +137,36 @@ export const aboutPageContent = {
     title: "Discover Campus Life",
     subtitle: "Gallery",
     images: [
-      { src: "/images/hero-campus.jpg", alt: "Main Campus", caption: "Academic block" },
-      { src: "/images/students-library.jpg", alt: "Central Library" },
-      { src: "/images/students-classroom.jpg", alt: "Lecture Hall" },
-      { src: "/images/computer.jpg", alt: "Computer Lab" },
-      { src: "/images/slide-2.jpg", alt: "Library Study Hall" },
-      { src: "/images/slide-3.jpg", alt: "Engineering Lab" },
+      {
+        src: "/images/main-building-side.JPG",
+        alt: "Main Campus",
+        caption: "Academic block",
+      },
+      {
+        src: "/images/library2.jpg",
+        alt: "Central Library",
+        caption: "Study spaces & resources",
+      },
+      {
+        src: "/images/Classroom.JPG",
+        alt: "Lecture Hall",
+        caption: "Modern classrooms",
+      },
+      {
+        src: "/images/computer-lab.JPG",
+        alt: "Computer Lab",
+        caption: "Hands-on computing",
+      },
+      {
+        src: "/images/workstation-quotes.JPG",
+        alt: "Library Study Hall",
+        caption: "Focused learning spaces",
+      },
+      {
+        src: "/images/lab.JPG",
+        alt: "Engineering Lab",
+        caption: "Practical engineering",
+      },
     ] satisfies GalleryImage[],
     ctaHref: "/about",
   },

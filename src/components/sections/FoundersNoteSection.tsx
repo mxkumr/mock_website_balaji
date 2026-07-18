@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ScrollReveal, ScaleReveal, StaggerContainer, StaggerItem } from "@/components/motion/ScrollAnimations";
-import { foundersNoteContent, heroContent, upcomingEventsContent } from "@/lib/home-content";
+import { foundersNoteContent, upcomingEventsContent } from "@/lib/home-content";
 
 function MortarboardIcon() {
   return (
@@ -84,8 +84,9 @@ function EventCard({ event }: { event: EventItem }) {
           src={event.image}
           alt=""
           fill
+          quality={100}
           className="object-cover transition-transform duration-500 group-hover:scale-105"
-          sizes="128px"
+          sizes="256px"
         />
       </div>
 
@@ -148,7 +149,7 @@ function UpcomingEvents() {
           </div>
         </ScrollReveal>
 
-        <StaggerContainer className="grid gap-5 sm:grid-cols-2 lg:gap-6" stagger={0.06}>
+        <StaggerContainer className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6" stagger={0.06}>
           {events.map((event) => (
             <StaggerItem key={event.title}>
               <EventCard event={event} />
@@ -197,13 +198,12 @@ export function FoundersNoteSection() {
       <div className="relative overflow-hidden bg-background">
         <div className="absolute inset-x-0 bottom-0 top-24 sm:top-32 lg:top-40">
           <Image
-            src={heroContent.buildingImage}
+            src="/images/main-building-side.JPG"
             alt=""
             fill
             className="object-cover object-center"
             sizes="100vw"
             quality={100}
-            unoptimized
           />
           <div className="absolute inset-0 bg-primary/45" />
           <div className="absolute inset-0 bg-gradient-to-b from-background via-background/25 to-primary/70" />

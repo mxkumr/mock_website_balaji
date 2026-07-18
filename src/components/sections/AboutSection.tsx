@@ -68,8 +68,9 @@ function AboutImage({
         alt={alt}
         fill
         priority={priority}
+        quality={100}
         className="object-cover transition-transform duration-500 group-hover:scale-105"
-        sizes="(max-width: 1024px) 100vw, 480px"
+        sizes="(max-width: 1024px) 100vw, 50vw"
       />
     </div>
   );
@@ -90,7 +91,7 @@ export function AboutSection() {
               />
               <AboutImage
                 src={aboutContent.images.secondary}
-                alt="Students in lecture at SBIST"
+                alt="Computer lab at SBIST"
                 priority
               />
             </div>

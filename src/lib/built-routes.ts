@@ -5,6 +5,9 @@ export const BUILT_ROUTES = new Set([
   "/academics",
   "/contact",
   "/careers",
+  "/campus-life",
+  "/sbsb",
+  "/sbiol",
   "/under-construction",
   "/site-under-construction",
 ]);

@@ -319,7 +319,7 @@ export function AboutMainSection() {
                     <div className="group relative aspect-[4/3] overflow-hidden rounded-xl border border-border">
                       <Image
                         src={main.images.secondary}
-                        alt="Students at SBIST"
+                        alt="Workstation space at SBIST"
                         fill
                         className="object-cover transition-transform duration-500 group-hover:scale-105"
                         sizes="(max-width: 640px) 100vw, 320px"

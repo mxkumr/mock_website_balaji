@@ -46,11 +46,6 @@ export function PageHeader({
         </>
       )}
 
-      <div className="absolute inset-0 opacity-[0.06]">
-        <div className="absolute -right-24 -top-24 h-72 w-72 rounded-full bg-accent" />
-        <div className="absolute -bottom-20 -left-20 h-56 w-56 rounded-full bg-white" />
-      </div>
-
       <div className="relative mx-auto max-w-7xl px-4 lg:px-8">
         <ScrollReveal>
           <nav aria-label="Breadcrumb" className="mb-6">
