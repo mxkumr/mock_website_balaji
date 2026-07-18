@@ -59,7 +59,7 @@ function GalleryFrame({
       <div className="absolute inset-0 bg-gradient-to-t from-primary-dark/85 via-primary-dark/20 to-transparent opacity-90 transition-opacity duration-500 group-hover:opacity-100" />
       <div className="absolute inset-x-0 bottom-0 p-4 sm:p-5">
         <span className="text-[10px] font-semibold uppercase tracking-[0.18em] text-accent">
-          Team Moment
+          SBIST Moment
         </span>
         <p className="mt-1 font-serif text-base font-semibold text-white sm:text-lg">
           {item.label}
