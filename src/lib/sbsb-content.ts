@@ -37,7 +37,7 @@ export const sbsbPageContent = {
       { label: "Home", href: "/" },
       { label: "SBSB", href: "/sbsb" },
     ],
-    backgroundImage: "/images/Gallery/audience1.JPG",
+    backgroundImage: "/images/cultural-fest.jpg",
   },
   charterHref: "/docs/SBSB%20ECO%20System.pdf",
   eyebrow: "Shree Balaji Students Board",
@@ -124,7 +124,7 @@ export const sbsbPageContent = {
       {
         title: "SBSB Fest",
         detail: "The flagship student festival celebrating talent, culture and community.",
-        image: "/images/Gallery/audience2.JPG",
+        image: "/images/cultural-fest.jpg",
       },
       {
         title: "Sports Meet",
@@ -134,27 +134,27 @@ export const sbsbPageContent = {
       {
         title: "Freshers' Day",
         detail: "A warm welcome that helps new students find belonging from day one.",
-        image: "/images/Gallery/audience1.JPG",
+        image: "/images/freshers-day.jpg",
       },
       {
         title: "Annual Cultural Festival",
         detail: "Music, dance, drama and fine arts on one vibrant stage.",
-        image: "/images/auditorium.JPG",
+        image: "/images/annual-cultural-fest.jpg",
       },
       {
         title: "Entrepreneurship Summit",
         detail: "Ideas, mentors and ventures from the Entrepreneurship Cell.",
-        image: "/images/workstation-quotes.JPG",
+        image: "/images/entrepreneur-summit.jpg",
       },
       {
         title: "Community Programs",
         detail: "Outreach and service initiatives that give back beyond campus.",
-        image: "/images/students-library.png",
+        image: "/images/community-programs.jpg",
       },
     ],
   },
-  image: "/images/Gallery/audience1.JPG",
-  imageAlt: "SBIST students celebrating campus community",
+  image: "/images/freshers-day.jpg",
+  imageAlt: "SBIST students celebrating Freshers' Day",
   clubs: {
     eyebrow: "Student Clubs",
     title: "Explore Our Clubs",
@@ -296,6 +296,6 @@ export const sbsbPageContent = {
     primaryHref: "/sbsb#clubs",
     secondaryLabel: "Download Charter PDF",
     secondaryHref: "/docs/SBSB%20ECO%20System.pdf",
-    image: "/images/Gallery/audience2.JPG",
+    image: "/images/annual-cultural-fest.jpg",
   },
 };

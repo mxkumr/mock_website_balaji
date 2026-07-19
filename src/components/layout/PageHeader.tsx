@@ -38,6 +38,7 @@ export function PageHeader({
             src={backgroundImage}
             alt=""
             fill
+            quality={100}
             className="object-cover object-center"
             sizes="100vw"
             priority

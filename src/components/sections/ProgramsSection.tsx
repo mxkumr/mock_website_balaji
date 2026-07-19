@@ -144,8 +144,8 @@ function NoticeCard() {
       <ul className="mt-4 flex flex-1 flex-col justify-between gap-3">
         {notices.map((notice) => (
           <li key={notice.ref} className="border-b border-border pb-3 last:border-0 last:pb-0">
-            {notice.ref.includes("OEC") ? (
-              <Link href="/sbiol" className="text-sm font-semibold leading-snug text-foreground hover:text-accent">
+            {"href" in notice && notice.href ? (
+              <Link href={notice.href} className="text-sm font-semibold leading-snug text-foreground hover:text-accent">
                 {notice.title}
               </Link>
             ) : (

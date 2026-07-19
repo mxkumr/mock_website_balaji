@@ -160,19 +160,16 @@ export const counterItems: CounterItem[] = [
 
 export const notices = [
   {
-    title: "Semester Examination Schedule",
-    date: "August 15, 2026",
-    ref: "SBIST/REG/EXAM/2026/01",
+    title: "Freshers' Day Coming Soon",
+    date: "Coming Soon",
+    ref: "SBIST/SBSB/FRESHERS/2026",
+    href: "/sbsb#events",
   },
   {
-    title: "New Digital Learning Resources Available",
-    date: "September 5, 2026",
-    ref: "SBIST/REG/ACD/2026/03",
-  },
-  {
-    title: "Online Education Center of Excellence",
-    date: "October 1, 2026",
-    ref: "SBIST/REG/OEC/2026/01",
+    title: "Online Admissions Are Open",
+    date: "Apply Now",
+    ref: "SBIST/SBIOL/ADM/2026",
+    href: "/sbiol",
   },
 ];
 
@@ -296,7 +293,7 @@ export const upcomingEventsContent = {
       date: "August 22, 2026",
       time: "09:00 AM - 06:00 PM",
       location: "SBIST Campus, Chromepet",
-      image: "/images/Gallery/audience2.JPG",
+      image: "/images/cultural-fest.jpg",
       href: "/sbsb#events",
     },
     {
@@ -312,7 +309,7 @@ export const upcomingEventsContent = {
       date: "July 25, 2026",
       time: "10:00 AM - 02:00 PM",
       location: "SBIST Main Auditorium, Chennai",
-      image: "/images/Gallery/audience1.JPG",
+      image: "/images/freshers-day.jpg",
       href: "/sbsb#events",
     },
     {
@@ -320,7 +317,7 @@ export const upcomingEventsContent = {
       date: "October 18, 2026",
       time: "11:00 AM - 08:00 PM",
       location: "SBIST Auditorium & Campus Grounds",
-      image: "/images/auditorium.JPG",
+      image: "/images/annual-cultural-fest.jpg",
       href: "/sbsb#events",
     },
     {
@@ -328,7 +325,7 @@ export const upcomingEventsContent = {
       date: "November 7, 2026",
       time: "09:30 AM - 04:30 PM",
       location: "SBIST Innovation Hub, Chennai",
-      image: "/images/workstation-quotes.JPG",
+      image: "/images/entrepreneur-summit.jpg",
       href: "/sbsb#events",
     },
     {
@@ -336,7 +333,7 @@ export const upcomingEventsContent = {
       date: "December 5, 2026",
       time: "09:00 AM - 01:00 PM",
       location: "SBIST Outreach Initiatives, Chennai",
-      image: "/images/students-library.png",
+      image: "/images/community-programs.jpg",
       href: "/sbsb#events",
     },
   ],

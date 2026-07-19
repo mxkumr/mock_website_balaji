@@ -138,27 +138,82 @@ export function SbsbPillarsSection() {
   const { pillars } = sbsbPageContent;
 
   return (
-    <section className="bg-surface py-16 lg:py-20">
+    <section className="bg-surface py-16 lg:py-24">
       <div className="mx-auto max-w-7xl px-4 lg:px-8">
         <ScrollReveal>
-          <div className="max-w-3xl">
-            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-accent">{pillars.eyebrow}</p>
-            <h2 className="mt-3 text-3xl leading-tight text-foreground lg:text-[2.35rem]">{pillars.title}</h2>
-            <p className="mt-4 text-base leading-relaxed text-muted">{pillars.description}</p>
+          <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+            <div className="max-w-2xl">
+              <div className="flex items-center gap-2.5">
+                <MortarboardIcon />
+                <span className="text-xs font-semibold uppercase tracking-[0.18em] text-accent">
+                  {pillars.eyebrow}
+                </span>
+              </div>
+              <h2 className="mt-3 text-3xl leading-tight text-foreground lg:text-[2.35rem]">{pillars.title}</h2>
+              <p className="mt-4 text-base leading-relaxed text-muted">{pillars.description}</p>
+            </div>
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary/60">
+              {pillars.items.length} focus areas
+            </p>
           </div>
         </ScrollReveal>
-        <StaggerContainer className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3" stagger={0.04}>
-          {pillars.items.map((pillar, index) => (
-            <StaggerItem key={pillar.title}>
-              <div className="h-full rounded-2xl border border-border bg-white px-5 py-5 shadow-sm motion-lift">
-                <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-accent">
-                  {String(index + 1).padStart(2, "0")}
-                </p>
-                <h3 className="mt-2 text-base font-semibold text-foreground">{pillar.title}</h3>
-                <p className="mt-1.5 text-sm text-muted">{pillar.detail}</p>
-              </div>
-            </StaggerItem>
-          ))}
+
+        <StaggerContainer className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3" stagger={0.045}>
+          {pillars.items.map((pillar, index) => {
+            const number = String(index + 1).padStart(2, "0");
+            const isAccent = index % 3 === 0;
+
+            return (
+              <StaggerItem key={pillar.title}>
+                <article
+                  className={`group relative flex h-full min-h-[160px] flex-col overflow-hidden border p-6 motion-lift transition-all duration-300 lg:p-7 ${
+                    isAccent
+                      ? "border-primary/20 bg-primary text-white hover:border-accent/50"
+                      : "border-border bg-white text-foreground hover:border-accent/40 hover:shadow-md"
+                  }`}
+                >
+                  <span
+                    className={`pointer-events-none absolute -right-1 -top-3 select-none font-heading text-[5.5rem] font-semibold leading-none ${
+                      isAccent ? "text-white/[0.08]" : "text-primary/[0.06]"
+                    }`}
+                    aria-hidden
+                  >
+                    {number}
+                  </span>
+
+                  <div className="relative flex h-full flex-col">
+                    <span
+                      className={`text-xs font-semibold uppercase tracking-[0.2em] ${
+                        isAccent ? "text-accent" : "text-accent"
+                      }`}
+                    >
+                      {number}
+                    </span>
+                    <h3
+                      className={`mt-4 font-heading text-xl font-semibold leading-snug tracking-tight ${
+                        isAccent ? "text-white" : "text-foreground"
+                      }`}
+                    >
+                      {pillar.title}
+                    </h3>
+                    <div
+                      className={`mt-3 h-0.5 w-8 rounded-full transition-all duration-300 group-hover:w-12 ${
+                        isAccent ? "bg-accent/70 group-hover:bg-accent" : "bg-accent/40 group-hover:bg-accent"
+                      }`}
+                      aria-hidden
+                    />
+                    <p
+                      className={`mt-4 text-sm leading-relaxed ${
+                        isAccent ? "text-white/75" : "text-muted"
+                      }`}
+                    >
+                      {pillar.detail}
+                    </p>
+                  </div>
+                </article>
+              </StaggerItem>
+            );
+          })}
         </StaggerContainer>
       </div>
     </section>
