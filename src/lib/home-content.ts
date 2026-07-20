@@ -305,7 +305,7 @@ export const upcomingEventsContent = {
       href: "/sbsb#events",
     },
     {
-      title: "Freshers' Day",
+      title: "Freshers’ Day",
       date: "July 25, 2026",
       time: "10:00 AM - 02:00 PM",
       location: "SBIST Main Auditorium, Chennai",

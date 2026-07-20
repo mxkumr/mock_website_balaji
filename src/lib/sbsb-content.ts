@@ -32,7 +32,7 @@ export const sbsbPageContent = {
   header: {
     title: "SBSB",
     description:
-      "Shree Balaji Students Board — Empowering Students. Building Leaders.",
+      "Sree Balaji Students Board — Empowering Students. Building Leaders.",
     breadcrumbs: [
       { label: "Home", href: "/" },
       { label: "SBSB", href: "/sbsb" },
@@ -40,31 +40,31 @@ export const sbsbPageContent = {
     backgroundImage: "/images/cultural-fest.jpg",
   },
   charterHref: "/docs/SBSB%20ECO%20System.pdf",
-  eyebrow: "Shree Balaji Students Board",
+  eyebrow: "Sree Balaji Students Board",
   brand: "SBSB",
   tagline: "Empowering Students. Building Leaders.",
   title: "Official Charter & Framework",
   description:
-    "The Shree Balaji Students Board is a premier student-led organization dedicated to promoting leadership, innovation, creativity and student welfare. Serving as a crucial bridge between the student body and the institution, SBSB empowers students beyond traditional academic boundaries by providing diverse opportunities to develop core leadership skills, explore emerging talents and enrich campus life.",
+    "The Sree Balaji Students Board (SBSB) functions as a premier student-led organization dedicated to promoting leadership, innovation, creativity, and student welfare. Serving as a crucial bridge between the student body and the institution, SBSB aims to empower students beyond traditional academic boundaries by providing diverse opportunities to develop core leadership skills, explore emerging talents, and actively contribute to the enrichment of campus life.",
   vision: {
     title: "Vision",
-    text: "To create a vibrant, inclusive and dynamic student community that nurtures leadership, excellence and holistic development.",
+    text: "To create a vibrant, inclusive, and dynamic student community that nurtures leadership, excellence, and holistic development.",
   },
   mission: {
     title: "Mission",
     items: [
-      "Promote student leadership and responsibility",
-      "Encourage cultural, technical and sports activities",
-      "Strengthen student engagement and campus life",
-      "Provide guidance and support to students",
-      "Foster innovation, teamwork and social responsibility",
-      "Build future leaders with strong values and ethics",
+      "Promote student leadership and responsibility.",
+      "Encourage cultural, technical, and sports activities.",
+      "Strengthen student engagement and campus life.",
+      "Provide guidance and support to students.",
+      "Foster innovation, teamwork, and social responsibility.",
+      "Build future leaders with strong values and ethics.",
     ],
   },
   pillars: {
-    eyebrow: "Core Ecosystem",
-    title: "Nine areas that define SBSB",
-    description: "The SBSB ecosystem spans engagement, culture, innovation, welfare and career growth.",
+    eyebrow: "Core Areas",
+    title: "Nine core areas of SBSB",
+    description: "The official SBSB framework spans engagement, welfare, leadership, culture, innovation, sports, entrepreneurship, outreach, and career development.",
     items: [
       { title: "Student Engagement", detail: "Active participation across campus initiatives" },
       { title: "Cultural Activities", detail: "Arts, performance and creative expression" },
@@ -79,7 +79,7 @@ export const sbsbPageContent = {
   },
   leadership: {
     eyebrow: "Governance",
-    title: "Leadership & Committees",
+    title: "Leadership Team",
     description: "Student officers and committees that guide welfare, culture, sports and discipline.",
     roles: [
       "President",
@@ -93,7 +93,7 @@ export const sbsbPageContent = {
   },
   clubGroups: {
     eyebrow: "Clubs & Forums",
-    title: "Organised under SBSB",
+    title: "SBSB Clubs & Forums",
     description: "Cultural, technical and student-life clubs that power campus energy.",
     items: [
       {
@@ -118,7 +118,7 @@ export const sbsbPageContent = {
   },
   events: {
     eyebrow: "Signature Events",
-    title: "SBSB Calendar Highlights",
+    title: "Official Signature Events",
     description: "Flagship gatherings that define campus energy through the year.",
     items: [
       {
@@ -132,7 +132,7 @@ export const sbsbPageContent = {
         image: "/images/campus-sports.png",
       },
       {
-        title: "Freshers' Day",
+        title: "Freshers’ Day",
         detail: "A warm welcome that helps new students find belonging from day one.",
         image: "/images/freshers-day.jpg",
       },
@@ -154,7 +154,7 @@ export const sbsbPageContent = {
     ],
   },
   image: "/images/freshers-day.jpg",
-  imageAlt: "SBIST students celebrating Freshers' Day",
+  imageAlt: "SBIST students celebrating Freshers’ Day",
   clubs: {
     eyebrow: "Student Clubs",
     title: "Explore Our Clubs",

@@ -74,7 +74,7 @@ export const mainNavigation: NavItem[] = [
       {
         label: "SBSB",
         href: "/sbsb",
-        description: "Shree Balaji Students Board — clubs, leadership and events.",
+        description: "Sree Balaji Students Board — clubs, leadership and events.",
         icon: "events",
       },
       {
