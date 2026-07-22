@@ -47,7 +47,7 @@ export const aboutPageContent = {
     ],
     quote: {
       text: "Our diverse community welcomes students from across the region, fostering cultural exchange and mutual understanding. Through industry collaborations, research initiatives and innovation hubs, we provide opportunities for students to engage with real-world challenges and contribute to sustainable solutions.",
-      author: "Dr. Shree Nisha",
+      author: "DR. J. Srinisha Elamaran",
       role: "Founder & Chairman",
     },
     closingParagraph:
@@ -67,8 +67,8 @@ export const aboutPageContent = {
     description:
       "Our vision is to create a world where education empowers every individual to achieve their fullest potential. We strive to be a leading institution recognized for academic excellence, innovation and social responsibility. Our goal is to nurture creative thinkers, ethical leaders and lifelong learners who contribute positively to society.",
     image: "/images/Dr-Nisha.png",
-    imageAlt: "Dr. Shree Nisha, Founder & Chairman of SBIST",
-    founderName: "Dr. Shree Nisha",
+    imageAlt: "DR. J. Srinisha Elamaran, Founder & Chairman of SBIST",
+    founderName: "DR. J. Srinisha Elamaran",
     founderRole: "Founder & Chairman",
     pillars: [
       {
@@ -96,8 +96,8 @@ export const aboutPageContent = {
     description:
       "In a world rapidly reshaped by AI and technology, Balaji stands as a beacon of what makes us truly human. Our vision is to nurture not just sharp minds, but resilient souls—empowering every individual to discover their purpose, lead with empathy, and thrive in an ever-changing world. We strive to inspire creative thinkers, ethical leaders, and lifelong learners who will shape a future defined by intelligence, grounded in humanity.",
     image: "/images/Er-N-Elamaran.png",
-    imageAlt: "J. Srinisha Elamaran of SBIST",
-    captionTitle: "J. Srinisha Elamaran",
+    imageAlt: "Er. N Elamaran of SBIST",
+    captionTitle: "Er. N Elamaran",
     captionSubtitle: "Managing Director",
     pillars: [
       {
