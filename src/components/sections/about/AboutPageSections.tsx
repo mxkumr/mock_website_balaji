@@ -432,6 +432,23 @@ export function AboutVisionSection() {
   );
 }
 
+function MissionDescription({ text }: { text: string }) {
+  const parts = text.split("Balaji");
+
+  return (
+    <p className="mt-5 text-base leading-relaxed text-muted">
+      {parts.map((part, index) => (
+        <span key={index}>
+          {part}
+          {index < parts.length - 1 && (
+            <span className="font-heading font-semibold tracking-wide text-primary">Balaji</span>
+          )}
+        </span>
+      ))}
+    </p>
+  );
+}
+
 export function AboutMissionSection() {
   const { mission } = aboutPageContent;
 
@@ -445,7 +462,7 @@ export function AboutMissionSection() {
                 <CardHeaderStrip eyebrow="Our Commitment" subtitle="How we serve every student" align="left" />
                 <div className="flex flex-1 flex-col justify-center px-6 py-8 lg:px-10 lg:py-10">
                   <h2 className="text-3xl leading-tight text-foreground lg:text-4xl">{mission.title}</h2>
-                  <p className="mt-5 text-base leading-relaxed text-muted">{mission.description}</p>
+                  <MissionDescription text={mission.description} />
                   <AccentBar className="group mt-6" />
                 </div>
               </div>

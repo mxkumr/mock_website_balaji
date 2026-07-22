@@ -94,10 +94,10 @@ export const aboutPageContent = {
   mission: {
     title: "Our Mission",
     description:
-      "Our mission is to deliver quality education that blends strong academic foundations with practical, industry-aligned learning. We are committed to mentoring every student with care, fostering innovation and research, and building graduates who lead with skill, integrity and social responsibility.",
+      "In a world rapidly reshaped by AI and technology, Balaji stands as a beacon of what makes us truly human. Our vision is to nurture not just sharp minds, but resilient souls—empowering every individual to discover their purpose, lead with empathy, and thrive in an ever-changing world. We strive to inspire creative thinkers, ethical leaders, and lifelong learners who will shape a future defined by intelligence, grounded in humanity.",
     image: "/images/Er-N-Elamaran.png",
-    imageAlt: "Er. N Elamaran of SBIST",
-    captionTitle: "Er. N Elamaran",
+    imageAlt: "J. Srinisha Elamaran of SBIST",
+    captionTitle: "J. Srinisha Elamaran",
     captionSubtitle: "Managing Director",
     pillars: [
       {
@@ -136,7 +136,7 @@ export const aboutPageContent = {
         rating: 5.0,
         quote:
           "I strongly recommend Sree Balaji Institute of Science and Technology for students who want quality education with discipline and purpose. It is a college I trust for student growth.",
-        name: "Yaser",
+        name: "Mr. Yaser",
         role: "Managing Director, Jollo",
         image: "/images/SREE_Balaji_logo.svg",
       },

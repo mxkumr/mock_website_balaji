@@ -119,7 +119,7 @@ export const academicsPageContent = {
     ] as HighlightStatItem[],
     stories: [
       {
-        name: "Yaser",
+        name: "Mr. Yaser",
         role: "Managing Director, Jollo",
         quote:
           "I strongly recommend Sree Balaji Institute of Science and Technology for students who want quality education with discipline and purpose. It is a college I trust for student growth.",
