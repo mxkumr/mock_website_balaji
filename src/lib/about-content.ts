@@ -65,7 +65,7 @@ export const aboutPageContent = {
   vision: {
     title: "Our Vision",
     description:
-      "Our vision is to create a world where education empowers every individual to achieve their fullest potential. We strive to be a leading institution recognized for academic excellence, innovation and social responsibility. Our goal is to nurture creative thinkers, ethical leaders and lifelong learners who contribute positively to society.",
+      "In a world rapidly reshaped by AI and technology, Balaji stands as a beacon of what makes us truly human. Our vision is to nurture not just sharp minds, but resilient souls empowering every individual to discover their purpose, lead with empathy, and thrive in an ever-changing world. We strive to inspire creative thinkers, ethical leaders, and lifelong learners who will shape a future defined by intelligence, grounded in humanity.",
     image: "/images/Dr-Nisha.png",
     imageAlt: "DR. J. Srinisha Elamaran, Founder & Chairman of SBIST",
     founderName: "DR. J. Srinisha Elamaran",
@@ -94,7 +94,7 @@ export const aboutPageContent = {
   mission: {
     title: "Our Mission",
     description:
-      "In a world rapidly reshaped by AI and technology, Balaji stands as a beacon of what makes us truly human. Our vision is to nurture not just sharp minds, but resilient souls—empowering every individual to discover their purpose, lead with empathy, and thrive in an ever-changing world. We strive to inspire creative thinkers, ethical leaders, and lifelong learners who will shape a future defined by intelligence, grounded in humanity.",
+      "Our mission is to deliver quality education that blends strong academic foundations with practical, industry-aligned learning. We are committed to mentoring every student with care, fostering innovation and research, and building graduates who lead with skill, integrity and social responsibility.",
     image: "/images/Er-N-Elamaran.png",
     imageAlt: "Er. N Elamaran of SBIST",
     captionTitle: "Er. N Elamaran",
