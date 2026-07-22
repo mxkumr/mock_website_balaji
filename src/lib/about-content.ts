@@ -47,7 +47,7 @@ export const aboutPageContent = {
     ],
     quote: {
       text: "Our diverse community welcomes students from across the region, fostering cultural exchange and mutual understanding. Through industry collaborations, research initiatives and innovation hubs, we provide opportunities for students to engage with real-world challenges and contribute to sustainable solutions.",
-      author: "Dr. S. Balaji",
+      author: "Dr. Shree Nisha",
       role: "Founder & Chairman",
     },
     closingParagraph:
@@ -66,6 +66,10 @@ export const aboutPageContent = {
     title: "Our Vision",
     description:
       "Our vision is to create a world where education empowers every individual to achieve their fullest potential. We strive to be a leading institution recognized for academic excellence, innovation and social responsibility. Our goal is to nurture creative thinkers, ethical leaders and lifelong learners who contribute positively to society.",
+    image: "/images/Dr-Nisha.png",
+    imageAlt: "Dr. Shree Nisha, Founder & Chairman of SBIST",
+    founderName: "Dr. Shree Nisha",
+    founderRole: "Founder & Chairman",
     pillars: [
       {
         title: "Affordability",
@@ -84,6 +88,35 @@ export const aboutPageContent = {
         description:
           "Vibrant campus activities, cultural events, sports and clubs that go beyond the classroom.",
         icon: "campus" as NavIconName,
+      },
+    ],
+  },
+  mission: {
+    title: "Our Mission",
+    description:
+      "Our mission is to deliver quality education that blends strong academic foundations with practical, industry-aligned learning. We are committed to mentoring every student with care, fostering innovation and research, and building graduates who lead with skill, integrity and social responsibility.",
+    image: "/images/Er-N-Elamaran.png",
+    imageAlt: "Er. N Elamaran of SBIST",
+    captionTitle: "Er. N Elamaran",
+    captionSubtitle: "Managing Director",
+    pillars: [
+      {
+        title: "Quality Education",
+        description:
+          "Rigorous programs taught by qualified faculty, combining theory with hands-on practice across every discipline.",
+        icon: "programs" as NavIconName,
+      },
+      {
+        title: "Student Mentorship",
+        description:
+          "Personal guidance and support that help students grow in confidence, competence and character.",
+        icon: "faculty" as NavIconName,
+      },
+      {
+        title: "Industry Readiness",
+        description:
+          "Labs, projects and real-world exposure that prepare graduates for careers and lifelong learning.",
+        icon: "research" as NavIconName,
       },
     ],
   },

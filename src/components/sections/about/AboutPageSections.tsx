@@ -382,11 +382,33 @@ export function AboutVisionSection() {
       <div className="mx-auto max-w-7xl px-4 lg:px-8">
         <ScrollReveal>
           <SectionCard>
-            <CardHeaderStrip eyebrow="Our Purpose" subtitle="What drives us forward" />
-            <div className="px-6 py-8 text-center lg:px-8 lg:py-10">
-              <h2 className="text-3xl leading-tight text-foreground lg:text-4xl">{vision.title}</h2>
-              <p className="mx-auto mt-5 max-w-3xl text-base leading-relaxed text-muted">{vision.description}</p>
-              <AccentBar className="group mx-auto mt-6" />
+            <div className="grid items-stretch lg:grid-cols-2">
+              <div className="flex flex-col">
+                <CardHeaderStrip eyebrow="Our Purpose" subtitle="What drives us forward" align="left" />
+                <div className="flex flex-1 flex-col justify-center px-6 py-8 lg:px-10 lg:py-10">
+                  <h2 className="text-3xl leading-tight text-foreground lg:text-4xl">{vision.title}</h2>
+                  <p className="mt-5 text-base leading-relaxed text-muted">{vision.description}</p>
+                  <AccentBar className="group mt-6" />
+                </div>
+              </div>
+
+              <div className="group relative min-h-[300px] overflow-hidden border-t border-border lg:min-h-full lg:border-l lg:border-t-0">
+                <Image
+                  src={vision.image}
+                  alt={vision.imageAlt}
+                  fill
+                  quality={100}
+                  className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                  sizes="(max-width: 1024px) 100vw, 560px"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-primary-dark/85 via-primary/25 to-transparent" />
+                <div className="absolute bottom-0 left-0 right-0 border-t border-white/10 bg-primary/40 px-5 py-4 backdrop-blur-sm">
+                  <p className="font-heading text-base font-semibold text-white">{vision.founderName}</p>
+                  <p className="mt-1 text-xs font-semibold uppercase tracking-[0.12em] text-accent">
+                    {vision.founderRole}
+                  </p>
+                </div>
+              </div>
             </div>
           </SectionCard>
         </ScrollReveal>
@@ -410,11 +432,69 @@ export function AboutVisionSection() {
   );
 }
 
+export function AboutMissionSection() {
+  const { mission } = aboutPageContent;
+
+  return (
+    <section className="bg-background py-20 lg:py-28">
+      <div className="mx-auto max-w-7xl px-4 lg:px-8">
+        <ScrollReveal>
+          <SectionCard>
+            <div className="grid items-stretch lg:grid-cols-2">
+              <div className="flex flex-col">
+                <CardHeaderStrip eyebrow="Our Commitment" subtitle="How we serve every student" align="left" />
+                <div className="flex flex-1 flex-col justify-center px-6 py-8 lg:px-10 lg:py-10">
+                  <h2 className="text-3xl leading-tight text-foreground lg:text-4xl">{mission.title}</h2>
+                  <p className="mt-5 text-base leading-relaxed text-muted">{mission.description}</p>
+                  <AccentBar className="group mt-6" />
+                </div>
+              </div>
+
+              <div className="group relative min-h-[300px] overflow-hidden border-t border-border lg:min-h-full lg:border-l lg:border-t-0">
+                <Image
+                  src={mission.image}
+                  alt={mission.imageAlt}
+                  fill
+                  quality={100}
+                  className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                  sizes="(max-width: 1024px) 100vw, 560px"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-primary-dark/85 via-primary/25 to-transparent" />
+                <div className="absolute bottom-0 left-0 right-0 border-t border-white/10 bg-primary/40 px-5 py-4 backdrop-blur-sm">
+                  <p className="font-heading text-base font-semibold text-white">{mission.captionTitle}</p>
+                  <p className="mt-1 text-xs font-semibold uppercase tracking-[0.12em] text-accent">
+                    {mission.captionSubtitle}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </SectionCard>
+        </ScrollReveal>
+
+        <StaggerContainer className="mt-8 grid gap-6 sm:grid-cols-3 lg:gap-8" stagger={0.06}>
+          {mission.pillars.map((pillar) => (
+            <StaggerItem key={pillar.title}>
+              <SectionCard className="group motion-lift h-full">
+                <div className="px-6 py-8 lg:px-8 lg:py-10">
+                  <IconBadge icon={pillar.icon} size="md" />
+                  <h3 className="mt-5 text-xl text-foreground">{pillar.title}</h3>
+                  <p className="mt-3 text-sm leading-relaxed text-muted">{pillar.description}</p>
+                  <AccentBar className="mt-6" />
+                </div>
+              </SectionCard>
+            </StaggerItem>
+          ))}
+        </StaggerContainer>
+      </div>
+    </section>
+  );
+}
+
 export function AboutCampusTourSection() {
   const { campusTour } = aboutPageContent;
 
   return (
-    <section className="bg-background py-20 lg:py-28">
+    <section className="bg-surface py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-4 lg:px-8">
         <SectionCard>
           <div className="grid items-stretch lg:grid-cols-2">

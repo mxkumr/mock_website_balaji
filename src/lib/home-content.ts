@@ -171,6 +171,16 @@ export const notices = [
     ref: "SBIST/SBIOL/ADM/2026",
     href: "/sbiol",
   },
+  {
+    title: "Project Expo — Tech Fusion",
+    date: "December 2026",
+    ref: "SBIST/CSE/TECHFUSION/2026",
+  },
+  {
+    title: "1st International Conference for Computer Science Engineering",
+    date: "December 2026",
+    ref: "SBIST/CSE/ICCSE/2026",
+  },
 ];
 
 export const galleryImages: GalleryImage[] = [
