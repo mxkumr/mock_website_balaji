@@ -6,9 +6,7 @@ import {
   AboutCampusTourSection,
   AboutGallerySection,
   AboutMainSection,
-  AboutMissionSection,
   AboutTestimonialsSection,
-  AboutVisionSection,
 } from "@/components/sections/about/AboutPageSections";
 import { CTA } from "@/components/sections/CTA";
 import { aboutPageContent } from "@/lib/about-content";
@@ -35,8 +33,6 @@ export default function AboutPage() {
 
       <main>
         <AboutMainSection />
-        <AboutVisionSection />
-        <AboutMissionSection />
         <AboutCampusTourSection />
         <AboutTestimonialsSection />
         <AboutGallerySection />

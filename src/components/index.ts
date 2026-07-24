@@ -32,8 +32,6 @@ export { CTA } from "./sections/CTA";
 export type { CTAProps } from "./sections/CTA";
 export {
   AboutMainSection,
-  AboutVisionSection,
-  AboutMissionSection,
   AboutCampusTourSection,
   AboutTestimonialsSection,
   AboutGallerySection,

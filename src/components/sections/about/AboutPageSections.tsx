@@ -263,6 +263,131 @@ function AboutSidebar() {
   );
 }
 
+function BalajiHighlightDescription({ text }: { text: string }) {
+  const parts = text.split("Balaji");
+
+  return (
+    <p className="mt-5 text-base leading-relaxed text-muted">
+      {parts.map((part, index) => (
+        <span key={index}>
+          {part}
+          {index < parts.length - 1 && (
+            <span className="font-heading font-semibold tracking-wide text-primary">Balaji</span>
+          )}
+        </span>
+      ))}
+    </p>
+  );
+}
+
+function VisionCard() {
+  const { vision } = aboutPageContent;
+
+  return (
+    <div className="space-y-6">
+      <SectionCard>
+        <div className="grid items-stretch lg:grid-cols-2">
+          <div className="flex flex-col">
+            <CardHeaderStrip eyebrow="Our Purpose" subtitle="What drives us forward" align="left" />
+            <div className="flex flex-1 flex-col justify-center px-6 py-8 lg:px-8 lg:py-10">
+              <h2 className="text-3xl leading-tight text-foreground lg:text-[2.25rem]">{vision.title}</h2>
+              <BalajiHighlightDescription text={vision.description} />
+              <AccentBar className="group mt-6" />
+            </div>
+          </div>
+
+          <div className="group relative min-h-[260px] overflow-hidden border-t border-border lg:min-h-full lg:border-l lg:border-t-0">
+            <Image
+              src={vision.image}
+              alt={vision.imageAlt}
+              fill
+              quality={100}
+              className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
+              sizes="(max-width: 1024px) 100vw, 420px"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-primary-dark/85 via-primary/25 to-transparent" />
+            <div className="absolute bottom-0 left-0 right-0 border-t border-white/10 bg-primary/40 px-5 py-4 backdrop-blur-sm">
+              <p className="font-heading text-base font-semibold text-white">{vision.founderName}</p>
+              <p className="mt-1 text-xs font-semibold uppercase tracking-[0.12em] text-accent">
+                {vision.founderRole}
+              </p>
+            </div>
+          </div>
+        </div>
+      </SectionCard>
+
+      <StaggerContainer className="grid gap-4 sm:grid-cols-3" stagger={0.06}>
+        {vision.pillars.map((pillar) => (
+          <StaggerItem key={pillar.title}>
+            <SectionCard className="group motion-lift h-full">
+              <div className="px-5 py-6 lg:px-6 lg:py-7">
+                <IconBadge icon={pillar.icon} size="md" />
+                <h3 className="mt-4 text-lg text-foreground">{pillar.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted">{pillar.description}</p>
+                <AccentBar className="mt-5" />
+              </div>
+            </SectionCard>
+          </StaggerItem>
+        ))}
+      </StaggerContainer>
+    </div>
+  );
+}
+
+function MissionCard() {
+  const { mission } = aboutPageContent;
+
+  return (
+    <div className="space-y-6">
+      <SectionCard>
+        <div className="grid items-stretch lg:grid-cols-2">
+          <div className="flex flex-col">
+            <CardHeaderStrip eyebrow="Our Commitment" subtitle="How we serve every student" align="left" />
+            <div className="flex flex-1 flex-col justify-center px-6 py-8 lg:px-8 lg:py-10">
+              <h2 className="text-3xl leading-tight text-foreground lg:text-[2.25rem]">{mission.title}</h2>
+              <p className="mt-5 text-base leading-relaxed text-muted">{mission.description}</p>
+              <AccentBar className="group mt-6" />
+            </div>
+          </div>
+
+          <div className="group relative min-h-[260px] overflow-hidden border-t border-border lg:min-h-full lg:border-l lg:border-t-0">
+            <Image
+              src={mission.image}
+              alt={mission.imageAlt}
+              fill
+              quality={100}
+              className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
+              sizes="(max-width: 1024px) 100vw, 420px"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-primary-dark/85 via-primary/25 to-transparent" />
+            <div className="absolute bottom-0 left-0 right-0 border-t border-white/10 bg-primary/40 px-5 py-4 backdrop-blur-sm">
+              <p className="font-heading text-base font-semibold text-white">{mission.captionTitle}</p>
+              <p className="mt-1 text-xs font-semibold uppercase tracking-[0.12em] text-accent">
+                {mission.captionSubtitle}
+              </p>
+            </div>
+          </div>
+        </div>
+      </SectionCard>
+
+      <StaggerContainer className="grid gap-4 sm:grid-cols-3" stagger={0.06}>
+        {mission.pillars.map((pillar) => (
+          <StaggerItem key={pillar.title}>
+            <SectionCard className="group motion-lift h-full">
+              <div className="px-5 py-6 lg:px-6 lg:py-7">
+                <IconBadge icon={pillar.icon} size="md" />
+                <h3 className="mt-4 text-lg text-foreground">{pillar.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted">{pillar.description}</p>
+                <AccentBar className="mt-5" />
+              </div>
+            </SectionCard>
+          </StaggerItem>
+        ))}
+      </StaggerContainer>
+    </div>
+  );
+}
+
 export function AboutMainSection() {
   const { main, stats } = aboutPageContent;
   const statsRef = useRef<HTMLDivElement>(null);
@@ -296,6 +421,14 @@ export function AboutMainSection() {
 
           <div className="min-w-0 space-y-8">
             <ScrollReveal direction="right">
+              <VisionCard />
+            </ScrollReveal>
+
+            <ScrollReveal delay={0.05}>
+              <MissionCard />
+            </ScrollReveal>
+
+            <ScrollReveal delay={0.08} direction="right">
               <SectionCard>
                 <CardHeaderStrip eyebrow={main.eyebrow} subtitle="Our story, mission and community" align="left" />
                 <div className="px-6 py-8 lg:px-8 lg:py-10">
@@ -332,10 +465,6 @@ export function AboutMainSection() {
                     <p className="mt-4 font-serif text-base italic leading-relaxed text-foreground">
                       &ldquo;{main.quote.text}&rdquo;
                     </p>
-                    <footer className="mt-4 border-t border-border pt-4">
-                      <p className="text-sm font-semibold text-primary">{main.quote.author}</p>
-                      <p className="text-xs text-muted">{main.quote.role}</p>
-                    </footer>
                   </blockquote>
 
                   <p className="mt-6 text-[15px] leading-relaxed text-muted">{main.closingParagraph}</p>
@@ -374,144 +503,11 @@ export function AboutMainSection() {
   );
 }
 
-function BalajiHighlightDescription({ text }: { text: string }) {
-  const parts = text.split("Balaji");
-
-  return (
-    <p className="mt-5 text-base leading-relaxed text-muted">
-      {parts.map((part, index) => (
-        <span key={index}>
-          {part}
-          {index < parts.length - 1 && (
-            <span className="font-heading font-semibold tracking-wide text-primary">Balaji</span>
-          )}
-        </span>
-      ))}
-    </p>
-  );
-}
-
-export function AboutVisionSection() {
-  const { vision } = aboutPageContent;
-
-  return (
-    <section className="bg-surface py-20 lg:py-28">
-      <div className="mx-auto max-w-7xl px-4 lg:px-8">
-        <ScrollReveal>
-          <SectionCard>
-            <div className="grid items-stretch lg:grid-cols-2">
-              <div className="flex flex-col">
-                <CardHeaderStrip eyebrow="Our Purpose" subtitle="What drives us forward" align="left" />
-                <div className="flex flex-1 flex-col justify-center px-6 py-8 lg:px-10 lg:py-10">
-                  <h2 className="text-3xl leading-tight text-foreground lg:text-4xl">{vision.title}</h2>
-                  <BalajiHighlightDescription text={vision.description} />
-                  <AccentBar className="group mt-6" />
-                </div>
-              </div>
-
-              <div className="group relative min-h-[300px] overflow-hidden border-t border-border lg:min-h-full lg:border-l lg:border-t-0">
-                <Image
-                  src={vision.image}
-                  alt={vision.imageAlt}
-                  fill
-                  quality={100}
-                  className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
-                  sizes="(max-width: 1024px) 100vw, 560px"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-primary-dark/85 via-primary/25 to-transparent" />
-                <div className="absolute bottom-0 left-0 right-0 border-t border-white/10 bg-primary/40 px-5 py-4 backdrop-blur-sm">
-                  <p className="font-heading text-base font-semibold text-white">{vision.founderName}</p>
-                  <p className="mt-1 text-xs font-semibold uppercase tracking-[0.12em] text-accent">
-                    {vision.founderRole}
-                  </p>
-                </div>
-              </div>
-            </div>
-          </SectionCard>
-        </ScrollReveal>
-
-        <StaggerContainer className="mt-8 grid gap-6 sm:grid-cols-3 lg:gap-8" stagger={0.06}>
-          {vision.pillars.map((pillar) => (
-            <StaggerItem key={pillar.title}>
-              <SectionCard className="group motion-lift h-full">
-                <div className="px-6 py-8 lg:px-8 lg:py-10">
-                  <IconBadge icon={pillar.icon} size="md" />
-                  <h3 className="mt-5 text-xl text-foreground">{pillar.title}</h3>
-                  <p className="mt-3 text-sm leading-relaxed text-muted">{pillar.description}</p>
-                  <AccentBar className="mt-6" />
-                </div>
-              </SectionCard>
-            </StaggerItem>
-          ))}
-        </StaggerContainer>
-      </div>
-    </section>
-  );
-}
-
-export function AboutMissionSection() {
-  const { mission } = aboutPageContent;
-
-  return (
-    <section className="bg-background py-20 lg:py-28">
-      <div className="mx-auto max-w-7xl px-4 lg:px-8">
-        <ScrollReveal>
-          <SectionCard>
-            <div className="grid items-stretch lg:grid-cols-2">
-              <div className="flex flex-col">
-                <CardHeaderStrip eyebrow="Our Commitment" subtitle="How we serve every student" align="left" />
-                <div className="flex flex-1 flex-col justify-center px-6 py-8 lg:px-10 lg:py-10">
-                  <h2 className="text-3xl leading-tight text-foreground lg:text-4xl">{mission.title}</h2>
-                  <p className="mt-5 text-base leading-relaxed text-muted">{mission.description}</p>
-                  <AccentBar className="group mt-6" />
-                </div>
-              </div>
-
-              <div className="group relative min-h-[300px] overflow-hidden border-t border-border lg:min-h-full lg:border-l lg:border-t-0">
-                <Image
-                  src={mission.image}
-                  alt={mission.imageAlt}
-                  fill
-                  quality={100}
-                  className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
-                  sizes="(max-width: 1024px) 100vw, 560px"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-primary-dark/85 via-primary/25 to-transparent" />
-                <div className="absolute bottom-0 left-0 right-0 border-t border-white/10 bg-primary/40 px-5 py-4 backdrop-blur-sm">
-                  <p className="font-heading text-base font-semibold text-white">{mission.captionTitle}</p>
-                  <p className="mt-1 text-xs font-semibold uppercase tracking-[0.12em] text-accent">
-                    {mission.captionSubtitle}
-                  </p>
-                </div>
-              </div>
-            </div>
-          </SectionCard>
-        </ScrollReveal>
-
-        <StaggerContainer className="mt-8 grid gap-6 sm:grid-cols-3 lg:gap-8" stagger={0.06}>
-          {mission.pillars.map((pillar) => (
-            <StaggerItem key={pillar.title}>
-              <SectionCard className="group motion-lift h-full">
-                <div className="px-6 py-8 lg:px-8 lg:py-10">
-                  <IconBadge icon={pillar.icon} size="md" />
-                  <h3 className="mt-5 text-xl text-foreground">{pillar.title}</h3>
-                  <p className="mt-3 text-sm leading-relaxed text-muted">{pillar.description}</p>
-                  <AccentBar className="mt-6" />
-                </div>
-              </SectionCard>
-            </StaggerItem>
-          ))}
-        </StaggerContainer>
-      </div>
-    </section>
-  );
-}
-
 export function AboutCampusTourSection() {
   const { campusTour } = aboutPageContent;
 
   return (
-    <section className="bg-surface py-20 lg:py-28">
+    <section className="bg-background py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-4 lg:px-8">
         <SectionCard>
           <div className="grid items-stretch lg:grid-cols-2">

@@ -96,9 +96,9 @@ export const siteConfig = {
   phone: "",
   address: "No. 7 Works Road, Chrompet, Chennai - 600 044",
   social: {
-    facebook: "https://facebook.com",
-    twitter: "https://twitter.com",
-    linkedin: "https://linkedin.com",
-    youtube: "https://youtube.com",
+    facebook: "https://www.facebook.com/profile.php?id=61592126405933",
+    instagram: "https://www.instagram.com/sbist__",
+    linkedin: "https://www.linkedin.com/company/142907523",
+    youtube: "https://www.youtube.com/@SreeBalajiInstituteofScience",
   },
 };

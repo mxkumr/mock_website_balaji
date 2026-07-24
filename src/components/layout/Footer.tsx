@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { getSocialEntries, SocialIcon, socialLabels } from "@/components/layout/SocialIcons";
 import { siteConfig } from "@/lib/navigation";
 
 const campusLinks = [
@@ -18,6 +19,7 @@ const usefulLinks = [
 
 export function Footer() {
   const year = new Date().getFullYear();
+  const socialEntries = getSocialEntries();
 
   return (
     <footer className="bg-footer-bg text-white">
@@ -131,17 +133,17 @@ export function Footer() {
           <p className="text-sm text-white/60">
             © {year} {siteConfig.name}. All Rights Reserved.
           </p>
-          <div className="flex items-center gap-4">
-            {Object.entries(siteConfig.social).map(([key, url]) => (
+          <div className="flex items-center gap-3">
+            {socialEntries.map(([key, url]) => (
               <a
                 key={key}
                 href={url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex h-9 w-9 items-center justify-center rounded-full border border-white/20 text-xs font-semibold capitalize text-white/70 transition-colors hover:border-accent hover:text-accent"
-                aria-label={key}
+                className="flex h-9 w-9 items-center justify-center rounded-full border border-white/20 text-white/70 transition-colors hover:border-accent hover:text-accent"
+                aria-label={socialLabels[key]}
               >
-                {key[0].toUpperCase()}
+                <SocialIcon name={key} />
               </a>
             ))}
           </div>

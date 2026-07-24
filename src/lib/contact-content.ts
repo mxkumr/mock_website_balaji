@@ -100,6 +100,12 @@ export const contactPageContent = {
       },
     ],
   },
+  social: {
+    eyebrow: "Connect With Us",
+    title: "Follow SBIST on Social Media",
+    description:
+      "Stay close to campus life — events, announcements and community moments across our official channels.",
+  },
   cta: {
     image: stockImages.students,
   },

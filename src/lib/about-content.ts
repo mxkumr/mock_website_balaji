@@ -47,8 +47,6 @@ export const aboutPageContent = {
     ],
     quote: {
       text: "Our diverse community welcomes students from across the region, fostering cultural exchange and mutual understanding. Through industry collaborations, research initiatives and innovation hubs, we provide opportunities for students to engage with real-world challenges and contribute to sustainable solutions.",
-      author: "DR. J. Srinisha Elamaran",
-      role: "Founder & Chairman",
     },
     closingParagraph:
       "At the heart of SBIST lies a commitment to excellence and inclusivity — helping students gain the skills, confidence and perspective to lead in an ever-changing world.",
