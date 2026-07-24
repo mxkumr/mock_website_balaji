@@ -119,8 +119,8 @@ export const academicsPageContent = {
     ] as HighlightStatItem[],
     stories: [
       {
-        name: "Mr. Yaser",
-        role: "Managing Director, Jollo",
+        name: "Mr. Arjun Desai",
+        role: "Industry Mentor, Chennai",
         quote:
           "I strongly recommend Sree Balaji Institute of Science and Technology for students who want quality education with discipline and purpose. It is a college I trust for student growth.",
         image: "/images/SREE_Balaji_logo.svg",
