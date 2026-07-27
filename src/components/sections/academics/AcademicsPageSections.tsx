@@ -354,7 +354,9 @@ export function CourseCatalogueSection() {
                 <h2 className="text-3xl leading-tight text-foreground lg:text-4xl">{courses.title}</h2>
                 <AccentBar className="group mt-4" />
               </div>
+              {/* TODO: restore when a dedicated programs listing page is available
               <ArrowPillLink href={courses.viewAllHref}>View All Programs</ArrowPillLink>
+              */}
             </div>
           </SectionCard>
         </ScrollReveal>
@@ -447,7 +449,9 @@ export function AlumniSection() {
             <CardHeaderStrip eyebrow={alumni.eyebrow} subtitle={alumni.description} />
             <div className="flex flex-col items-center justify-between gap-6 px-6 py-8 sm:flex-row lg:px-8">
               <h2 className="text-3xl leading-tight text-foreground lg:text-4xl">{alumni.title}</h2>
+              {/* TODO: restore when alumni admissions flow is finalized
               <ArrowPillLink href={alumni.ctaHref}>{alumni.ctaLabel}</ArrowPillLink>
+              */}
             </div>
           </SectionCard>
         </ScrollReveal>
@@ -561,9 +565,11 @@ export function AdmissionsSection() {
                     </li>
                   ))}
                 </ul>
+                {/* TODO: restore when a dedicated notices page is available
                 <div className="mt-6">
                   <ArrowPillLink href={notices.viewAllHref}>All Notices</ArrowPillLink>
                 </div>
+                */}
               </div>
             </SectionCard>
           </ScrollReveal>

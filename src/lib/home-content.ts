@@ -7,7 +7,7 @@ export const heroContent = {
   watermarkSubtitle: "What the World Needs Begins Here",
   eyebrow: "Welcome to Sree Balaji Institute of Science and Technology",
   title: "Highly Qualified Faculties Will Guide You for Career Growth",
-  campusTourLabel: "Campus Tour",
+  campusTourLabel: "About Us",
   campusTourHref: "/about",
   applyHref: "/contact",
   /** Tablet & desktop hero */
