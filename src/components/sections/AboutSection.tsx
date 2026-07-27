@@ -56,13 +56,17 @@ function AboutImage({
   src,
   alt,
   priority = false,
+  className = "",
 }: {
   src: string;
   alt: string;
   priority?: boolean;
+  className?: string;
 }) {
   return (
-    <div className="group relative min-h-[200px] flex-1 overflow-hidden rounded-2xl border border-border bg-white shadow-sm motion-lift">
+    <div
+      className={`group relative min-h-[200px] flex-1 overflow-hidden rounded-2xl border border-border bg-white shadow-sm motion-lift ${className}`}
+    >
       <Image
         src={src}
         alt={alt}
@@ -88,6 +92,7 @@ export function AboutSection() {
                 src={aboutContent.images.primary}
                 alt="Students learning at SBIST"
                 priority
+                className="hidden lg:block"
               />
               <AboutImage
                 src={aboutContent.images.secondary}
