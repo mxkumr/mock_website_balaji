@@ -47,7 +47,7 @@ export const careersPageContent = {
       "Preference will be given for candidates with First Class in both UG & PG with teaching experience in engineering colleges.",
       "Ph.D with relevant experience is a must for Professor and Associate Professor posts.",
     ],
-    deadline: "31.08.2024",
+    deadline: "31.08.2026",
     deadlineNote: `Eligible candidates may apply by emailing their résumé to ${applicationEmail} before the deadline. Shortlisted applicants will be contacted by the office.`,
   },
   apply: {
