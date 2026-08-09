@@ -281,77 +281,49 @@ function BalajiHighlightDescription({ text }: { text: string }) {
   );
 }
 
-function VisionCard() {
-  const { vision } = aboutPageContent;
-
+function PillarsGrid({ pillars }: { pillars: typeof aboutPageContent.vision.pillars }) {
   return (
-    <div className="space-y-6">
-      <SectionCard>
-        <div className="grid items-stretch lg:grid-cols-2">
-          <div className="flex flex-col">
-            <CardHeaderStrip eyebrow="Our Purpose" subtitle="What drives us forward" align="left" />
-            <div className="flex flex-1 flex-col justify-center px-6 py-8 lg:px-8 lg:py-10">
-              <h2 className="text-3xl leading-tight text-foreground lg:text-[2.25rem]">{vision.title}</h2>
-              <BalajiHighlightDescription text={vision.description} />
-              <AccentBar className="group mt-6" />
+    <StaggerContainer className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3" stagger={0.06}>
+      {pillars.map((pillar) => (
+        <StaggerItem key={pillar.title}>
+          <SectionCard className="group motion-lift h-full">
+            <div className="px-5 py-6 lg:px-6 lg:py-7">
+              <IconBadge icon={pillar.icon} size="md" />
+              <h3 className="mt-4 text-lg text-foreground">{pillar.title}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-muted">{pillar.description}</p>
+              <AccentBar className="mt-5" />
             </div>
-          </div>
-
-          <div className="group relative min-h-[260px] overflow-hidden border-t border-border lg:min-h-full lg:border-l lg:border-t-0">
-            <Image
-              src={vision.image}
-              alt={vision.imageAlt}
-              fill
-              quality={100}
-              className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
-              sizes="(max-width: 1024px) 100vw, 420px"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-primary-dark/85 via-primary/25 to-transparent" />
-            <div className="absolute bottom-0 left-0 right-0 border-t border-white/10 bg-primary/40 px-5 py-4 backdrop-blur-sm">
-              <p className="font-heading text-base font-semibold text-white">{vision.founderName}</p>
-              <p className="mt-1 text-xs font-semibold uppercase tracking-[0.12em] text-accent">
-                {vision.founderRole}
-              </p>
-            </div>
-          </div>
-        </div>
-      </SectionCard>
-
-      <StaggerContainer className="grid gap-4 sm:grid-cols-3" stagger={0.06}>
-        {vision.pillars.map((pillar) => (
-          <StaggerItem key={pillar.title}>
-            <SectionCard className="group motion-lift h-full">
-              <div className="px-5 py-6 lg:px-6 lg:py-7">
-                <IconBadge icon={pillar.icon} size="md" />
-                <h3 className="mt-4 text-lg text-foreground">{pillar.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted">{pillar.description}</p>
-                <AccentBar className="mt-5" />
-              </div>
-            </SectionCard>
-          </StaggerItem>
-        ))}
-      </StaggerContainer>
-    </div>
+          </SectionCard>
+        </StaggerItem>
+      ))}
+    </StaggerContainer>
   );
 }
 
-function MissionCard() {
-  const { mission } = aboutPageContent;
+function VisionMissionCard() {
+  const { vision, mission } = aboutPageContent;
 
   return (
     <div className="space-y-6">
       <SectionCard>
         <div className="grid items-stretch lg:grid-cols-2">
           <div className="flex flex-col">
-            <CardHeaderStrip eyebrow="Our Commitment" subtitle="How we serve every student" align="left" />
-            <div className="flex flex-1 flex-col justify-center px-6 py-8 lg:px-8 lg:py-10">
-              <h2 className="text-3xl leading-tight text-foreground lg:text-[2.25rem]">{mission.title}</h2>
-              <p className="mt-5 text-base leading-relaxed text-muted">{mission.description}</p>
-              <AccentBar className="group mt-6" />
+            <CardHeaderStrip eyebrow="Our Purpose" subtitle="Vision and mission that guide SBIST" align="left" />
+            <div className="flex flex-1 flex-col justify-center gap-8 px-6 py-8 lg:px-8 lg:py-10">
+              <div>
+                <h2 className="text-3xl leading-tight text-foreground lg:text-[2.25rem]">{vision.title}</h2>
+                <BalajiHighlightDescription text={vision.description} />
+                <AccentBar className="group mt-6" />
+              </div>
+              <div className="border-t border-border pt-8">
+                <h2 className="text-3xl leading-tight text-foreground lg:text-[2.25rem]">{mission.title}</h2>
+                <p className="mt-5 text-base leading-relaxed text-muted">{mission.description}</p>
+                <AccentBar className="group mt-6" />
+              </div>
             </div>
           </div>
 
-          <div className="group relative min-h-[260px] overflow-hidden border-t border-border lg:min-h-full lg:border-l lg:border-t-0">
+          <div className="group relative min-h-[320px] overflow-hidden border-t border-border lg:min-h-full lg:border-l lg:border-t-0">
             <Image
               src={mission.image}
               alt={mission.imageAlt}
@@ -371,20 +343,7 @@ function MissionCard() {
         </div>
       </SectionCard>
 
-      <StaggerContainer className="grid gap-4 sm:grid-cols-3" stagger={0.06}>
-        {mission.pillars.map((pillar) => (
-          <StaggerItem key={pillar.title}>
-            <SectionCard className="group motion-lift h-full">
-              <div className="px-5 py-6 lg:px-6 lg:py-7">
-                <IconBadge icon={pillar.icon} size="md" />
-                <h3 className="mt-4 text-lg text-foreground">{pillar.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted">{pillar.description}</p>
-                <AccentBar className="mt-5" />
-              </div>
-            </SectionCard>
-          </StaggerItem>
-        ))}
-      </StaggerContainer>
+      <PillarsGrid pillars={mission.pillars} />
     </div>
   );
 }
@@ -470,15 +429,15 @@ export function AboutMainSection() {
 
           <div className="min-w-0 space-y-8">
             <ScrollReveal direction="right">
-              <VisionCard />
+              <LeaderPreviewCard />
+            </ScrollReveal>
+
+            <ScrollReveal delay={0.04}>
+              <PillarsGrid pillars={aboutPageContent.vision.pillars} />
             </ScrollReveal>
 
             <ScrollReveal delay={0.05}>
-              <MissionCard />
-            </ScrollReveal>
-
-            <ScrollReveal delay={0.07}>
-              <LeaderPreviewCard />
+              <VisionMissionCard />
             </ScrollReveal>
 
             <ScrollReveal delay={0.08} direction="right">
