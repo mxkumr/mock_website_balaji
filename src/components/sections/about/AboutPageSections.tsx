@@ -7,6 +7,7 @@ import { Gallery } from "@/components/blocks/Gallery";
 import { NavIcon } from "@/components/layout/NavIcons";
 import { ScrollReveal, StaggerContainer, StaggerItem } from "@/components/motion/ScrollAnimations";
 import { aboutPageContent } from "@/lib/about-content";
+import { aboutLeaderPreview } from "@/lib/leadership-content";
 import type { NavIconName } from "@/lib/navigation";
 
 function MortarboardIcon({ className = "h-5 w-5 shrink-0 text-accent" }: { className?: string }) {
@@ -388,6 +389,54 @@ function MissionCard() {
   );
 }
 
+function LeaderPreviewCard() {
+  const leader = aboutLeaderPreview;
+
+  return (
+    <SectionCard>
+      <div className="grid items-stretch lg:grid-cols-2">
+        <div className="flex flex-col">
+          <CardHeaderStrip eyebrow={leader.eyebrow} subtitle={leader.tagline} align="left" />
+          <div className="flex flex-1 flex-col justify-center px-6 py-8 lg:px-8 lg:py-10">
+            <h2 className="font-heading text-3xl leading-tight text-foreground lg:text-[2.25rem]">
+              {leader.title}
+            </h2>
+            <p className="mt-2 text-xs font-semibold uppercase tracking-[0.14em] text-accent">
+              {leader.role}
+            </p>
+            <div className="mt-5 space-y-4 text-base leading-relaxed text-muted">
+              {leader.paragraphs.map((paragraph) => (
+                <p key={paragraph.slice(0, 48)}>{paragraph}</p>
+              ))}
+            </div>
+            <div className="mt-8">
+              <ArrowPillLink href={leader.readMoreHref}>{leader.readMoreLabel}</ArrowPillLink>
+            </div>
+          </div>
+        </div>
+
+        <div className="group relative min-h-[280px] overflow-hidden border-t border-border lg:min-h-full lg:border-l lg:border-t-0">
+          <Image
+            src={leader.image}
+            alt={leader.imageAlt}
+            fill
+            quality={100}
+            className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
+            sizes="(max-width: 1024px) 100vw, 420px"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-primary-dark/85 via-primary/25 to-transparent" />
+          <div className="absolute bottom-0 left-0 right-0 border-t border-white/10 bg-primary/40 px-5 py-4 backdrop-blur-sm">
+            <p className="font-heading text-base font-semibold text-white">{leader.title}</p>
+            <p className="mt-1 text-xs font-semibold uppercase tracking-[0.12em] text-accent">
+              {leader.role}
+            </p>
+          </div>
+        </div>
+      </div>
+    </SectionCard>
+  );
+}
+
 export function AboutMainSection() {
   const { main, stats } = aboutPageContent;
   const statsRef = useRef<HTMLDivElement>(null);
@@ -426,6 +475,10 @@ export function AboutMainSection() {
 
             <ScrollReveal delay={0.05}>
               <MissionCard />
+            </ScrollReveal>
+
+            <ScrollReveal delay={0.07}>
+              <LeaderPreviewCard />
             </ScrollReveal>
 
             <ScrollReveal delay={0.08} direction="right">

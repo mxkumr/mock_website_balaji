@@ -32,6 +32,7 @@ export const aboutPageContent = {
     title: "SBIST Inside",
     links: [
       { label: "Who We Are", href: "/about", icon: "about" as NavIconName },
+      { label: "Our Leader", href: "/about/leadership", icon: "founder" as NavIconName },
       { label: "Academics", href: "/academics", icon: "programs" as NavIconName },
       { label: "Careers", href: "/careers", icon: "faculty" as NavIconName },
       { label: "Contact", href: "/contact", icon: "apply" as NavIconName },

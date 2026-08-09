@@ -37,6 +37,11 @@ export {
   AboutGallerySection,
 } from "./sections/about/AboutPageSections";
 export {
+  LeadershipIntroSection,
+  LeadershipInstitutionsSection,
+  LeadershipNarrativeSection,
+} from "./sections/about/LeadershipPageSections";
+export {
   AcademicsIntroSection,
   CourseCatalogueSection,
   WhyJoinSection,

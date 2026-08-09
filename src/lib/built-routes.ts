@@ -2,6 +2,7 @@
 export const BUILT_ROUTES = new Set([
   "/",
   "/about",
+  "/about/leadership",
   "/academics",
   "/contact",
   "/careers",
