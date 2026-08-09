@@ -175,11 +175,13 @@ export const notices = [
     title: "Project Expo — Tech Fusion",
     date: "December 2026",
     ref: "SBIST/CSE/TECHFUSION/2026",
+    href: "/academics#admissions",
   },
   {
     title: "1st International Conference for Computer Science Engineering",
     date: "December 2026",
     ref: "SBIST/CSE/ICCSE/2026",
+    href: "/academics#admissions",
   },
 ];
 
@@ -227,7 +229,7 @@ export type CampusLifeTile = {
 export const campusLifeContent = {
   eyebrow: "Campus Life",
   title: "Discover Campus Life",
-  viewAllHref: "/sbsb#clubs",
+  viewAllHref: "/campus-life",
   tiles: [
     {
       id: "campus",

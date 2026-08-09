@@ -530,11 +530,9 @@ export function AboutCampusTourSection() {
               <div className="flex flex-1 flex-col px-6 py-8 lg:px-10 lg:py-10">
                 <h2 className="text-3xl leading-tight text-foreground lg:text-4xl">{campusTour.title}</h2>
                 <p className="mt-5 text-base leading-relaxed text-muted">{campusTour.description}</p>
-                {/* TODO: restore when campus tour video/page is ready
                 <div className="mt-8">
-                  <ArrowPillLink href={campusTour.videoHref}>Take a Campus Tour</ArrowPillLink>
+                  <ArrowPillLink href={campusTour.videoHref}>Explore Campus Life</ArrowPillLink>
                 </div>
-                */}
               </div>
             </ScrollReveal>
 

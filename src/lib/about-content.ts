@@ -123,7 +123,7 @@ export const aboutPageContent = {
     title: "Our Campus Tour",
     description:
       "Explore our Chrompet campus — from modern lecture halls and engineering laboratories to the central library and sports grounds. See where SBIST students learn, research and grow.",
-    videoHref: "/about",
+    videoHref: "/campus-life",
     image: "/images/interior3.JPG",
   },
   testimonials: {
@@ -200,6 +200,6 @@ export const aboutPageContent = {
         caption: "Practical engineering",
       },
     ] satisfies GalleryImage[],
-    ctaHref: "/about",
+    ctaHref: "/campus-life",
   },
 };

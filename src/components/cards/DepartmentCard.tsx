@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import type { ReactNode } from "react";
 import { Card, CardDescription, CardTitle } from "@/components/ui/Card";
 
@@ -18,7 +19,7 @@ export function DepartmentCard({
   description,
   image,
   programs = [],
-  href = "#",
+  href = "/academics#courses",
   icon,
   duration,
   className = "",
@@ -51,7 +52,6 @@ export function DepartmentCard({
             </li>
           ))}
         </ul>
-        {/* TODO: restore when program detail pages are ready
         <Link
           href={href}
           className="mt-auto inline-flex items-center gap-1 pt-5 text-sm font-semibold text-primary hover:text-primary-light"
@@ -71,7 +71,6 @@ export function DepartmentCard({
             />
           </svg>
         </Link>
-        */}
         {duration && (
           <p className="mt-4 border-t border-border pt-4 text-xs font-medium uppercase tracking-[0.12em] text-muted">
             {duration}

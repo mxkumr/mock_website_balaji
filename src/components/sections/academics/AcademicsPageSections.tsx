@@ -354,9 +354,7 @@ export function CourseCatalogueSection() {
                 <h2 className="text-3xl leading-tight text-foreground lg:text-4xl">{courses.title}</h2>
                 <AccentBar className="group mt-4" />
               </div>
-              {/* TODO: restore when a dedicated programs listing page is available
               <ArrowPillLink href={courses.viewAllHref}>View All Programs</ArrowPillLink>
-              */}
             </div>
           </SectionCard>
         </ScrollReveal>
@@ -449,9 +447,7 @@ export function AlumniSection() {
             <CardHeaderStrip eyebrow={alumni.eyebrow} subtitle={alumni.description} />
             <div className="flex flex-col items-center justify-between gap-6 px-6 py-8 sm:flex-row lg:px-8">
               <h2 className="text-3xl leading-tight text-foreground lg:text-4xl">{alumni.title}</h2>
-              {/* TODO: restore when alumni admissions flow is finalized
               <ArrowPillLink href={alumni.ctaHref}>{alumni.ctaLabel}</ArrowPillLink>
-              */}
             </div>
           </SectionCard>
         </ScrollReveal>
@@ -556,7 +552,16 @@ export function AdmissionsSection() {
                       key={notice.ref}
                       className="rounded-xl border border-border bg-surface/40 px-4 py-4 transition-colors hover:border-primary/20 hover:bg-white"
                     >
-                      <p className="text-sm font-semibold text-foreground">{notice.title}</p>
+                      {"href" in notice && notice.href ? (
+                        <Link
+                          href={notice.href}
+                          className="text-sm font-semibold text-foreground transition-colors hover:text-primary"
+                        >
+                          {notice.title}
+                        </Link>
+                      ) : (
+                        <p className="text-sm font-semibold text-foreground">{notice.title}</p>
+                      )}
                       <div className="mt-2 flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-muted">
                         <span>{notice.date}</span>
                         <span className="hidden sm:inline">·</span>
@@ -565,11 +570,9 @@ export function AdmissionsSection() {
                     </li>
                   ))}
                 </ul>
-                {/* TODO: restore when a dedicated notices page is available
                 <div className="mt-6">
                   <ArrowPillLink href={notices.viewAllHref}>All Notices</ArrowPillLink>
                 </div>
-                */}
               </div>
             </SectionCard>
           </ScrollReveal>

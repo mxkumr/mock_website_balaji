@@ -111,9 +111,10 @@ export function Footer() {
             <p className="mb-4 text-sm text-white/70">
               Stay updated with campus news and events.
             </p>
-            <form className="flex flex-col gap-3" action="#" method="post">
+            <form className="flex flex-col gap-3" action="/contact" method="get">
               <input
                 type="email"
+                name="email"
                 placeholder="Your email address"
                 className="rounded-md border border-white/20 bg-white/10 px-4 py-2.5 text-sm text-white placeholder:text-white/50 focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent"
                 aria-label="Email for newsletter"
