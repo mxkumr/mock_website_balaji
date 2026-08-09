@@ -18,7 +18,7 @@ export const leadershipPageContent = {
     formalName: "DR. J. Srinisha Elamaran",
     tagline: "A Leader with Vision. A Heart with Purpose.",
     role: "Founder & Chairman",
-    image: "/images/Dr-Nisha.png",
+    image: "/images/Dr-Nisha.jpg",
     imageAlt: "DR. J. Srinisha Elamaran, Founder & Chairman of SBIST",
     paragraphs: [
       "Srinisha Elamaran is a compassionate leader and visionary administrator whose work reflects a strong commitment to excellence, empathy, education, healthcare and service.",
@@ -119,7 +119,7 @@ export const aboutLeaderPreview = {
   title: "DR. J. Srinisha Elamaran",
   tagline: "A Leader with Vision. A Heart with Purpose.",
   role: "Founder & Chairman",
-  image: "/images/Dr-Nisha.png",
+  image: "/images/Dr-Nisha.jpg",
   imageAlt: "DR. J. Srinisha Elamaran, Founder & Chairman of SBIST",
   paragraphs: leadershipPageContent.intro.paragraphs,
   readMoreHref: "/about/leadership",
