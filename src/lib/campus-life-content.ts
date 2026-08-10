@@ -76,8 +76,8 @@ export const campusFacilitiesContent = {
         "Resources that fuel research",
       ],
       images: [
-        { src: "/images/library2.jpg", alt: "Students studying in the central library" },
-        { src: "/images/library3.jpg", alt: "Library shelves and reading spaces at SBIST" },
+        { src: "/images/Library_AI.png", alt: "Students studying in the central library" },
+        { src: "/images/workstation-quotes.JPG", alt: "Focused study spaces at SBIST" },
       ],
     },
     {
@@ -135,7 +135,7 @@ export const campusFacilitiesContent = {
       ],
       images: [
         { src: "/images/auditorium.JPG", alt: "SBIST auditorium ready for ceremonies" },
-        { src: "/images/Gallery/audience1.JPG", alt: "Campus community celebrating together" },
+        { src: "/images/freshers-day.jpg", alt: "Campus community celebrating together" },
       ],
     },
     {
@@ -154,7 +154,7 @@ export const campusFacilitiesContent = {
       ],
       images: [
         { src: "/images/campus-sports.png", alt: "Students playing sports on campus grounds" },
-        { src: "/images/Gallery/audience2.JPG", alt: "Cultural celebration on campus" },
+        { src: "/images/community-programs.jpg", alt: "Students engaged in campus community life" },
       ],
     },
   ] satisfies CampusFacility[],

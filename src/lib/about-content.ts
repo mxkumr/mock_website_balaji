@@ -94,10 +94,6 @@ export const aboutPageContent = {
     title: "Our Mission",
     description:
       "Our mission is to deliver quality education that blends strong academic foundations with practical, industry-aligned learning. We are committed to mentoring every student with care, fostering innovation and research, and building graduates who lead with skill, integrity and social responsibility.",
-    image: "/images/Er-N-Elamaran.jpg",
-    imageAlt: "Er. N Elamaran of SBIST",
-    captionTitle: "Er. N Elamaran",
-    captionSubtitle: "Managing Director",
     pillars: [
       {
         title: "Quality Education",
@@ -175,7 +171,7 @@ export const aboutPageContent = {
         caption: "Academic block",
       },
       {
-        src: "/images/library2.jpg",
+        src: "/images/Library_AI.png",
         alt: "Central Library",
         caption: "Study spaces & resources",
       },

@@ -404,7 +404,7 @@ export function Navbar({ variant = "default" }: NavbarProps) {
             alt={siteConfig.name}
             width={360}
             height={96}
-            className="h-10 w-auto max-w-[200px] object-contain object-left sm:h-12 sm:max-w-[300px] lg:h-14 lg:max-w-[360px]"
+            className="h-14 w-auto max-w-[260px] object-contain object-left sm:h-16 sm:max-w-[360px] lg:h-[4.5rem] lg:max-w-[440px]"
             priority
           />
         </Link>

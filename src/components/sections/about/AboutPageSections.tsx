@@ -323,24 +323,10 @@ function VisionMissionCard() {
             </div>
           </div>
 
-          <div className="group relative min-h-[320px] overflow-hidden border-t border-border lg:min-h-full lg:border-l lg:border-t-0">
-            <Image
-              src={mission.image}
-              alt={mission.imageAlt}
-              fill
-              quality={100}
-              priority
-              className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
-              sizes="(max-width: 1024px) 100vw, (max-width: 1536px) 50vw, 800px"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-primary-dark/85 via-primary/25 to-transparent" />
-            <div className="absolute bottom-0 left-0 right-0 border-t border-white/10 bg-primary/40 px-5 py-4 backdrop-blur-sm">
-              <p className="font-heading text-base font-semibold text-white">{mission.captionTitle}</p>
-              <p className="mt-1 text-xs font-semibold uppercase tracking-[0.12em] text-accent">
-                {mission.captionSubtitle}
-              </p>
-            </div>
-          </div>
+          <div
+            className="relative min-h-[320px] overflow-hidden border-t border-border bg-surface lg:min-h-full lg:border-l lg:border-t-0"
+            aria-hidden
+          />
         </div>
       </SectionCard>
 

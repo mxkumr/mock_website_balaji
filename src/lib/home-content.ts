@@ -10,16 +10,41 @@ export const heroContent = {
   campusTourLabel: "About Us",
   campusTourHref: "/about",
   applyHref: "/contact",
-  /** Tablet & desktop hero */
+  /** Auto-advance interval for main banner carousel (ms) */
+  bannerIntervalMs: 6500,
+  /** Tablet & desktop hero (primary slide) */
   buildingImage: "/images/hero-desktop.png",
-  /** Mobile-only hero */
+  /** Mobile-only hero (primary slide) */
   heroMobileImage: "/images/hero-campus-mobile.png",
+  banners: [
+    {
+      id: "primary",
+      alt: "SBIST students looking toward the future",
+      desktopSrc: "/images/hero-desktop.png",
+      mobileSrc: "/images/hero-campus-mobile.png",
+      desktopObjectPosition: "object-[center_35%]",
+      mobileObjectPosition: "object-[50%_30%]",
+      /** Soft sky fade so watermark reads in open sky */
+      skyMask: true,
+      showWatermark: true,
+    },
+    {
+      id: "campus",
+      alt: "SBIST admission open 2025-26 — Sree Balaji Institute of Science and Technology",
+      desktopSrc: "/images/main_block_admission.png",
+      mobileSrc: "/images/main_block_admission.png",
+      desktopObjectPosition: "object-center",
+      mobileObjectPosition: "object-center",
+      skyMask: false,
+      showWatermark: false,
+    },
+  ],
 };
 
 /** Shared local imagery from public/images */
 export const stockImages = {
   campus: "/images/hero-campus.jpg",
-  library: "/images/slide-1.jpg",
+  library: "/images/Library_AI.png",
   graduation: "/images/slide-2.jpg",
   sports: "/images/mechanical.jpg",
   students: "/images/students-library.png",
@@ -192,7 +217,7 @@ export const galleryImages: GalleryImage[] = [
     caption: "Academic block",
   },
   {
-    src: "/images/library2.jpg",
+    src: "/images/Library_AI.png",
     alt: "Central Library",
     caption: "Study spaces & resources",
   },
@@ -244,7 +269,7 @@ export const campusLifeContent = {
       title: "Central Library",
       description:
         "A quiet, well-stocked library with digital resources, journals and study spaces for focused learning.",
-      image: "/images/library2.jpg",
+      image: "/images/Library_AI.png",
       href: "/campus-life#library",
     },
     {
@@ -368,21 +393,21 @@ export const homeGalleryContent = {
   viewMoreLabel: "View more",
   items: [
     {
-      src: "/images/Gallery/audience1.JPG",
-      alt: "Students celebrating together at a campus event",
+      src: "/images/freshers-day.jpg",
+      alt: "Students celebrating together at Freshers Day",
       label: "Celebrate Together",
       role: "hero",
     },
     {
-      src: "/images/Gallery/Faculty1.JPG",
-      alt: "Faculty and students connected as one academic family",
-      label: "Mentors & Minds",
+      src: "/images/Gallery/auditorium.JPG",
+      alt: "Modern SBIST seminar hall and auditorium",
+      label: "Spaces to Gather",
       role: "side",
     },
     {
-      src: "/images/Gallery/Award1.JPG",
-      alt: "Team receiving awards on stage",
-      label: "Win as a Team",
+      src: "/images/community-programs.jpg",
+      alt: "Students volunteering in a community outreach program",
+      label: "Serve Together",
       role: "side",
     },
     {
@@ -404,20 +429,20 @@ export const homeGalleryContent = {
       role: "strip",
     },
     {
-      src: "/images/Gallery/award2.JPG",
-      alt: "Campus award ceremony celebrating collective success",
-      label: "Rise Together",
+      src: "/images/Gallery/main-building-front.JPG",
+      alt: "Front entrance of Sree Balaji Institute of Science and Technology",
+      label: "Our Campus",
       role: "strip",
     },
     {
-      src: "/images/Gallery/audience2.JPG",
-      alt: "Community gathered for a campus celebration",
+      src: "/images/Gallery/interior2.JPG",
+      alt: "Bright campus interiors and common spaces",
       label: "Belong Here",
       role: "strip",
     },
     {
-      src: "/images/Gallery/Award3.JPG",
-      alt: "Students recognized for excellence as a cohort",
+      src: "/images/Gallery/computer1.JPG",
+      alt: "Modern computing facilities for hands-on learning",
       label: "Proud Moments",
       role: "strip",
     },
@@ -437,15 +462,7 @@ export const campusLifeGalleryContent = {
   description:
     "Scroll through labs, classrooms, celebrations and everyday life at SBIST.",
   items: [
-    { src: "/images/Gallery/audience2.JPG", alt: "Audience at a campus gathering", label: "Campus Gathering" },
-    { src: "/images/Gallery/audience3.JPG", alt: "Students and guests at an event", label: "Shared Moments" },
     { src: "/images/Gallery/auditorium.JPG", alt: "SBIST auditorium", label: "Auditorium" },
-    { src: "/images/Gallery/Award1.JPG", alt: "Award ceremony on stage", label: "Awards Night" },
-    { src: "/images/Gallery/award2.JPG", alt: "Students receiving recognition", label: "Recognition" },
-    { src: "/images/Gallery/Award3.JPG", alt: "Excellence awards celebration", label: "Proud Moments" },
-    { src: "/images/Gallery/award4.JPG", alt: "Campus award presentation", label: "Achievement" },
-    { src: "/images/Gallery/award5.JPG", alt: "Faculty and students with awards", label: "Honours" },
-    { src: "/images/Gallery/award6.JPG", alt: "Award ceremony group", label: "Success Together" },
     { src: "/images/Gallery/civil.jpg", alt: "Civil engineering laboratory", label: "Civil Lab" },
     { src: "/images/Gallery/Classroom.JPG", alt: "Modern lecture classroom", label: "Lecture Hall" },
     { src: "/images/Gallery/Classroom2.JPG", alt: "Students in classroom learning", label: "Active Learning" },
@@ -463,7 +480,6 @@ export const campusLifeGalleryContent = {
     { src: "/images/Gallery/electricallab2.jpg", alt: "Students in electrical lab", label: "Circuit Work" },
     { src: "/images/Gallery/electricallab3.jpg", alt: "Electrical lab benches", label: "Hands-On Circuits" },
     { src: "/images/Gallery/electricallab4.jpg", alt: "Electrical laboratory setup", label: "Lab Ready" },
-    { src: "/images/Gallery/Faculty1.JPG", alt: "Faculty with students", label: "Mentors & Minds" },
     { src: "/images/Gallery/interior.JPG", alt: "Campus interior corridor", label: "Campus Interior" },
     { src: "/images/Gallery/interior2.JPG", alt: "Academic building interior", label: "Inside Campus" },
     { src: "/images/Gallery/interior3.JPG", alt: "Campus hallway and spaces", label: "Walkways" },
@@ -488,7 +504,8 @@ export const campusLifeGalleryContent = {
     { src: "/images/Gallery/slide-3.jpg", alt: "Campus academic highlight", label: "Academic Spirit" },
     { src: "/images/Gallery/workstation-quotes.JPG", alt: "Workstation area with quotes", label: "Workstations" },
     { src: "/images/Gallery/wrokstation.JPG", alt: "Student workstation space", label: "Study Stations" },
-    { src: "/images/Gallery/audience1.JPG", alt: "Campus community celebrating together", label: "Celebrate Together" },
+    { src: "/images/freshers-day.jpg", alt: "Students at Freshers Day celebration", label: "Freshers Day" },
+    { src: "/images/community-programs.jpg", alt: "Community outreach and service", label: "Community Programs" },
   ] satisfies CampusLifeGalleryItem[],
 };
 
