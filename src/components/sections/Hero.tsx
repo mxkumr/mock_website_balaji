@@ -53,7 +53,7 @@ function Watermark({ y }: { y?: ReturnType<typeof useTransform<number, string>> 
   );
 
   const className =
-    "pointer-events-none absolute inset-x-0 top-[12%] z-[6] flex justify-center select-none";
+    "pointer-events-none absolute inset-x-0 top-[12%] z-6 flex justify-center select-none";
 
   if (y) {
     return (
@@ -75,24 +75,38 @@ function BannerSlide({
 }: {
   banner: (typeof heroContent.banners)[number];
 }) {
+  const isGraphic = Boolean(banner.graphicBanner);
+
   return (
     <>
       <Image
         src={banner.mobileSrc}
         alt={banner.alt}
         fill
-        priority={banner.id === "primary"}
+        priority
         quality={100}
-        className={`object-cover opacity-100 transition-opacity duration-700 ease-in-out md:pointer-events-none md:opacity-0 ${banner.mobileObjectPosition}`}
+        unoptimized={isGraphic}
+        className={[
+          "object-cover opacity-100 transition-opacity duration-700 ease-in-out md:pointer-events-none md:opacity-0",
+          banner.mobileObjectPosition,
+        ]
+          .filter(Boolean)
+          .join(" ")}
         sizes="100vw"
       />
       <Image
         src={banner.desktopSrc}
         alt={banner.alt}
         fill
-        priority={banner.id === "primary"}
+        priority
         quality={100}
-        className={`object-cover opacity-0 transition-opacity duration-700 ease-in-out md:opacity-100 ${banner.desktopObjectPosition}`}
+        unoptimized={isGraphic}
+        className={[
+          "object-cover opacity-0 transition-opacity duration-700 ease-in-out md:opacity-100",
+          banner.desktopObjectPosition,
+        ]
+          .filter(Boolean)
+          .join(" ")}
         sizes="100vw"
       />
     </>
@@ -106,6 +120,7 @@ export function Hero() {
   const [index, setIndex] = useState(0);
   const [paused, setPaused] = useState(false);
   const active = banners[index];
+  const isGraphicBanner = Boolean(active.graphicBanner);
 
   const goTo = useCallback(
     (next: number) => {
@@ -165,7 +180,12 @@ export function Hero() {
           <BannerSlide banner={active} />
         </div>
         {!active.skyMask && (
-          <div className="pointer-events-none absolute inset-0 bg-linear-to-b from-primary-dark/35 via-transparent to-transparent" />
+          <div
+            className={[
+              "pointer-events-none absolute inset-0 bg-linear-to-b from-primary-dark/35 via-transparent to-transparent",
+              isGraphicBanner ? "hidden md:block" : "",
+            ].join(" ")}
+          />
         )}
       </motion.div>
     </AnimatePresence>
@@ -174,16 +194,16 @@ export function Hero() {
   return (
     <section
       ref={ref}
-      className="relative min-h-screen overflow-hidden bg-background"
+      className="relative min-h-dvh w-full overflow-hidden bg-background"
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
       aria-roledescription="carousel"
       aria-label="Campus banners"
     >
-      {/* Light backdrop so the masked top of the image blends into the theme background */}
-      <div className="pointer-events-none absolute inset-x-0 top-0 z-[1] h-[38%] bg-linear-to-b from-background via-background to-transparent" />
+      {active.skyMask && (
+        <div className="pointer-events-none absolute inset-x-0 top-0 z-1 h-[38%] bg-linear-to-b from-background via-background to-transparent" />
+      )}
 
-      {/* SBIST watermark in open sky (primary slide) */}
       <AnimatePresence mode="wait">
         {active.showWatermark &&
           (prefersReducedMotion ? (
@@ -209,9 +229,8 @@ export function Hero() {
           ))}
       </AnimatePresence>
 
-      {/* Campus image */}
-      <div className="absolute inset-0 z-[3]">
-        {prefersReducedMotion ? (
+      <div className="absolute inset-0 z-3">
+        {prefersReducedMotion || isGraphicBanner ? (
           imageLayer
         ) : (
           <motion.div className="absolute inset-0" style={{ y: imageY, scale: imageScale }}>
@@ -220,22 +239,29 @@ export function Hero() {
         )}
       </div>
 
-      {/* Soft blend at horizon */}
       {active.skyMask && (
-        <div className="pointer-events-none absolute inset-x-0 top-0 z-[4] h-[32%] bg-linear-to-b from-background/60 via-transparent to-transparent" />
+        <div className="pointer-events-none absolute inset-x-0 top-0 z-4 h-[32%] bg-linear-to-b from-background/60 via-transparent to-transparent" />
       )}
 
-      {/* Bottom gradient for headline legibility */}
-      <div className="pointer-events-none absolute inset-0 z-[5] bg-linear-to-b from-transparent via-transparent to-[#0f2744]/92" />
-      <div className="pointer-events-none absolute inset-x-0 bottom-0 z-[5] h-56 bg-linear-to-t from-[#0f2744] via-[#0f2744]/80 to-transparent" />
+      <div
+        className={[
+          "pointer-events-none absolute inset-0 z-5 bg-linear-to-b from-transparent via-transparent to-[#0f2744]/92",
+          isGraphicBanner ? "hidden md:block" : "",
+        ].join(" ")}
+      />
+      <div
+        className={[
+          "pointer-events-none absolute inset-x-0 bottom-0 z-5 h-56 bg-linear-to-t from-[#0f2744] via-[#0f2744]/80 to-transparent",
+          isGraphicBanner ? "hidden md:block" : "",
+        ].join(" ")}
+      />
 
-      {/* Banner navigation — theme-consistent arrows */}
       {banners.length > 1 && (
-        <div className="pointer-events-none absolute inset-y-0 z-[8] flex w-full items-center justify-between px-3 sm:px-5 lg:px-8">
+        <div className="pointer-events-none absolute inset-y-0 z-8 flex w-full items-center justify-between px-2 sm:px-5 lg:px-8">
           <button
             type="button"
             onClick={goPrev}
-            className="pointer-events-auto flex h-11 w-11 items-center justify-center rounded-full border border-white/35 bg-primary/55 text-white shadow-lg backdrop-blur-sm transition-colors hover:border-accent hover:bg-primary hover:text-accent-bright sm:h-12 sm:w-12"
+            className="pointer-events-auto flex h-10 w-10 items-center justify-center rounded-full border border-white/35 bg-primary/55 text-white shadow-lg backdrop-blur-sm transition-colors hover:border-accent hover:bg-primary hover:text-accent-bright sm:h-12 sm:w-12"
             aria-label="Previous banner"
           >
             <NavArrowIcon direction="prev" />
@@ -243,7 +269,7 @@ export function Hero() {
           <button
             type="button"
             onClick={goNext}
-            className="pointer-events-auto flex h-11 w-11 items-center justify-center rounded-full border border-white/35 bg-primary/55 text-white shadow-lg backdrop-blur-sm transition-colors hover:border-accent hover:bg-primary hover:text-accent-bright sm:h-12 sm:w-12"
+            className="pointer-events-auto flex h-10 w-10 items-center justify-center rounded-full border border-white/35 bg-primary/55 text-white shadow-lg backdrop-blur-sm transition-colors hover:border-accent hover:bg-primary hover:text-accent-bright sm:h-12 sm:w-12"
             aria-label="Next banner"
           >
             <NavArrowIcon direction="next" />
@@ -251,9 +277,13 @@ export function Hero() {
         </div>
       )}
 
-      {/* Progress dots */}
       {banners.length > 1 && (
-        <div className="absolute inset-x-0 bottom-4 z-[8] flex justify-center gap-2 sm:bottom-6">
+        <div
+          className={[
+            "absolute inset-x-0 z-8 flex justify-center gap-2",
+            isGraphicBanner ? "bottom-2 md:bottom-6" : "bottom-4 sm:bottom-6",
+          ].join(" ")}
+        >
           {banners.map((banner, i) => (
             <button
               key={banner.id}
@@ -263,40 +293,42 @@ export function Hero() {
               aria-current={i === index}
               className={[
                 "h-1.5 rounded-full transition-all duration-500",
-                i === index
-                  ? "w-8 bg-accent"
-                  : "w-1.5 bg-white/45 hover:bg-white/75",
+                i === index ? "w-8 bg-accent" : "w-1.5 bg-white/45 hover:bg-white/75",
               ].join(" ")}
             />
           ))}
         </div>
       )}
 
-      {/* Foreground content */}
-      {prefersReducedMotion ? (
-        <div className="absolute inset-x-0 bottom-0 z-[6] mx-auto max-w-7xl px-4 pb-10 pt-24 lg:px-8 lg:pb-14">
-          <div className="flex flex-col items-start justify-between gap-10 sm:flex-row sm:items-end">
-            <HeroContent />
+      {!isGraphicBanner &&
+        (prefersReducedMotion ? (
+          <div className="absolute inset-x-0 bottom-0 z-6 mx-auto max-w-7xl px-4 pb-10 pt-24 lg:px-8 lg:pb-14">
+            <div className="flex flex-col items-start justify-between gap-10 sm:flex-row sm:items-end">
+              <div className="max-w-2xl" />
+              <CampusTourLink />
+            </div>
+          </div>
+        ) : (
+          <motion.div
+            className="absolute inset-x-0 bottom-0 z-6 mx-auto max-w-7xl px-4 pb-10 pt-24 lg:px-8 lg:pb-14"
+            style={{ y: contentY, opacity: contentOpacity }}
+          >
+            <div className="flex flex-col items-start justify-between gap-10 sm:flex-row sm:items-end">
+              <div className="max-w-2xl" />
+              <CampusTourLink />
+            </div>
+          </motion.div>
+        ))}
+
+      {isGraphicBanner && (
+        <div className="absolute inset-x-0 bottom-0 z-6 mx-auto hidden max-w-7xl px-4 pb-10 pt-24 md:block lg:px-8 lg:pb-14">
+          <div className="flex justify-end">
             <CampusTourLink />
           </div>
         </div>
-      ) : (
-        <motion.div
-          className="absolute inset-x-0 bottom-0 z-[6] mx-auto max-w-7xl px-4 pb-10 pt-24 lg:px-8 lg:pb-14"
-          style={{ y: contentY, opacity: contentOpacity }}
-        >
-          <div className="flex flex-col items-start justify-between gap-10 sm:flex-row sm:items-end">
-            <HeroContent />
-            <CampusTourLink />
-          </div>
-        </motion.div>
       )}
     </section>
   );
-}
-
-function HeroContent() {
-  return <div className="max-w-2xl" />;
 }
 
 function CampusTourLink() {

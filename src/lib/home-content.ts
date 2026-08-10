@@ -33,8 +33,10 @@ export const heroContent = {
       alt: "SBIST admission open 2025-26 — Sree Balaji Institute of Science and Technology",
       desktopSrc: "/images/main_block_admission.png",
       mobileSrc: "/images/main-block-mobile.png",
-      desktopObjectPosition: "object-center",
-      mobileObjectPosition: "object-center",
+      desktopObjectPosition: "",
+      mobileObjectPosition: "",
+      /** Designed poster — skip image optimizer soft-compression */
+      graphicBanner: true,
       skyMask: false,
       showWatermark: false,
     },

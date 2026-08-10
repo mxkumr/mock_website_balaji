@@ -243,7 +243,7 @@ export function CampusLifeGallerySection() {
                   src={item.src}
                   alt=""
                   fill
-                  quality={75}
+                  quality={100}
                   className="object-cover"
                   sizes="112px"
                 />
