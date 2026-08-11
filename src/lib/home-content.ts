@@ -3,7 +3,7 @@ import type { GalleryImage } from "@/components/blocks/Gallery";
 import type { NavIconName } from "@/lib/navigation";
 
 export const heroContent = {
-  watermark: "Sree Balaji College of Science and Technology",
+  watermark: "sree balaji institute of science and technology",
   watermarkSubtitle: "What the World Needs Begins Here",
   eyebrow: "Welcome to Sree Balaji Institute of Science and Technology",
   title: "Highly Qualified Faculties Will Guide You for Career Growth",
@@ -33,8 +33,8 @@ export const heroContent = {
       alt: "SBIST admission open 2025-26 — Sree Balaji Institute of Science and Technology",
       desktopSrc: "/images/main_block_admission.png",
       mobileSrc: "/images/main-block-mobile.png",
-      desktopObjectPosition: "",
-      mobileObjectPosition: "",
+      desktopObjectPosition: "object-center",
+      mobileObjectPosition: "object-[50%_30%]",
       /** Designed poster — skip image optimizer soft-compression */
       graphicBanner: true,
       skyMask: false,

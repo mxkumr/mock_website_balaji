@@ -77,6 +77,39 @@ function BannerSlide({
 }) {
   const isGraphic = Boolean(banner.graphicBanner);
 
+  // For the designed poster frames, bypass Next/Image optimization entirely
+  // to avoid any compression/resampling that can make text look soft.
+  if (isGraphic) {
+    return (
+      <>
+        <img
+          src={banner.mobileSrc}
+          alt={banner.alt}
+          className={[
+            "absolute inset-0 origin-center object-cover opacity-100 transition-opacity duration-700 ease-in-out scale-[1.06] md:pointer-events-none md:opacity-0",
+            banner.mobileObjectPosition,
+          ]
+            .filter(Boolean)
+            .join(" ")}
+          loading="eager"
+          draggable={false}
+        />
+        <img
+          src={banner.desktopSrc}
+          alt={banner.alt}
+          className={[
+            "absolute inset-0 origin-center object-cover opacity-0 transition-opacity duration-700 ease-in-out scale-[1.06] md:opacity-100",
+            banner.desktopObjectPosition,
+          ]
+            .filter(Boolean)
+            .join(" ")}
+          loading="eager"
+          draggable={false}
+        />
+      </>
+    );
+  }
+
   return (
     <>
       <Image
@@ -85,7 +118,7 @@ function BannerSlide({
         fill
         priority
         quality={100}
-        unoptimized={isGraphic}
+        unoptimized={false}
         className={[
           "object-cover opacity-100 transition-opacity duration-700 ease-in-out md:pointer-events-none md:opacity-0",
           banner.mobileObjectPosition,
@@ -100,7 +133,7 @@ function BannerSlide({
         fill
         priority
         quality={100}
-        unoptimized={isGraphic}
+        unoptimized={false}
         className={[
           "object-cover opacity-0 transition-opacity duration-700 ease-in-out md:opacity-100",
           banner.desktopObjectPosition,
