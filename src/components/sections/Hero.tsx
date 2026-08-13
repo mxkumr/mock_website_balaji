@@ -86,7 +86,7 @@ function BannerSlide({
           src={banner.mobileSrc}
           alt={banner.alt}
           className={[
-            "absolute inset-0 origin-center object-cover opacity-100 transition-opacity duration-700 ease-in-out scale-[1.06] md:pointer-events-none md:opacity-0",
+            "absolute inset-0 h-full w-full max-w-none object-cover opacity-100 transition-opacity duration-700 ease-in-out md:pointer-events-none md:opacity-0",
             banner.mobileObjectPosition,
           ]
             .filter(Boolean)
@@ -98,7 +98,7 @@ function BannerSlide({
           src={banner.desktopSrc}
           alt={banner.alt}
           className={[
-            "absolute inset-0 origin-center object-cover opacity-0 transition-opacity duration-700 ease-in-out scale-[1.06] md:opacity-100",
+            "absolute inset-0 h-full w-full max-w-none object-cover opacity-0 transition-opacity duration-700 ease-in-out md:opacity-100",
             banner.desktopObjectPosition,
           ]
             .filter(Boolean)
