@@ -306,27 +306,24 @@ function VisionMissionCard() {
   return (
     <div className="space-y-6">
       <SectionCard>
+        <CardHeaderStrip eyebrow="Our Purpose" subtitle="Vision and mission that guide SBIST" align="left" />
         <div className="grid items-stretch lg:grid-cols-2">
-          <div className="flex flex-col">
-            <CardHeaderStrip eyebrow="Our Purpose" subtitle="Vision and mission that guide SBIST" align="left" />
-            <div className="flex flex-1 flex-col justify-center gap-8 px-6 py-8 lg:px-8 lg:py-10">
-              <div>
-                <h2 className="text-3xl leading-tight text-foreground lg:text-[2.25rem]">{vision.title}</h2>
-                <BalajiHighlightDescription text={vision.description} />
-                <AccentBar className="group mt-6" />
-              </div>
-              <div className="border-t border-border pt-8">
-                <h2 className="text-3xl leading-tight text-foreground lg:text-[2.25rem]">{mission.title}</h2>
-                <p className="mt-5 text-base leading-relaxed text-muted">{mission.description}</p>
-                <AccentBar className="group mt-6" />
-              </div>
+          <div className="group px-6 py-8 lg:px-8 lg:py-10">
+            <div className="flex items-center gap-3">
+              <IconBadge icon="mission" size="md" />
+              <h2 className="text-3xl leading-tight text-foreground lg:text-[2.25rem]">{vision.title}</h2>
             </div>
+            <BalajiHighlightDescription text={vision.description} />
+            <AccentBar className="mt-6" />
           </div>
-
-          <div
-            className="relative min-h-[320px] overflow-hidden border-t border-border bg-surface lg:min-h-full lg:border-l lg:border-t-0"
-            aria-hidden
-          />
+          <div className="group border-t border-border px-6 py-8 lg:border-l lg:border-t-0 lg:px-8 lg:py-10">
+            <div className="flex items-center gap-3">
+              <IconBadge icon="programs" size="md" />
+              <h2 className="text-3xl leading-tight text-foreground lg:text-[2.25rem]">{mission.title}</h2>
+            </div>
+            <p className="mt-5 text-base leading-relaxed text-muted">{mission.description}</p>
+            <AccentBar className="mt-6" />
+          </div>
         </div>
       </SectionCard>
 
