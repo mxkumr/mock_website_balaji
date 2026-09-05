@@ -71,7 +71,7 @@ export const aboutContent = {
       "Through dedicated teaching, hands-on learning and strong values, we help students turn ambition into lasting success.",
   },
   images: {
-    primary: stockImages.students,
+    primary: "/images/auditorium.JPG",
     secondary: "/images/computer-lab.JPG",
   },
 };

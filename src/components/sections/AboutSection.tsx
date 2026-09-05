@@ -90,7 +90,7 @@ export function AboutSection() {
             <div className="flex h-full flex-col gap-4">
               <AboutImage
                 src={aboutContent.images.primary}
-                alt="Students learning at SBIST"
+                alt="SBIST auditorium"
                 priority
                 className="hidden lg:block"
               />
