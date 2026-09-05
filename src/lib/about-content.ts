@@ -52,8 +52,8 @@ export const aboutPageContent = {
     closingParagraph:
       "At the heart of SBIST lies a commitment to excellence and inclusivity — helping students gain the skills, confidence and perspective to lead in an ever-changing world.",
     images: {
-      primary: "/images/hero-campus.jpg",
-      secondary: "/images/workstation-quotes.JPG",
+      primary: "/images/computer-lab.JPG",
+      secondary: "/images/entrepreneur-summit.jpg",
     },
   },
   stats: [
@@ -181,9 +181,9 @@ export const aboutPageContent = {
         caption: "Modern classrooms",
       },
       {
-        src: "/images/computer-lab.JPG",
-        alt: "Computer Lab",
-        caption: "Hands-on computing",
+        src: "/images/entrepreneur-summit.jpg",
+        alt: "Entrepreneur Summit",
+        caption: "Ideate, innovate & inspire",
       },
       {
         src: "/images/workstation-quotes.JPG",

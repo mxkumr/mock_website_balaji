@@ -77,7 +77,7 @@ export const campusFacilitiesContent = {
       ],
       images: [
         { src: "/images/Library_AI.png", alt: "Students studying in the central library" },
-        { src: "/images/workstation-quotes.JPG", alt: "Focused study spaces at SBIST" },
+        { src: "/images/computer2.JPG", alt: "Focused study spaces at SBIST" },
       ],
     },
     {
@@ -95,8 +95,8 @@ export const campusFacilitiesContent = {
         "Designed for engagement",
       ],
       images: [
-        { src: "/images/Classroom.JPG", alt: "Modern technology-enabled lecture hall" },
-        { src: "/images/Classroom3.JPG", alt: "Students learning in a contemporary classroom" },
+        { src: "/images/classroom2.png", alt: "Modern technology-enabled lecture hall" },
+        { src: "/images/classroom1.png", alt: "Students learning in a contemporary classroom" },
       ],
     },
     {

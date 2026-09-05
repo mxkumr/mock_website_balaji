@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { useState, type FormEvent, type ReactNode } from "react";
 import { NavIcon } from "@/components/layout/NavIcons";
@@ -127,19 +126,6 @@ function ContactSidebar() {
             })}
           </ul>
         </nav>
-        <div className="group relative aspect-[4/3] overflow-hidden border-t border-border">
-          <Image
-            src={sidebar.image}
-            alt="Students at SBIST campus"
-            fill
-            className="object-cover transition-transform duration-500 group-hover:scale-105"
-            sizes="280px"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-primary-dark/60 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-          <p className="absolute bottom-4 left-4 text-xs font-semibold uppercase tracking-[0.12em] text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-            Chrompet Campus
-          </p>
-        </div>
       </SectionCard>
     </aside>
   );

@@ -62,29 +62,9 @@ export const mainNavigation: NavItem[] = [
   { label: "About", href: "/about" },
   { label: "Academics", href: "/academics" },
   { label: "SBIOL", href: "/sbiol" },
-  {
-    label: "Campus Life",
-    dropdown: [
-      {
-        label: "Overview",
-        href: "/campus-life",
-        description: "Facilities, spaces and the everyday pulse of SBIST campus.",
-        icon: "campus",
-      },
-      {
-        label: "SBSB",
-        href: "/sbsb",
-        description: "Sree Balaji Students Board — clubs, leadership and events.",
-        icon: "events",
-      },
-      {
-        label: "Careers",
-        href: "/careers",
-        description: "Faculty openings and how to apply to join our team.",
-        icon: "faculty",
-      },
-    ],
-  },
+  { label: "Campus Life", href: "/campus-life" },
+  { label: "SBSB", href: "/sbsb" },
+  { label: "Careers", href: "/careers" },
   { label: "Contact", href: "/contact" },
 ];
 

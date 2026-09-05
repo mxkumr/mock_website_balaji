@@ -246,19 +246,6 @@ function AboutSidebar() {
             })}
           </ul>
         </nav>
-        <div className="group relative aspect-[4/3] overflow-hidden border-t border-border">
-          <Image
-            src={sidebar.image}
-            alt="Students on the SBIST campus"
-            fill
-            className="object-cover transition-transform duration-500 group-hover:scale-105"
-            sizes="280px"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-primary-dark/60 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-          <p className="absolute bottom-4 left-4 text-xs font-semibold uppercase tracking-[0.12em] text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-            Campus Life
-          </p>
-        </div>
       </SectionCard>
     </aside>
   );
@@ -440,8 +427,9 @@ export function AboutMainSection() {
                     <div className="group relative aspect-[4/3] overflow-hidden rounded-xl border border-border">
                       <Image
                         src={main.images.primary}
-                        alt="SBIST campus"
+                        alt="Modern computer laboratory at SBIST"
                         fill
+                        quality={100}
                         className="object-cover transition-transform duration-500 group-hover:scale-105"
                         sizes="(max-width: 640px) 100vw, 320px"
                       />
@@ -449,8 +437,9 @@ export function AboutMainSection() {
                     <div className="group relative aspect-[4/3] overflow-hidden rounded-xl border border-border">
                       <Image
                         src={main.images.secondary}
-                        alt="Workstation space at SBIST"
+                        alt="Entrepreneur Summit at SBIST"
                         fill
+                        quality={100}
                         className="object-cover transition-transform duration-500 group-hover:scale-105"
                         sizes="(max-width: 640px) 100vw, 320px"
                       />
