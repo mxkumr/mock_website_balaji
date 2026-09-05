@@ -11,7 +11,7 @@ export const contactPageContent = {
       { label: "Home", href: "/" },
       { label: "Contact", href: "/contact" },
     ],
-    backgroundImage: stockImages.campus,
+    backgroundImage: "/images/main-academic-block.png",
   },
   sidebar: {
     title: "Get in Touch",

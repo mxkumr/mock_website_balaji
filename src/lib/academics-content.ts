@@ -4,7 +4,7 @@ import type { HighlightStatItem, PageStatItem } from "@/lib/about-content";
 
 /** Local image paths for the Academics page */
 export const academicsImages = {
-  header: stockImages.campus,
+  header: "/images/classroom1.png",
   sidebar: stockImages.students,
   whyJoin: "/images/students-classroom.jpg",
   cta: stockImages.students,

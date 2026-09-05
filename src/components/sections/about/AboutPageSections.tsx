@@ -352,7 +352,7 @@ function LeaderPreviewCard() {
             fill
             quality={100}
             priority
-            className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
+            className="object-cover object-[60%_center] transition-transform duration-700 group-hover:scale-105"
             sizes="(max-width: 1024px) 100vw, (max-width: 1536px) 50vw, 800px"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-primary-dark/85 via-primary/25 to-transparent" />
